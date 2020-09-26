@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Theme Name: Seats Plus 2020
+ * Theme URI: https://seatsplus.com.au
+ * Description: Seats Plus 2020 Wordpress Theme
+ * Version: 0.0.1
+ * Author: Mark Woodward | 360South
+ * URL: https://360south.com.au
+ */
