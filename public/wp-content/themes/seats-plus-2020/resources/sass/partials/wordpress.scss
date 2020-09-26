@@ -1,0 +1,60 @@
+/**
+ * Wordpess core classes
+ */
+
+
+.sticky {}
+
+.bypostauthor {}
+
+/**
+ * Alignment
+ */
+
+.alignnone {
+  margin: 0;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignright {
+  float: right;
+  margin: 0;
+}
+
+.alignleft {
+  float: left;
+  margin: 0;
+}
+
+
+/**
+ * Gallery & images
+ */
+
+.wp-caption {
+  background: rgba(255, 255, 255, 1);
+  border: thin solid #F0F0F0;
+  max-width: 95%;
+  padding: 0;
+  text-align: center;
+
+  & img {
+    width: auto;
+    max-width: 98.5%;
+    height: auto;
+    border: 0 none;
+    @include reset-box;
+  }
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+  margin: 0;
+  padding: 0 ;
+  font-size: 1em;
+  line-height: 1;
+}

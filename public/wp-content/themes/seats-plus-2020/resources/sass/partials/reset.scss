@@ -1,0 +1,44 @@
+// Global box-sizing
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  // Cancel hightlight color when tapping in iOS
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+body {
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  color: rgba(100, 200, 255, 1);
+  text-decoration: none;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {}
+}
+
+input[type="text"],
+input[type="search"] {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+// Text selection
+::selection {
+  background-color: rgba(100, 200, 255, 0.5);
+  color: rgba(0, 0, 0, 1);
+  text-shadow: none;
+}
