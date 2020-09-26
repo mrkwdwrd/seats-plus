@@ -9,40 +9,8 @@
  * URL: https://360south.com.au
  */
 
-// Add carbon fields for field csutomisations
-// https://carbonfields.net/docs/
-
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
-
-add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
-function crb_attach_theme_options()
-{
-    Container::make('post_meta', 'Slider')
-        ->where('post_type', '=', 'page')
-        ->where('post_template', '=', 'template-home-page.php')
-        ->add_fields(array(
-            Field::make('complex', 'crb_slides')->add_fields(array(
-                Field::make('image', 'image')->set_width(2),
-                Field::make('textarea', 'crb_caption', 'Caption')
-                    ->set_rows(4)->set_width(20),
-                Field::make('association', 'crb_association', 'Link to')
-                    ->set_types(
-                        array(
-                            array('type' => 'post', 'post_type' => 'product'),
-                            array('type' => 'post', 'post_type' => 'page')
-                        )
-                    )->set_max(1)->set_width(50),
-            ))->set_layout('tabbed-horizontal'),
-        ));
-}
-
-add_action('after_setup_theme', 'crb_load');
-function crb_load()
-{
-    require_once('vendor/autoload.php');
-    \Carbon_Fields\Carbon_Fields::boot();
-}
 
 // Theme Support
 if (function_exists('add_theme_support')) {
@@ -51,6 +19,19 @@ if (function_exists('add_theme_support')) {
 }
 
 // Functions
+function header_scripts()
+{
+    if ($GLOBALS['pagenow'] !== 'wp-login.php' && !is_admin()) {
+        wp_register_script('manifest', get_template_directory_uri() . '/js/manifest.js', '1.0.0');
+        wp_enqueue_script('manifest');
+
+        wp_register_script('vendor', get_template_directory_uri() . '/js/vendor.js', '1.0.0');
+        wp_enqueue_script('vendor');
+
+        wp_register_script('scripts', get_template_directory_uri() . '/js/app.js', '1.0.0');
+        wp_enqueue_script('scripts');
+    }
+}
 function main_nav()
 {
     wp_nav_menu(
@@ -198,7 +179,40 @@ function register_projects()
     );
 }
 
+// Add carbon fields for field csutomisations
+// https://carbonfields.net/docs/
+function crb_attach_theme_options()
+{
+    Container::make('post_meta', 'Slider')
+        ->where('post_type', '=', 'page')
+        ->where('post_template', '=', 'template-home-page.php')
+        ->add_fields(array(
+            Field::make('complex', 'crb_slides')->add_fields(array(
+                Field::make('image', 'image')->set_width(2),
+                Field::make('textarea', 'crb_caption', 'Caption')
+                    ->set_rows(4)->set_width(20),
+                Field::make('association', 'crb_association', 'Link to')
+                    ->set_types(
+                        array(
+                            array('type' => 'post', 'post_type' => 'product'),
+                            array('type' => 'post', 'post_type' => 'page')
+                        )
+                    )->set_max(1)->set_width(50),
+            ))->set_layout('tabbed-horizontal'),
+        ));
+}
+
+function crb_load()
+{
+    require_once('vendor/autoload.php');
+    \Carbon_Fields\Carbon_Fields::boot();
+}
 
 // Actions
+add_action('init', 'header_scripts');
+
 add_action('init', 'register_menus');
 add_action('init', 'register_projects');
+
+add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
+add_action('after_setup_theme', 'crb_load');
