@@ -58,6 +58,24 @@ function header_cleanup()
     }
 }
 
+// Inlcude page slug in body class (Credit: https://github.com/aaronallport/starkers)
+function add_slug_to_body_class($classes)
+{
+    global $post;
+    if (is_home()) {
+        $key = array_search('blog', $classes);
+        if ($key > -1) {
+            unset($classes[$key]);
+        }
+    } elseif (is_page()) {
+        $classes[] = sanitize_html_class($post->post_name);
+    } elseif (is_singular()) {
+        $classes[] = sanitize_html_class($post->post_name);
+    }
+
+    return $classes;
+}
+
 function main_nav()
 {
     wp_nav_menu(
@@ -158,10 +176,10 @@ function footer_legal()
 function register_menus()
 {
     register_nav_menus(array(
-        'header-menu' => __('Header Menu'),
-        'footer-sitemap' => __('Footer Sitemap'),
-        'footer-contact' => __('Footer Contact'),
-        'footer-legal' => __('Footer Legal')
+        'header-menu'       => __('Header Menu'),
+        'footer-sitemap'    => __('Footer Sitemap'),
+        'footer-contact'    => __('Footer Contact'),
+        'footer-legal'      => __('Footer Legal')
     ));
 }
 
@@ -174,30 +192,30 @@ function register_projects()
         'project',
         array(
             'labels' => array(
-                'name' => __('Projects'),
-                'singular_name' => __('Project'),
-                'add_new' => __('Add New'),
-                'add_new_item' => __('Add New Project'),
-                'edit' => __('Edit'),
-                'edit_item' => __('Edit Project'),
-                'new_item' => __('New Project'),
-                'view' => __('View Project'),
-                'view_item' => __('View Project'),
-                'search_items' => __('Search Projects'),
-                'not_found' => __('No Projects found'),
-                'not_found_in_trash' => __('No Projects found in Trash')
+                'name'                  => __('Projects'),
+                'singular_name'         => __('Project'),
+                'add_new'               => __('Add New'),
+                'add_new_item'          => __('Add New Project'),
+                'edit'                  => __('Edit'),
+                'edit_item'             => __('Edit Project'),
+                'new_item'              => __('New Project'),
+                'view'                  => __('View Project'),
+                'view_item'             => __('View Project'),
+                'search_items'          => __('Search Projects'),
+                'not_found'             => __('No Projects found'),
+                'not_found_in_trash'    => __('No Projects found in Trash')
             ),
-            'public' => true,
-            'hierarchical' => false,
-            'has_archive' => true,
-            'supports' => array(
+            'public'        => true,
+            'hierarchical'  => false,
+            'has_archive'   => true,
+            'supports'      => array(
                 'title',
                 'editor',
                 'excerpt',
                 'thumbnail'
             ),
-            'can_export' => true,
-            'taxonomies' => array(
+            'can_export'    => true,
+            'taxonomies'    => array(
                 'post_tag',
                 'category'
             )
@@ -238,6 +256,7 @@ function crb_load()
 add_action('init', 'header_scripts');
 add_action('wp_enqueue_scripts', 'theme_styles');
 add_action('init', 'header_cleanup');
+add_filter('body_class', 'add_slug_to_body_class');
 
 add_action('init', 'register_menus');
 add_action('init', 'register_projects');
