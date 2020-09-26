@@ -32,6 +32,32 @@ function header_scripts()
         wp_enqueue_script('scripts');
     }
 }
+
+function theme_styles()
+{
+    wp_register_style('styles', get_template_directory_uri() . '/style.css', '1.0.0', 'all');
+    wp_enqueue_style('styles');
+}
+
+// Cleanup  Wordpress stuff in the header that is likely uneeded
+function header_cleanup()
+{
+    remove_action('wp_head', 'feed_links_extra', 3);
+    remove_action('wp_head', 'feed_links', 2);
+    remove_action('wp_head', 'rsd_link');
+    remove_action('wp_head', 'wlwmanifest_link');
+    remove_action('wp_head', 'index_rel_link');
+    remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+    remove_action('wp_head', 'start_post_rel_link', 10, 0);
+    remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+    remove_action('wp_head', 'wp_generator');
+    if (!is_admin()) {
+        // Use theme's jQuery version for nom admin
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', '', '', '', true);
+    }
+}
+
 function main_nav()
 {
     wp_nav_menu(
@@ -210,6 +236,8 @@ function crb_load()
 
 // Actions
 add_action('init', 'header_scripts');
+add_action('wp_enqueue_scripts', 'theme_styles');
+add_action('init', 'header_cleanup');
 
 add_action('init', 'register_menus');
 add_action('init', 'register_projects');
