@@ -14,4 +14,8 @@
 
 <body <?php body_class(); ?>>
   <header class="clear">
+    <h2><?php bloginfo('name') ?></h2>
+    <nav class="nav" role="navigation">
+      <?php main_nav(); ?>
+    </nav>
   </header>

@@ -66,13 +66,12 @@ get_header();
 					$link_url = esc_url(get_permalink($about));
 
 					echo '<h2>' . $about->post_title . '</h2>';
-					echo $about->post_content; // get extract instead
+					echo get_the_excerpt($about);
 					echo '<a href="' . $link_url . '" title="' . $about->post_title . '">Read More</a>';
 					?>
 
 
 					<?php
-
 					$args = array(
 						'post_type' => 'project',
 						'order'    => 'ASC'
