@@ -158,5 +158,47 @@ function register_menus()
     ));
 }
 
+// Register Projects Custom Posts
+function register_projects()
+{
+    register_taxonomy_for_object_type('category', 'project');
+    register_taxonomy_for_object_type('post_tag', 'project');
+    register_post_type(
+        'project',
+        array(
+            'labels' => array(
+                'name' => __('Projects'),
+                'singular_name' => __('Project'),
+                'add_new' => __('Add New'),
+                'add_new_item' => __('Add New Project'),
+                'edit' => __('Edit'),
+                'edit_item' => __('Edit Project'),
+                'new_item' => __('New Project'),
+                'view' => __('View Project'),
+                'view_item' => __('View Project'),
+                'search_items' => __('Search Projects'),
+                'not_found' => __('No Projects found'),
+                'not_found_in_trash' => __('No Projects found in Trash')
+            ),
+            'public' => true,
+            'hierarchical' => false,
+            'has_archive' => true,
+            'supports' => array(
+                'title',
+                'editor',
+                'excerpt',
+                'thumbnail'
+            ),
+            'can_export' => true,
+            'taxonomies' => array(
+                'post_tag',
+                'category'
+            )
+        )
+    );
+}
+
+
 // Actions
 add_action('init', 'register_menus');
+add_action('init', 'register_projects');
