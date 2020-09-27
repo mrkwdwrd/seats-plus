@@ -253,20 +253,34 @@ function crb_attach_theme_options()
     Container::make('post_meta', 'Slider')
         ->where('post_type', '=', 'page')
         ->where('post_template', '=', 'template-home-page.php')
-        ->add_fields(array(
-            Field::make('complex', 'crb_slides')->add_fields(array(
-                Field::make('image', 'image')->set_width(2),
-                Field::make('textarea', 'crb_caption', 'Caption')
-                    ->set_rows(4)->set_width(20),
-                Field::make('association', 'crb_association', 'Link to')
-                    ->set_types(
-                        array(
-                            array('type' => 'post', 'post_type' => 'product'),
-                            array('type' => 'post', 'post_type' => 'page')
-                        )
-                    )->set_max(1)->set_width(50),
-            ))->set_layout('tabbed-horizontal'),
-        ));
+        ->add_fields([
+            Field::make('complex', 'crb_slides', '')
+                ->add_fields([
+                    Field::make('image', 'image'),
+                    Field::make('textarea', 'crb_caption', 'Caption')->set_rows(4),
+                    Field::make('text', 'button_text'),
+                    Field::make('association', 'crb_association', 'Link to')
+                        ->set_types(
+                            [
+                                ['type' => 'post', 'post_type' => 'product'],
+                                ['type' => 'post', 'post_type' => 'page']
+                            ]
+                        )->set_max(1),
+                ])->set_layout('tabbed-horizontal'),
+        ]);
+
+    Container::make('post_meta', 'Features')
+        ->where('post_type', '=', 'page')
+        ->where('post_template', '=', 'template-home-page.php')
+        ->add_fields([
+            Field::make('complex', 'crb_features', '')
+                ->add_fields([
+                    Field::make('image', 'icon'),
+                    Field::make('text', 'title'),
+                    Field::make('textarea', 'content'),
+                ])
+                ->set_layout('grid')
+        ]);
 }
 
 function crb_load()

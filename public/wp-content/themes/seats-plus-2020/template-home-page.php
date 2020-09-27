@@ -38,8 +38,15 @@ get_header();
 							<?php the_content(); ?>
 							<?php edit_post_link(); ?>
 						</div>
-						<div class="col-xs-offset-1 col-xs-7">
-							col 2
+						<div class="features col-xs-offset-1 col-xs-7">
+							<?php $features = carbon_get_the_post_meta('crb_features');
+							if (!empty($features)) : foreach ($features as  $feature) { ?>
+									<div class="feature">
+										<h3><?php echo $feature['title'] ?></h3>
+										<p><?php echo $feature['content'] ?></p>
+									</div>
+							<?php }
+							endif; ?>
 						</div>
 					</div>
 				</div>

@@ -741,6 +741,15 @@ main section,
 main article {
   overflow: hidden;
 }
+main#home-page article .features {
+  display: flex;
+  flex-wrap: wrap;
+}
+main#home-page article .features .feature {
+  width: 50%;
+  flex: 0 0 50%;
+  padding-right: 4rem;
+}
 main#home-page section.our-projects {
   background-color: #2C383D;
   color: #A5B2B7;
