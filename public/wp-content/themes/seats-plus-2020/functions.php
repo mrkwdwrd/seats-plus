@@ -255,7 +255,7 @@ function crb_load()
 // Actions
 add_action('init', 'header_scripts');
 add_action('wp_enqueue_scripts', 'theme_styles');
-add_action('init', 'header_cleanup');
+add_action('wp_enqueue_scripts', 'header_cleanup');
 add_filter('body_class', 'add_slug_to_body_class');
 
 add_action('init', 'register_menus');
