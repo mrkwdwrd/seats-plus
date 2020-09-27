@@ -1,0 +1,44 @@
+header {
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  .container {
+    max-width: 1600px;
+    .row {
+      align-items: center;
+      justify-content: space-between;
+      height: 120px;
+    }
+  }
+  .logo {
+    display: block;
+    width: 250px;
+    height: 75px;
+    background-image: url('/wp-content/themes/seats-plus-2020/images/logo.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    text-indent: -999em;
+  }
+  nav {
+    color: $brand-black;
+    font-weight: $heavy;
+    a {
+      color: inherit;
+    }
+    ul {
+      text-align: center;
+      width: 100%;
+      li {
+        display: inline-block;
+        list-style: none;
+        ul {
+          display: none;
+        }
+      }
+    }
+  }
+}

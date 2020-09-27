@@ -14,8 +14,17 @@
 
 <body <?php body_class(); ?>>
   <header class="clear">
-    <h2><?php bloginfo('name') ?></h2>
-    <nav class="nav" role="navigation">
-      <?php main_nav(); ?>
-    </nav>
+    <div class="container">
+      <div class="row">
+        <a href="#" class="logo">
+          <?php bloginfo('name') ?>
+        </a>
+        <nav class="nav" role="navigation">
+          <?php main_nav(); ?>
+        </nav>
+        <nav class="nav" role="navigation">
+          <?php secondary_nav(); ?>
+        </nav>
+      </div>
+    </div>
   </header>

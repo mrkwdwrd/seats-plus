@@ -1,3 +1,6 @@
+// Vendor
+@import "vendor";
+
 // Modules
 @import "modules/variables";
 @import "modules/mixins";
@@ -7,3 +10,34 @@
 @import "partials/reset";
 @import "partials/wordpress";
 @import "partials/utils";
+
+@import "partials/header";
+@import "partials/slider";
+body {
+  font-family: $font;
+  background-color: $brand-black;
+}
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+main {
+  padding-top: 120px;
+  background-color: $white;
+  section,
+  article {
+    overflow: hidden;
+  }
+  &#home-page {
+    section {
+      &.our-projects {
+        background-color: $brand-black;
+        color: $cool-grey;
+      }
+    }
+
+  }
+}

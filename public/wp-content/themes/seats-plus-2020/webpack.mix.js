@@ -16,14 +16,16 @@ require('laravel-mix-merge-manifest');
 var spinner = ora('Building assets...')
 spinner.start()
 
-mix.config.fileLoaderDirs.fonts = 'src/fonts';
-mix.config.fileLoaderDirs.images = 'src/img';
+let options = {
+  processCssUrls: false
+}
 
 // Assets build
 mix.js('resources/js/app.js', 'js')
-  .extract(['jquery', 'lodash', 'jquery-validation', 'slick-carousel'], 'js/vendor.js')
+  .extract(['lodash', 'slick-carousel', 'selectize'], 'js/vendor.js')
   .sass('resources/sass/vendor.scss', 'css')
   .sass('resources/sass/app.scss', 'css/app.css')
+  .options(options)
   .sourceMaps()
   .mergeManifest()
   .then(function () {

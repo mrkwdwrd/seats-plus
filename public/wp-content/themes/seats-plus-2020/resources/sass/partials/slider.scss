@@ -1,0 +1,15 @@
+.slider {
+  position: relative;
+  background-color: $white;
+  .main-slider {
+    margin: 0;
+    padding: 0;
+    .slide {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center bottom;
+      height: 666px;
+      color: $white;
+    }
+  }
+}
