@@ -34,6 +34,14 @@
             </form>
           </div>
         </div>
+        <div class="row credits">
+          <div>
+            <p>&copy; <?php echo date('Y') ?> SeatsPlus</p>
+          </div>
+          <div>
+            <p>Website by 360South</p>
+          </div>
+        </div>
       </div>
     </footer>
     <?php wp_footer(); ?>

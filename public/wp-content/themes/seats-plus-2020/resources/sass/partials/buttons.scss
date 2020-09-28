@@ -1,0 +1,45 @@
+button,
+.button {
+  &.primary {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    color: $brand-black;
+    padding: 1.4em 2.6em;
+    font-size: 1.15rem;
+    font-weight: $medium;
+    text-decoration: none;
+    z-index: 1;
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-color: $white;
+      transform: skew(-10deg);
+      z-index: -1;
+    }
+    &.hollow {
+      &::before {
+        background: transparent;
+        border: 1px solid;
+      }
+    }
+  }
+  &.secondary {
+    color: $brand-black;
+    font-size: 1.25rem;
+    font-weight: $heavy;
+    &::before {
+      content: '\2014';
+      display: inline-block;
+      width: 1.2em;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

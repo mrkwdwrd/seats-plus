@@ -22,7 +22,7 @@
         <nav class="nav" role="navigation">
           <?php main_nav(); ?>
         </nav>
-        <nav class="nav" role="navigation">
+        <nav class="nav secondary">
           <?php secondary_nav(); ?>
         </nav>
       </div>

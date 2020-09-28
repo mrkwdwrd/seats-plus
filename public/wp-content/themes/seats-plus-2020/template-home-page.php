@@ -13,13 +13,18 @@ get_header();
 				<?php foreach ($slider as $key => $slide) {
 					$caption = $slide['crb_caption'];
 					$link_url = esc_url(get_permalink($slide['crb_association'][0]['id']));
-					$link_title = get_the_title($slide['crb_association'][0]['id']); ?>
+					$link_title = get_the_title($slide['crb_association'][0]['id']);
+					$button_text = $slide['button_text'];
+				?>
 					<div class="slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
 						<div class="container">
-							<div class="row">
-								<div>
+							<div class="row content">
+								<div class="col-xs-5">
 									<h5><?php echo $link_title ?></h5>
 									<h2><?php echo $caption ?></h2>
+									<a href="<?php echo $link_url ?>" class="button primary hollow" title="<?php echo $link_title ?>">
+										<?php echo $button_text ?>
+									</a>
 								</div>
 							</div>
 						</div>
@@ -33,10 +38,8 @@ get_header();
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-4">
-							<h5>Why SeatsPlus</h5>
-							<h1><?php the_title(); ?></h1>
-							<?php the_content(); ?>
-							<?php edit_post_link(); ?>
+							<?php the_content() ?>
+							<?php edit_post_link() ?>
 						</div>
 						<div class="features col-xs-offset-1 col-xs-7">
 							<?php $features = carbon_get_the_post_meta('crb_features');
@@ -62,7 +65,7 @@ get_header();
 					<h2>Premium Aluminium Outdoor Furniture Specialists</h2>
 				</div>
 				<div>
-					<a href="products" title="View All Products">View All Products</a>
+					<a href="products" class="button secondary" title="View all Products">View all Products</a>
 				</div>
 			</header>
 		</div>
@@ -84,8 +87,8 @@ get_header();
 					<div class="caterory-slide" />
 					<figure></figure>
 					<h4>
-						<a href="<?php echo get_term_link($category); ?>" title="<?php echo $category->name; ?>">
-							<?php echo $category->name; ?>
+						<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
+							<?php echo $category->name ?>
 						</a>
 					</h4>
 			</div>
@@ -139,13 +142,20 @@ get_header();
 							<li>
 								<figure></figure>
 								<?php echo $project->post_title; ?>
-								<a href="<?php echo $link_url; ?>" title="<?php echo $project->post_title; ?>">
+								<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>">
 									View Project
 								</a>
 							</li>
 					</ul>
 				<?php } ?>
 			<?php } ?>
+			</div>
+			<div class="row">
+				<div class="buttons col-xs-12">
+					<a href="" class="button primary" title="Our work">
+						View all Projects
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -160,7 +170,7 @@ get_header();
 					$link_url = esc_url(get_permalink($about)); ?>
 
 					<h2><?php echo $about->post_title; ?></h2>
-					<?php echo get_the_excerpt($about); ?>
+					<p><?php echo get_the_excerpt($about) ?></p>
 					<a href="<?php echo $link_url; ?>" title="<?php echo $about->post_title; ?>">Read More</a>
 				</div>
 			</div>
@@ -186,10 +196,9 @@ get_header();
 	<section class="get-a-quote">
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12">
+				<div class="content">
 					<h5>Get a Quote</h5>
 					<h2>Reliable quality outdoor seating and aluminium furniture</h2>
-
 					<a href="" class="button primary" title="Get a quote">Get a quote</a>
 				</div>
 			</div>

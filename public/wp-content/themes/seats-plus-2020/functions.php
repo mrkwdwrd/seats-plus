@@ -246,7 +246,7 @@ function register_projects()
     );
 }
 
-// Add carbon fields for field csutomisations
+// Add carbon fields for field customisations
 // https://carbonfields.net/docs/
 function crb_attach_theme_options()
 {

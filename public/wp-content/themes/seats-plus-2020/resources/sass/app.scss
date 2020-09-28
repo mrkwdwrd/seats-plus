@@ -11,13 +11,16 @@
 @import "partials/wordpress";
 @import "partials/utils";
 
+@import "partials/typography";
+@import "partials/buttons";
+
 @import "partials/header";
 @import "partials/slider";
 @import "partials/footer";
 
 body {
-  font-family: $font;
   background-color: $brand-black;
+  color: $brand-black;
 }
 .container {
   box-sizing: initial;
@@ -35,11 +38,17 @@ main {
     header {
       justify-content: space-between;
       align-items: flex-end;
+      h2 {
+        margin-bottom: 0;
+      }
     }
     overflow: hidden;
   }
   &#home-page {
     article {
+      h5 {
+        color: $brand-blue;
+      }
       .features {
         display: flex;
         flex-wrap: wrap;
@@ -81,6 +90,9 @@ main {
         .container {
           position: relative;
           z-index: 1;
+        }
+        .button {
+          color: $white;
         }
       }
       &.our-process {
@@ -192,6 +204,9 @@ main {
         h2 {
           color: $white;
         }
+        .buttons {
+          text-align: center;
+        }
       }
       &.about-us {
         overflow: visible;
@@ -238,6 +253,11 @@ main {
         text-align: center;
         padding: 260px 0 135px;
         position: relative;
+        color: $white;
+        .content {
+          max-width: 600px;
+          margin: 0 auto;
+        }
         &::before {
           content: '';
           display: block;
@@ -247,6 +267,13 @@ main {
           clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
           position: absolute;
           top: 0;
+        }
+        .button {
+          text-transform: uppercase;
+          color: $white;
+          &::before {
+            background: $brand-red;
+          }
         }
       }
     }
