@@ -586,6 +586,10 @@ fieldset {
   padding: 0;
 }
 
+figure {
+  margin: 0;
+}
+
 input[type=text],
 input[type=email],
 input[type=number],
@@ -899,15 +903,15 @@ nav.main ul > li > a:hover::after {
   background-color: #00ADEE;
 }
 
-.slider {
+.main-slider {
   position: relative;
   background-color: #FFFFFF;
 }
-.slider .main-slider {
+.main-slider .slider {
   margin: 0;
   padding: 0;
 }
-.slider .main-slider .slide {
+.main-slider .slider .slide {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
@@ -916,12 +920,29 @@ nav.main ul > li > a:hover::after {
   display: flex;
   align-items: stretch;
 }
-.slider .main-slider .slide .content {
+.main-slider .slider .slide .content {
   height: 100%;
   align-items: center;
 }
-.slider .main-slider .slide .content .button {
+.main-slider .slider .slide .content .button {
   color: #FFFFFF;
+}
+
+.product-category-slider {
+  margin: 55px 0;
+  position: relative;
+  width: 100vw;
+}
+.product-category-slider .slider .slide {
+  padding: 0 15px;
+}
+.product-category-slider .slider .slide figure {
+  background-color: #A5B2B7;
+  width: 460px;
+  height: 345px;
+}
+.product-category-slider .slider .slide h3 a {
+  color: #2C383D;
 }
 
 body > footer {

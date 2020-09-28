@@ -4,12 +4,12 @@ get_header();
 ?>
 
 <main id="home-page" role="main">
-	<section class="slider">
+	<section class="main-slider">
 		<?php
 		$slider = carbon_get_the_post_meta('crb_slides');
 		if (!empty($slider)) { ?>
 
-			<div class="main-slider">
+			<div class="slider">
 				<?php foreach ($slider as $key => $slide) {
 					$caption = $slide['crb_caption'];
 					$link_url = esc_url(get_permalink($slide['crb_association'][0]['id']));
@@ -69,32 +69,36 @@ get_header();
 				</div>
 			</header>
 		</div>
-		<?php
-		$orderby = 'name';
-		$order = 'asc';
-		$hide_empty = true;
-		$cat_args = array(
-			'orderby'    => $orderby,
-			'order'      => $order,
-			'hide_empty' => $hide_empty
-		);
-
-		$product_categories = get_terms('product_cat', $cat_args);
-		if (!empty($product_categories)) { ?>
-
+		<div class="container">
 			<div class="product-category-slider">
-				<?php foreach ($product_categories as $key => $category) { ?>
-					<div class="caterory-slide" />
-					<figure></figure>
-					<h4>
-						<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
-							<?php echo $category->name ?>
-						</a>
-					</h4>
+				<?php
+				$orderby = 'name';
+				$order = 'asc';
+				$hide_empty = true;
+				$cat_args = array(
+					'orderby'    => $orderby,
+					'order'      => $order,
+					'hide_empty' => $hide_empty
+				);
+
+				$product_categories = get_terms('product_cat', $cat_args);
+				if (!empty($product_categories)) { ?>
+
+					<div class="slider">
+						<?php foreach ($product_categories as $key => $category) { ?>
+							<div class="slide col-xs-4">
+								<figure></figure>
+								<h3>
+									<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
+										<?php echo $category->name ?>
+									</a>
+								</h3>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
 			</div>
-		<?php } ?>
 		</div>
-	<?php } ?>
 	</section>
 
 	<section class="our-process">
