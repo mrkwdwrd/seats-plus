@@ -931,10 +931,13 @@ nav.main ul > li > a:hover::after {
 .product-category-slider {
   margin: 55px 0;
   position: relative;
-  width: 100vw;
+  min-width: 100vw;
 }
 .product-category-slider .slider .slide {
-  padding: 0 15px;
+  margin-right: 30px !important;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 .product-category-slider .slider .slide figure {
   background-color: #A5B2B7;
@@ -1100,10 +1103,14 @@ main#home-page section.product-categories .button {
 main#home-page section.our-process {
   position: relative;
 }
+main#home-page section.our-process header {
+  text-align: center;
+  margin-bottom: 55px;
+}
 main#home-page section.our-process ol {
   width: 100%;
   padding: 0;
-  margin: 40px auto;
+  margin: 40px auto 80px;
   display: flex;
   justify-content: center;
   counter-reset: step;

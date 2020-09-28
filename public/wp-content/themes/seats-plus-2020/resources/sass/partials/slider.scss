@@ -26,10 +26,11 @@
 .product-category-slider {
     margin: 55px 0;
     position: relative;
-    width: 100vw;
+    min-width: 100vw;
     .slider {
       .slide {
-        padding: 0 15px;
+        margin-right: 30px!important;
+        width: fit-content!important;
         figure {
           background-color: $cool-grey;
           width: 460px;

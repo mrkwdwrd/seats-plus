@@ -98,10 +98,14 @@ main {
       }
       &.our-process {
         position: relative;
+        header {
+          text-align: center;
+          margin-bottom: 55px;
+        }
         ol {
           width: 100%;
           padding: 0;
-          margin: 40px auto;
+          margin: 40px auto 80px;
           display: flex;
           justify-content: center;
           counter-reset: step;

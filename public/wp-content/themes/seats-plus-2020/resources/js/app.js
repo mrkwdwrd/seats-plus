@@ -17,15 +17,17 @@ require('./bootstrap');
 
 			$('.product-category-slider > .slider').slick({
 				fade: false,
-				autoplaySpeed: 200,
+				autoplaySpeed: 2000,
 				autoplay: true,
 				lazyLoad: "progressive",
-				speed: 1000,
+				speed: 2000,
 				arrows: true,
 				dots: false,
-				slidesToShow: 5,
+				slidesToShow: 3,
 				slidesToScroll: 1,
 				infinite: true,
+				centerMode: true,
+				// centerPadding: '115px',
 				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 			});
 		});

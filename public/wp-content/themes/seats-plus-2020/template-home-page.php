@@ -86,7 +86,7 @@ get_header();
 
 					<div class="slider">
 						<?php foreach ($product_categories as $key => $category) { ?>
-							<div class="slide col-xs-4">
+							<div class="slide">
 								<figure></figure>
 								<h3>
 									<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
