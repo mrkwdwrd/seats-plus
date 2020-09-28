@@ -1040,6 +1040,32 @@ main {
   padding-top: 120px;
   background-color: #FFFFFF;
 }
+main > header {
+  background-color: #2C383D;
+  overflow: hidden;
+  color: #FFFFFF;
+  padding: 120px 0;
+  position: relative;
+}
+main > header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  height: 15%;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  position: absolute;
+  bottom: 0;
+}
+main > header ul.breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+main > header ul.breadcrumbs li {
+  display: inline-block;
+}
 main section,
 main article {
   overflow: hidden;
@@ -1052,6 +1078,43 @@ main article header {
 main section header h2,
 main article header h2 {
   margin-bottom: 0;
+}
+main section.get-a-quote,
+main article.get-a-quote {
+  background-image: url("/wp-content/themes/seats-plus-2020/images/get-a-quote-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center;
+  padding: 260px 0 135px;
+  position: relative;
+  color: #FFFFFF;
+}
+main section.get-a-quote .content,
+main article.get-a-quote .content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+main section.get-a-quote::before,
+main article.get-a-quote::before {
+  content: "";
+  display: block;
+  width: 100%;
+  background-color: #FFFFFF;
+  height: 120px;
+  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
+  position: absolute;
+  top: 0;
+}
+main section.get-a-quote .button,
+main article.get-a-quote .button {
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+main section.get-a-quote .button::before,
+main article.get-a-quote .button::before {
+  background: #EE3829;
 }
 main#home-page article h5 {
   color: #00ADEE;
@@ -1267,33 +1330,16 @@ main#home-page section.our-clients header div {
 }
 main#home-page section.get-a-quote {
   background-image: url("/wp-content/themes/seats-plus-2020/images/get-a-quote-bg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  text-align: center;
-  padding: 260px 0 135px;
-  position: relative;
-  color: #FFFFFF;
 }
-main#home-page section.get-a-quote .content {
-  max-width: 600px;
-  margin: 0 auto;
+main#product-index h5 {
+  color: #00ADEE;
+  margin-bottom: 0;
 }
-main#home-page section.get-a-quote::before {
-  content: "";
-  display: block;
-  width: 100%;
-  background-color: #FFFFFF;
-  height: 120px;
-  -webkit-clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
-          clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
-  position: absolute;
-  top: 0;
+main#product-index .product-categories .category figure {
+  background-color: #A5B2B7;
+  width: 460px;
+  height: 345px;
 }
-main#home-page section.get-a-quote .button {
-  text-transform: uppercase;
-  color: #FFFFFF;
-}
-main#home-page section.get-a-quote .button::before {
-  background: #EE3829;
+main#product-index .product-categories .category h3 a {
+  color: #2C383D;
 }

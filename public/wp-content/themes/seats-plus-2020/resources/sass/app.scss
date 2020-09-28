@@ -34,8 +34,34 @@ body {
 main {
   padding-top: 120px;
   background-color: $white;
+  > header {
+    background-color: $brand-black;
+    overflow: hidden;
+    color: $white;
+    padding: 120px 0;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      background-color: $white;
+      height: 15%;
+      clip-path: polygon(100% 0, 0 100%, 100% 100%);
+      position: absolute;
+      bottom: 0;
+    }
+    ul.breadcrumbs {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+      }
+    }
+  }
   section,
   article {
+    overflow: hidden;
     header {
       justify-content: space-between;
       align-items: flex-end;
@@ -43,7 +69,37 @@ main {
         margin-bottom: 0;
       }
     }
-    overflow: hidden;
+    &.get-a-quote {
+      background-image: url('/wp-content/themes/seats-plus-2020/images/get-a-quote-bg.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      text-align: center;
+      padding: 260px 0 135px;
+      position: relative;
+      color: $white;
+      .content {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        background-color: $white;
+        height: 120px;
+        clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
+        position: absolute;
+        top: 0;
+      }
+      .button {
+        text-transform: uppercase;
+        color: $white;
+        &::before {
+          background: $brand-red;
+        }
+      }
+    }
   }
   &#home-page {
     article {
@@ -252,33 +308,23 @@ main {
       }
       &.get-a-quote {
         background-image: url('/wp-content/themes/seats-plus-2020/images/get-a-quote-bg.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        text-align: center;
-        padding: 260px 0 135px;
-        position: relative;
-        color: $white;
-        .content {
-          max-width: 600px;
-          margin: 0 auto;
+      }
+    }
+  }
+  &#product-index {
+    h5 {
+      color: $brand-blue;
+      margin-bottom: 0;
+    }
+    .product-categories {
+      .category {
+        figure {
+          background-color: $cool-grey;
+          width: 460px;
+          height: 345px;
         }
-        &::before {
-          content: '';
-          display: block;
-          width: 100%;
-          background-color: $white;
-          height: 120px;
-          clip-path: polygon(0 100%, 100% 0, 100% 0, 0 0);
-          position: absolute;
-          top: 0;
-        }
-        .button {
-          text-transform: uppercase;
-          color: $white;
-          &::before {
-            background: $brand-red;
-          }
+        h3 a {
+          color: $brand-black;
         }
       }
     }
