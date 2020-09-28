@@ -40,7 +40,13 @@ a {
   &:active {}
 }
 
+fieldset {
+  border: none;
+  padding: 0;
+}
 input[type="text"],
+input[type="email"],
+input[type="number"],
 input[type="search"] {
   font-size: inherit;
   line-height: inherit;

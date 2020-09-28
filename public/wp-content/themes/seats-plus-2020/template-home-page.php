@@ -33,7 +33,7 @@ get_header();
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-4">
-							<h4>Why SeatsPlus</h4>
+							<h5>Why SeatsPlus</h5>
 							<h1><?php the_title(); ?></h1>
 							<?php the_content(); ?>
 							<?php edit_post_link(); ?>
@@ -56,15 +56,15 @@ get_header();
 
 	<section class="product-categories">
 		<div class="container">
-			<div class="row">
-				<div>
+			<header class="row">
+				<div class="col-xs-4">
 					<h5>Products</h5>
 					<h2>Premium Aluminium Outdoor Furniture Specialists</h2>
 				</div>
 				<div>
 					<a href="products" title="View All Products">View All Products</a>
 				</div>
-			</div>
+			</header>
 		</div>
 		<?php
 		$orderby = 'name';
@@ -96,29 +96,36 @@ get_header();
 
 	<section class="our-process">
 		<div class="container">
-			<div class="row">
+			<header class="row">
 				<div class="col-xs-12">
 					<h2>Our Process</h2>
-					<ol class="our-process">
-						<li>Choose your Product</li>
-						<li>Select a Colour</li>
-						<li>Request a Quote</li>
-						<li>Order Confirmation</li>
-						<li>Product Locally Manufactured</li>
-						<li>Order Dispatched</li>
-					</ol>
 				</div>
+			</header>
+			<div class="row">
+				<ol class="our-process">
+					<li class="select-your-product"><i></i>Select your Product</li>
+					<li class="select-a-colour"><i></i>Select a Colour</li>
+					<li class="request-a-quote"><i></i>Request a Quote</li>
+					<li class="order-confirmation"><i></i>Order Confirmation</li>
+					<li class="product-locally-manufactured"><i></i>Product Locally Manufactured</li>
+					<li class="order-dispatched"><i></i>Order Dispatched</li>
+				</ol>
 			</div>
 		</div>
 	</section>
 
 	<section class="our-projects">
 		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h4>Our Work</h4>
+			<header class="row">
+				<div class="col-xs-4">
+					<h5>Our Work</h5>
 					<h2>Our Latest Projects</h2>
 				</div>
+				<div>
+					<label>Filter by</label>
+				</div>
+			</header>
+			<div class="row">
 				<?php
 				$args = array(
 					'post_type' => 'project',
@@ -146,20 +153,45 @@ get_header();
 	<section class="about-us">
 		<div class="container">
 			<div class="row">
-				<?php
-				$about = get_page_by_path('about-us');
-				$link_url = esc_url(get_permalink($about)); ?>
+				<div class="image col-xs-4 col-xs-offset-1"></div>
+				<div class="col-xs-5 col-xs-offset-1">
+					<?php
+					$about = get_page_by_path('about-us');
+					$link_url = esc_url(get_permalink($about)); ?>
 
-				<h2><?php echo $about->post_title; ?></h2>
-				<?php echo get_the_excerpt($about); ?>
-				<a href="<?php echo $link_url; ?>" title="<?php echo $about->post_title; ?>">Read More</a>
+					<h2><?php echo $about->post_title; ?></h2>
+					<?php echo get_the_excerpt($about); ?>
+					<a href="<?php echo $link_url; ?>" title="<?php echo $about->post_title; ?>">Read More</a>
+				</div>
 			</div>
-		</div>
 	</section>
 
 	<section class="our-clients">
 		<div class="container">
+			<header class="row">
+				<div>
+					<h2>Our Clients include Schools, Parks, Councils, Sporting Clubs, Architects and more</h2>
+				</div>
+			</header>
 			<div class="row">
+				<div class="col-xs-12">
+					<ul class="client-logos">
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="get-a-quote">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h5>Get a Quote</h5>
+					<h2>Reliable quality outdoor seating and aluminium furniture</h2>
+
+					<a href="" class="button primary" title="Get a quote">Get a quote</a>
+				</div>
 			</div>
 		</div>
 	</section>
