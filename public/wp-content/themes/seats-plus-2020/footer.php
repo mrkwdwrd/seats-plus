@@ -2,8 +2,8 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-3">
-            <a href="" class="logo" title="SitesPlus">
-              SitesPlus
+            <a href="/" class="logo" title="<?php bloginfo('name') ?>">
+              <?php bloginfo('name') ?>
             </a>
           </div>
           <div class="col-xs-2">

@@ -28,6 +28,9 @@ button,
         border: 1px solid;
       }
     }
+    &:hover {
+      text-decoration: none;
+    }
   }
   &.secondary {
     color: $brand-black;
@@ -41,5 +44,9 @@ button,
     &:hover {
       text-decoration: underline;
     }
+  }
+  a {
+    color: inherit;
+    text-decoration: inherit;
   }
 }

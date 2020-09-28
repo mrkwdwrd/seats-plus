@@ -737,6 +737,10 @@ button.primary.hollow::before,
   background: transparent;
   border: 1px solid;
 }
+button.primary:hover,
+.button.primary:hover {
+  text-decoration: none;
+}
 button.secondary,
 .button.secondary {
   color: #2C383D;
@@ -753,6 +757,11 @@ button.secondary:hover,
 .button.secondary:hover {
   text-decoration: underline;
 }
+button a,
+.button a {
+  color: inherit;
+  text-decoration: inherit;
+}
 
 body > header {
   background-color: #FFFFFF;
@@ -764,6 +773,7 @@ body > header {
 }
 body > header .container {
   max-width: 1600px;
+  width: 100%;
 }
 body > header .container .row {
   align-items: center;
@@ -797,8 +807,8 @@ body > header nav ul li {
   font-size: 1.25rem;
   padding: 0 0.65em;
 }
-body > header nav ul li ul {
-  display: none;
+body > header nav.secondary {
+  padding-right: 40px;
 }
 body > header nav.secondary li {
   padding: 0 2em;
@@ -823,6 +833,69 @@ body > header nav.secondary .button {
   color: #FFFFFF;
 }
 body > header nav.secondary .button::before {
+  background-color: #00ADEE;
+}
+
+nav.main ul {
+  overflow: visible;
+  padding: 0;
+}
+nav.main ul > li {
+  float: left;
+  display: block;
+  position: relative;
+  padding: 10px;
+}
+nav.main ul > li.menu-item-has-children > a {
+  padding: 20px 5px;
+}
+nav.main ul > li.menu-item-has-children > a::after {
+  content: "";
+  display: inline-block;
+  height: 0.5em;
+  width: 0.5em;
+  margin-left: 0.5em;
+  background-color: #2C383D;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="17.13,4.31 10,11.45 2.87,4.31 0.04,7.14 0.04,7.14 10,17.1 19.96,7.14 17.13,4.31"/></svg>');
+          mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="17.13,4.31 10,11.45 2.87,4.31 0.04,7.14 0.04,7.14 10,17.1 19.96,7.14 17.13,4.31"/></svg>');
+}
+nav.main ul > li ul {
+  margin-top: 10px;
+  padding: 10px;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s;
+  position: absolute;
+  text-align: left;
+  left: -5px;
+  width: auto;
+  overflow: visible;
+  background-color: #FFFFFF;
+  box-shadow: 5px 5px 5px rgba(44, 56, 61, 0.5);
+  border-top: 2px solid #A5B2B7;
+}
+nav.main ul > li ul li {
+  font-weight: 300;
+  display: block;
+  width: 100%;
+  white-space: nowrap;
+  overflow: visible;
+}
+nav.main ul > li:hover ul {
+  display: block;
+  opacity: 1;
+}
+nav.main ul > li:hover > a,
+nav.main ul > li > a:hover {
+  color: #00ADEE;
+  text-decoration: none;
+}
+nav.main ul > li:hover > a::after,
+nav.main ul > li > a:hover::after {
   background-color: #00ADEE;
 }
 

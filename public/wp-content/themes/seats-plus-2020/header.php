@@ -16,10 +16,10 @@
   <header class="clear">
     <div class="container">
       <div class="row">
-        <a href="#" class="logo">
+        <a href="/" class="logo" title="<?php bloginfo('name') ?>">
           <?php bloginfo('name') ?>
         </a>
-        <nav class="nav" role="navigation">
+        <nav class="nav main" role="navigation">
           <?php main_nav(); ?>
         </nav>
         <nav class="nav secondary">
