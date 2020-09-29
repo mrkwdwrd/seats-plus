@@ -2,20 +2,18 @@
 <main id="product-index">
 	<header role="banner">
 		<div class="container">
-			<ul class="breadcrumbs">
-				<li><a href="/" title="Home">Home</a></li>
-				<li><?php woocommerce_page_title(); ?></li>
-			</ul>
-			<h2><?php woocommerce_page_title(); ?></h2>
+			<?php woocommerce_breadcrumb(); ?>
+			<h2><?php the_title(); ?></h2>
 		</div>
 	</header>
 	<section>
 		<div class="container">
-			<!--
-			<h5><?php woocommerce_page_title(); ?></h5>
-			<?php do_action('woocommerce_archive_description'); ?>
-			-->
-			<?php woocommerce_content(); ?>
+
+			<?php while (have_posts()) : ?>
+				<?php the_post(); ?>
+				<?php wc_get_template_part('content', 'single-product'); ?>
+			<?php endwhile; ?>
+
 		</div>
 	</section>
 	<section class="get-a-quote">

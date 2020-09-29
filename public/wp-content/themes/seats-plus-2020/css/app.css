@@ -1058,13 +1058,26 @@ main > header::after {
   position: absolute;
   bottom: 0;
 }
-main > header ul.breadcrumbs {
+main > header .breadcrumbs ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-main > header ul.breadcrumbs li {
+main > header .breadcrumbs ul li {
   display: inline-block;
+}
+main > header .breadcrumbs ul li a {
+  color: rgba(255, 255, 255, 0.5);
+}
+main > header .breadcrumbs ul li a::after {
+  content: "";
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 10px;
+  vertical-align: middle;
 }
 main section,
 main article {
