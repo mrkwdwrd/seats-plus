@@ -4,14 +4,17 @@ require('./bootstrap');
 		$(function () {
 
 			$('.main-slider > .slider').slick({
-				fade: true,
-				autoplaySpeed: 4000,
+				fade: false,
+				autoplaySpeed: 2000,
 				autoplay: true,
-				lazyLoad: "progressive",
+				vertical: true,
 				speed: 1000,
-				arrows: false,
+				arrows: true,
 				dots: false,
-				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
+				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)",
+				slide: ".slide",
+				prevArrow: "a.previous",
+				nextArrow: "a.next",
 			});
 
 
@@ -19,15 +22,13 @@ require('./bootstrap');
 				fade: false,
 				autoplaySpeed: 2000,
 				autoplay: true,
-				lazyLoad: "progressive",
 				speed: 2000,
 				arrows: true,
 				dots: false,
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				infinite: true,
-				centerMode: true,
-				// centerPadding: '115px',
+				// centerMode: true,
 				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 			});
 		});

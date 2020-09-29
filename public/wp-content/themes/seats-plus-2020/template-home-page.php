@@ -8,7 +8,6 @@ get_header();
 		<?php
 		$slider = carbon_get_the_post_meta('crb_slides');
 		if (!empty($slider)) { ?>
-
 			<div class="slider">
 				<?php foreach ($slider as $key => $slide) {
 					$caption = $slide['crb_caption'];
@@ -29,8 +28,25 @@ get_header();
 							</div>
 						</div>
 					</div>
+					<div class="slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
+						<div class="container">
+							<div class="row content">
+								<div class="col-xs-5">
+									<h5><?php echo $link_title ?></h5>
+									<h2><?php echo $caption ?></h2>
+									<a href="<?php echo $link_url ?>" class="button primary hollow" title="<?php echo $link_title ?>">
+										<?php echo $button_text ?>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				<?php	} ?>
 			<?php	} ?>
+			<ul class="main-slider-nav container">
+				<li><a class="next">Next</a></li>
+				<li><a class="previous">Previous</a></li>
+			</ul>
 	</section>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -175,7 +191,7 @@ get_header();
 
 					<h2><?php echo $about->post_title; ?></h2>
 					<p><?php echo get_the_excerpt($about) ?></p>
-					<a href="<?php echo $link_url; ?>" title="<?php echo $about->post_title; ?>">Read More</a>
+					<a href="<?php echo $link_url; ?>" class="button secondary" title="<?php echo $about->post_title; ?>">Read More</a>
 				</div>
 			</div>
 	</section>
