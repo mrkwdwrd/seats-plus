@@ -1099,6 +1099,47 @@ body > footer .credits p {
   margin: 0;
 }
 
+main#product-index > section, main#product-category > section, main#product-single > section {
+  padding: 110px 0;
+}
+main#product-index figure, main#product-category figure, main#product-single figure {
+  border: 1px solid #A5B2B7;
+}
+main#product-single .images figure {
+  max-height: 530px;
+  overflow: hidden;
+  margin: 0;
+}
+main#product-single .details {
+  padding: 0 50px;
+}
+main#product-single .details h1 {
+  margin: 0;
+}
+main#product-single .details .category {
+  padding: 10px 0;
+  font-size: 1.4rem;
+}
+main#product-single .details .category a {
+  color: #6B6B6B;
+}
+main#product-single .details .options .attributes {
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+main#product-single .details .options .attributes fieldset {
+  padding: 0;
+  margin: 0;
+  flex: 0 1 50%;
+  width: 50%;
+}
+main#product-single .details .options .add-to-cart {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
 body {
   background-color: #2C383D;
   color: #2C383D;

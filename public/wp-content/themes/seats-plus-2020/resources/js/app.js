@@ -5,7 +5,7 @@ require('./bootstrap');
 
 			$('.main-slider > .slider').slick({
 				fade: false,
-				autoplaySpeed: 2000,
+				autoplaySpeed: 4000,
 				autoplay: true,
 				vertical: true,
 				speed: 1000,
@@ -34,4 +34,6 @@ require('./bootstrap');
 				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 			});
 		});
+
+		$('select').selectize();
 } (jQuery));

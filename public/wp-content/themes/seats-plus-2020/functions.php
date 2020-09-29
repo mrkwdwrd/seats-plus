@@ -31,6 +31,9 @@ function header_scripts()
         wp_register_script('slick', get_template_directory_uri() . '/node_modules/slick-carousel/slick/slick.min.js', '', '', true);
         wp_enqueue_script('slick');
 
+        wp_register_script('selectize', get_template_directory_uri() . '/node_modules/selectize/dist/js/standalone/selectize.min.js', '', '', true);
+        wp_enqueue_script('selectize');
+
         wp_register_script('scripts', get_template_directory_uri() . '/js/app.js', '', '', true);
         wp_enqueue_script('scripts');
     }

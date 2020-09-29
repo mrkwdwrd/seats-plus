@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main id="product-index">
+<main id="product-single">
 	<header role="banner">
 		<div class="container">
 			<?php woocommerce_breadcrumb(); ?>
