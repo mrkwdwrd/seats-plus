@@ -114,6 +114,10 @@ get_header();
 					</div>
 				<?php } ?>
 			</div>
+			<ul class="product-category-slider-nav">
+				<li><a class="previous">Previous</a></li>
+				<li><a class="next">Next</a></li>
+			</ul>
 		</div>
 	</section>
 

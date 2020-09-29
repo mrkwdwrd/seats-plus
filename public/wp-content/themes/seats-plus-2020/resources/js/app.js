@@ -13,8 +13,8 @@ require('./bootstrap');
 				dots: false,
 				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)",
 				slide: ".slide",
-				prevArrow: "a.previous",
-				nextArrow: "a.next",
+				prevArrow: ".main-slider-nav a.previous",
+				nextArrow: ".main-slider-nav a.next",
 			});
 
 
@@ -29,6 +29,8 @@ require('./bootstrap');
 				slidesToScroll: 1,
 				infinite: true,
 				// centerMode: true,
+				prevArrow: ".product-category-slider-nav a.previous",
+				nextArrow: ".product-category-slider-nav a.next",
 				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 			});
 		});
