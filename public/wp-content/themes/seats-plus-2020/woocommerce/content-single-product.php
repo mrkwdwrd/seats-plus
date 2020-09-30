@@ -10,32 +10,28 @@ if (post_password_required()) {
 }
 ?>
 
-<section id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
-  <div class="container">
-    <div class="row">
-      <div class="images col-xs-7">
-        <?php woocommerce_show_product_images() ?>
+<div class="row">
+  <div class="images col-xs-7">
+    <?php woocommerce_show_product_images() ?>
+  </div>
+  <div class="col-xs-5">
+    <div class="details">
+      <?php woocommerce_template_single_title(); ?>
+      <div class="category">
+        <?php woocommerce_template_single_meta(); ?>
       </div>
-      <div class="col-xs-5">
-        <div class="details">
-          <?php woocommerce_template_single_title(); ?>
-          <div class="category">
-            <?php woocommerce_template_single_meta(); ?>
-          </div>
-
-          <?php woocommerce_template_single_excerpt(); ?>
-
-          <div class="options">
-            <?php woocommerce_template_single_add_to_cart(); ?>
-          </div>
-        </div>
+      <div class="excerpt">
+        <?php woocommerce_template_single_excerpt(); ?>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <?php woocommerce_output_product_data_tabs(); ?>
-        <?php woocommerce_output_related_products(); ?>
-      </div>
+    <div class="options">
+      <?php woocommerce_template_single_add_to_cart(); ?>
     </div>
   </div>
-</section>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <?php woocommerce_output_product_data_tabs(); ?>
+    <?php woocommerce_output_related_products(); ?>
+  </div>
+</div>
