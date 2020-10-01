@@ -1,0 +1,38 @@
+.selectize-control.single {
+  .selectize-input {
+    border-radius: 0;
+    border: 1px solid $brand-black;
+    font-weight: $heavy;
+    padding: 20px 15px;
+    font-size: 1.4rem;
+    line-height: 1;
+    &::after {
+      background-color: $brand-black;
+      mask-size: 7px;
+      mask-position: center center;
+      mask-repeat: no-repeat;
+      mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="17.13,4.31 10,11.45 2.87,4.31 0.04,7.14 0.04,7.14 10,17.1 19.96,7.14 17.13,4.31"/></svg>');
+    }
+    input {
+      font-size: 1.2rem;
+      padding: 0;
+    }
+  }
+  .selectize-dropdown.single {
+    border: 1px solid $brand-black;
+    color: $brand-black;
+    .selectize-dropdown-content {
+      .option {
+        padding: 20px 15px;
+        font-size: 1.4rem;
+        .selected {
+          background-color: aquamarine;
+        }
+      }
+    }
+    .active {
+      background-color: rgba($brand-blue, 0.25);
+      color: $brand-black;
+    }
+  }
+}
