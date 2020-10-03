@@ -30,8 +30,14 @@ if (post_password_required()) {
   </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col-xs-8 col-xs-offset-2">
     <?php woocommerce_output_product_data_tabs(); ?>
-    <?php woocommerce_output_related_products(); ?>
   </div>
 </div>
+<div class="row">
+  <div class="col-xs-12 backlink">
+    <a href="/products" title="Back to products"><i></i> Back to products</a>
+  </div>
+</div>
+
+<?php woocommerce_output_related_products(); ?>

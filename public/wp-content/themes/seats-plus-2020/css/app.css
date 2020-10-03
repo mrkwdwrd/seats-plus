@@ -1145,7 +1145,6 @@ main#product-index figure, main#product-category figure, main#product-single fig
   border: 1px solid #A5B2B7;
 }
 main#product-single .images figure {
-  max-height: 530px;
   overflow: hidden;
   margin: 0;
 }
@@ -1166,19 +1165,20 @@ main#product-single .details .excerpt {
   border-bottom: 1px solid #6B6B6B;
 }
 main#product-single .options {
+  padding-top: 20px;
   margin-left: 20px;
 }
-main#product-single .options .attributes {
+main#product-single .options .variations {
   padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
 }
-main#product-single .options .attributes fieldset {
+main#product-single .options .variations fieldset {
   margin: 0;
   padding: 0 0 0 30px;
   width: 50%;
 }
-main#product-single .options .attributes fieldset label {
+main#product-single .options .variations fieldset label {
   text-transform: uppercase;
   font-size: 1.1em;
   color: #6B6B6B;
@@ -1186,30 +1186,113 @@ main#product-single .options .attributes fieldset label {
   margin: 0.75em 0;
   display: block;
 }
-main#product-single .options .single_variation_wrap {
-  margin-top: 20px;
-}
-main#product-single .options .single_variation_wrap .add-to-cart {
+main#product-single .options .add-to-cart {
   margin-left: 30px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-main#product-single .options .single_variation_wrap .add-to-cart .quantity,
-main#product-single .options .single_variation_wrap .add-to-cart button {
+main#product-single .options .add-to-cart .quantity,
+main#product-single .options .add-to-cart button {
   width: 50%;
 }
-main#product-single .options .single_variation_wrap .add-to-cart button {
+main#product-single .options .add-to-cart button {
   margin-left: 30px;
   border-radius: 0;
   font-size: 1.4rem;
   background-color: #00ADEE;
 }
-main#product-single .options .single_variation_wrap .add-to-cart input {
+main#product-single .options .add-to-cart input {
   border: 1px solid #2C383D;
   padding: 10px 15px;
   width: 100%;
   font-size: 1.4rem;
+}
+main#product-single .options .quantity .pseudo-qty {
+  display: flex;
+  border: 1px solid #2C383D;
+  justify-content: space-between;
+}
+main#product-single .options .quantity .pseudo-qty button {
+  background-color: #FFFFFF;
+  border: none;
+  color: #6B6B6B;
+  margin: 0;
+  cursor: pointer;
+  padding: 20px 15px;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+main#product-single .options .quantity .pseudo-qty button.qty-inc {
+  border-left: 1px solid #2C383D;
+}
+main#product-single .options .quantity .pseudo-qty button.qty-dec {
+  border-right: 1px solid #2C383D;
+}
+main#product-single .options .quantity .pseudo-qty input {
+  flex: 1 1 auto;
+  margin: 0;
+  text-align: center;
+  border: none;
+}
+main#product-single ul.tabs {
+  border-bottom: 1px solid #B3B3B3;
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+}
+main#product-single ul.tabs li {
+  display: inline-block;
+  width: calc(100% / 3);
+  padding: 0;
+  margin: 0 0 -2px 0;
+  color: #B3B3B3;
+}
+main#product-single ul.tabs li.active {
+  border-bottom: 4px solid #00ADEE;
+  color: #00ADEE;
+}
+main#product-single ul.tabs li a {
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1pt;
+  font-size: 0.85em;
+  text-align: center;
+  display: block;
+  width: 100%;
+  padding: 2em;
+  color: inherit;
+}
+main#product-single .backlink {
+  text-align: center;
+  margin: 40px auto;
+}
+main#product-single .backlink a {
+  color: #6B6B6B;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-size: 1.2em;
+}
+main#product-single .backlink a i {
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  margin-right: 0.25em;
+  vertical-align: middle;
+  background-color: #6B6B6B;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="st0" d="M14.2085,9.45557c0,2.625-2.12793,4.75293-4.75293,4.75293s-4.75293-2.12793-4.75293-4.75293 s2.12793-4.75293,4.75293-4.75293S14.2085,6.83057,14.2085,9.45557z M9.45557,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293S14.2085,27.625,14.2085,25S12.08057,20.24707,9.45557,20.24707z M9.45557,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293 S12.08057,35.79199,9.45557,35.79199z M25,4.70264c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,14.2085,25,14.2085 s4.75293-2.12793,4.75293-4.75293S27.625,4.70264,25,4.70264z M25,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 S22.375,29.75293,25,29.75293S29.75293,27.625,29.75293,25S27.625,20.24707,25,20.24707z M25,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,45.29785,25,45.29785s4.75293-2.12793,4.75293-4.75293 S27.625,35.79199,25,35.79199z M40.54492,14.2085c2.625,0,4.75293-2.12793,4.75293-4.75293s-2.12793-4.75293-4.75293-4.75293 s-4.75293,2.12793-4.75293,4.75293S37.91992,14.2085,40.54492,14.2085z M40.54492,20.24707 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293S45.29785,27.625,45.29785,25 S43.16992,20.24707,40.54492,20.24707z M40.54492,35.79199c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293S43.16992,35.79199,40.54492,35.79199z"/></svg>');
+          mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="st0" d="M14.2085,9.45557c0,2.625-2.12793,4.75293-4.75293,4.75293s-4.75293-2.12793-4.75293-4.75293 s2.12793-4.75293,4.75293-4.75293S14.2085,6.83057,14.2085,9.45557z M9.45557,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293S14.2085,27.625,14.2085,25S12.08057,20.24707,9.45557,20.24707z M9.45557,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293 S12.08057,35.79199,9.45557,35.79199z M25,4.70264c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,14.2085,25,14.2085 s4.75293-2.12793,4.75293-4.75293S27.625,4.70264,25,4.70264z M25,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 S22.375,29.75293,25,29.75293S29.75293,27.625,29.75293,25S27.625,20.24707,25,20.24707z M25,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,45.29785,25,45.29785s4.75293-2.12793,4.75293-4.75293 S27.625,35.79199,25,35.79199z M40.54492,14.2085c2.625,0,4.75293-2.12793,4.75293-4.75293s-2.12793-4.75293-4.75293-4.75293 s-4.75293,2.12793-4.75293,4.75293S37.91992,14.2085,40.54492,14.2085z M40.54492,20.24707 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293S45.29785,27.625,45.29785,25 S43.16992,20.24707,40.54492,20.24707z M40.54492,35.79199c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293S43.16992,35.79199,40.54492,35.79199z"/></svg>');
+}
+main#product-single .related header {
+  text-align: center;
+}
+main#product-single .related header h5 {
+  color: #00ADEE;
 }
 
 body {

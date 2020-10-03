@@ -284,6 +284,17 @@ function crb_attach_theme_options()
                 ])
                 ->set_layout('grid')
         ]);
+
+    Container::make('post_meta', 'Downloads')
+        ->where('post_type', '=', 'product')
+        ->add_fields([
+            Field::make('complex', 'crb_downloads', '')
+                ->add_fields([
+                    Field::make('file', 'file'),
+                    Field::make('text', 'title')
+                ])
+                ->set_layout('grid')
+        ]);
 }
 
 function crb_load()
@@ -298,6 +309,39 @@ function add_woocommerce_support()
     add_theme_support('woocommerce');
 }
 
+// Rename tab
+function woo_rename_tab($tabs)
+{
+    $tabs['additional_information']['title'] = 'Technical';
+    return $tabs;
+}
+
+// Add downloads tab
+function woo_new_product_tab($tabs)
+{
+    if (carbon_get_the_post_meta('crb_downloads')) {
+        $tabs['downloads'] = [
+            'title'        => __('Downloads & resources', 'woocommerce'),
+            'callback'     => 'downloads_callback'
+        ];
+    }
+    return $tabs;
+}
+
+// Get downloads
+function downloads_callback()
+{
+    $downloads = carbon_get_the_post_meta('crb_downloads');
+    echo '<ul>';
+    foreach ($downloads as $download) {
+        echo '<li>';
+        echo '<a href="' . esc_url(wp_get_attachment_url($download['file'])) . '" title="' . $download['title'] . '">' . $download['title'] . '</a>';
+        echo '</li>';
+    }
+    echo '</ul>';
+}
+
+
 // Actions
 add_action('init', 'header_scripts');
 add_action('wp_enqueue_scripts', 'theme_styles');
@@ -311,6 +355,6 @@ add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
 add_action('after_setup_theme', 'crb_load');
 add_action('after_setup_theme', 'add_woocommerce_support');
 
-// remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-// remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-// add_filter('woocommerce_enqueue_styles', '__return_false');
+
+add_filter('woocommerce_product_tabs', 'woo_rename_tab');
+add_filter('woocommerce_product_tabs', 'woo_new_product_tab');
