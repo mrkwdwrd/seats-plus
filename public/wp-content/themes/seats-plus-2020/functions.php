@@ -12,6 +12,8 @@
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
+include_once 'inc/breadcrumbs.php';
+
 // Theme Support
 if (function_exists('add_theme_support')) {
     // Add Menu Support
@@ -249,6 +251,7 @@ function register_projects()
     );
 }
 
+
 // Add carbon fields for field customisations
 // https://carbonfields.net/docs/
 function crb_attach_theme_options()
@@ -292,6 +295,23 @@ function crb_attach_theme_options()
                 ->add_fields([
                     Field::make('file', 'file'),
                     Field::make('text', 'title')
+                ])
+                ->set_layout('grid')
+        ]);
+
+    Container::make('post_meta', 'Colours')
+        ->where('post_type', '=', 'page')
+        ->where('post_template', '=', 'template-colour-chart.php')
+        ->add_fields([
+            Field::make('complex', 'crb_colours', '')
+                ->add_fields([
+                    Field::make('select', 'category')
+                        ->add_options([
+                            'brights' => 'Brights',
+                            'colorbond' => 'Colorbond'
+                        ])->set_width(10),
+                    Field::make('text', 'name')->set_width(10),
+                    Field::make('color', 'colour')->set_width(10)
                 ])
                 ->set_layout('grid')
         ]);

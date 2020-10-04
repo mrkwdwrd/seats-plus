@@ -1,6 +1,4 @@
 require('./bootstrap');
-require('./woocommerce/add-to-cart-variation');
-require('./woocommerce/add-to-cart');
 
 (function ($) {
 		$(function () {
