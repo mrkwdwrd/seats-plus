@@ -28,7 +28,13 @@ get_header();
 						</article>
 					</div>
 
-					<?php $colours = carbon_get_the_post_meta('crb_colours'); ?>
+					<?php
+					$colours = carbon_get_the_post_meta('crb_colours');
+
+					$brights = array_filter($colours, function ($val) {
+						return $val['category'] === 'brights';
+					});
+					?>
 
 					<div class="row">
 						<div class="col-xs-12">
@@ -36,14 +42,39 @@ get_header();
 						</div>
 					</div>
 					<div class="row">
-						<?php foreach ($colours as $key => $colour) {
+						<?php foreach ($brights as $key => $colour) {
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
-							$category = $colour['category'];
+							$id = strtolower(str_replace(' ', '-', $name))
 						?>
 							<div class="col-xs-2 colour-swatch">
-								<figure id="<?php echo $name; ?>" style="background-color: <?php echo $hexvalue; ?>">&nbsp;</figure>
-								<figcaption for="<?php echo $name; ?>">
+								<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">&nbsp;</figure>
+								<figcaption for="<?php echo $id; ?>">
+									<?php echo $name; ?>
+								</figcaption>
+							</div>
+						<?php }; ?>
+					</div>
+
+					<?php
+					$colorbond = array_filter($colours, function ($val) {
+						return $val['category'] === 'colorbond';
+					});
+					?>
+					<div class="row">
+						<div class="col-xs-12">
+							<h3>Colourbond</h3>
+						</div>
+					</div>
+					<div class="row">
+						<?php foreach ($colorbond as $key => $colour) {
+							$name = $colour['name'];
+							$hexvalue = $colour['colour'];
+							$id = strtolower(str_replace(' ', '-', $name))
+						?>
+							<div class="col-xs-2 colour-swatch">
+								<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">&nbsp;</figure>
+								<figcaption for="<?php echo $id; ?>">
 									<?php echo $name; ?>
 								</figcaption>
 							</div>
