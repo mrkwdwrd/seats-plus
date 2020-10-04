@@ -6,16 +6,12 @@
 			<h2><?php the_title(); ?></h2>
 		</div>
 	</header>
-	<section>
-		<div class="container">
 
-			<?php while (have_posts()) : ?>
-				<?php the_post(); ?>
-				<?php wc_get_template_part('content', 'single-product'); ?>
-			<?php endwhile; ?>
+	<?php while (have_posts()) : ?>
+		<?php the_post(); ?>
+		<?php wc_get_template_part('content', 'single-product'); ?>
+	<?php endwhile; ?>
 
-		</div>
-	</section>
 	<section class="get-a-quote">
 		<div class="container">
 			<div class="row">

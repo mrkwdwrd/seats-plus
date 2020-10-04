@@ -112,9 +112,9 @@ main {
       }
       .button {
         text-transform: uppercase;
-        color: $white;
+        color: $white!important;
         &::before {
-          background: $brand-red;
+          background: $brand-red!important;
         }
       }
     }

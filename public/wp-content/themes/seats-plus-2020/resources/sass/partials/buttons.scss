@@ -1,5 +1,18 @@
+
+.woocommerce-page input#submit,
+.woocommerce-page input.button,
+.woocommerce-page a.button,
+.woocommerce-page button.button,
+.woocommerce-page button,
+.woocommerce input#submit,
+.woocommerce input.button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce button,
 button,
 .button {
+  background-color: transparent;
+  border-radius: 0;
   &.primary {
     position: relative;
     display: inline-block;

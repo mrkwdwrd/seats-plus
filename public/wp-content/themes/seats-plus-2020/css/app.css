@@ -711,6 +711,31 @@ main p, main li {
   font-size: 1.25rem;
 }
 
+.woocommerce-page input#submit,
+.woocommerce-page input.button,
+.woocommerce-page a.button,
+.woocommerce-page button.button,
+.woocommerce-page button,
+.woocommerce input#submit,
+.woocommerce input.button,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce button,
+button,
+.button {
+  background-color: transparent;
+  border-radius: 0;
+}
+.woocommerce-page input#submit.primary,
+.woocommerce-page input.button.primary,
+.woocommerce-page a.button.primary,
+.woocommerce-page button.button.primary,
+.woocommerce-page button.primary,
+.woocommerce input#submit.primary,
+.woocommerce input.button.primary,
+.woocommerce a.button.primary,
+.woocommerce button.button.primary,
+.woocommerce button.primary,
 button.primary,
 .button.primary {
   position: relative;
@@ -723,6 +748,16 @@ button.primary,
   text-decoration: none;
   z-index: 1;
 }
+.woocommerce-page input#submit.primary::before,
+.woocommerce-page input.button.primary::before,
+.woocommerce-page a.button.primary::before,
+.woocommerce-page button.button.primary::before,
+.woocommerce-page button.primary::before,
+.woocommerce input#submit.primary::before,
+.woocommerce input.button.primary::before,
+.woocommerce a.button.primary::before,
+.woocommerce button.button.primary::before,
+.woocommerce button.primary::before,
 button.primary::before,
 .button.primary::before {
   content: "";
@@ -736,31 +771,91 @@ button.primary::before,
   transform: skew(-10deg);
   z-index: -1;
 }
+.woocommerce-page input#submit.primary.hollow::before,
+.woocommerce-page input.button.primary.hollow::before,
+.woocommerce-page a.button.primary.hollow::before,
+.woocommerce-page button.button.primary.hollow::before,
+.woocommerce-page button.primary.hollow::before,
+.woocommerce input#submit.primary.hollow::before,
+.woocommerce input.button.primary.hollow::before,
+.woocommerce a.button.primary.hollow::before,
+.woocommerce button.button.primary.hollow::before,
+.woocommerce button.primary.hollow::before,
 button.primary.hollow::before,
 .button.primary.hollow::before {
   background: transparent;
   border: 1px solid;
 }
+.woocommerce-page input#submit.primary:hover,
+.woocommerce-page input.button.primary:hover,
+.woocommerce-page a.button.primary:hover,
+.woocommerce-page button.button.primary:hover,
+.woocommerce-page button.primary:hover,
+.woocommerce input#submit.primary:hover,
+.woocommerce input.button.primary:hover,
+.woocommerce a.button.primary:hover,
+.woocommerce button.button.primary:hover,
+.woocommerce button.primary:hover,
 button.primary:hover,
 .button.primary:hover {
   text-decoration: none;
 }
+.woocommerce-page input#submit.secondary,
+.woocommerce-page input.button.secondary,
+.woocommerce-page a.button.secondary,
+.woocommerce-page button.button.secondary,
+.woocommerce-page button.secondary,
+.woocommerce input#submit.secondary,
+.woocommerce input.button.secondary,
+.woocommerce a.button.secondary,
+.woocommerce button.button.secondary,
+.woocommerce button.secondary,
 button.secondary,
 .button.secondary {
   color: #2C383D;
   font-size: 1.25rem;
   font-weight: 800;
 }
+.woocommerce-page input#submit.secondary::before,
+.woocommerce-page input.button.secondary::before,
+.woocommerce-page a.button.secondary::before,
+.woocommerce-page button.button.secondary::before,
+.woocommerce-page button.secondary::before,
+.woocommerce input#submit.secondary::before,
+.woocommerce input.button.secondary::before,
+.woocommerce a.button.secondary::before,
+.woocommerce button.button.secondary::before,
+.woocommerce button.secondary::before,
 button.secondary::before,
 .button.secondary::before {
   content: "\2014";
   display: inline-block;
   width: 1.2em;
 }
+.woocommerce-page input#submit.secondary:hover,
+.woocommerce-page input.button.secondary:hover,
+.woocommerce-page a.button.secondary:hover,
+.woocommerce-page button.button.secondary:hover,
+.woocommerce-page button.secondary:hover,
+.woocommerce input#submit.secondary:hover,
+.woocommerce input.button.secondary:hover,
+.woocommerce a.button.secondary:hover,
+.woocommerce button.button.secondary:hover,
+.woocommerce button.secondary:hover,
 button.secondary:hover,
 .button.secondary:hover {
   text-decoration: underline;
 }
+.woocommerce-page input#submit a,
+.woocommerce-page input.button a,
+.woocommerce-page a.button a,
+.woocommerce-page button.button a,
+.woocommerce-page button a,
+.woocommerce input#submit a,
+.woocommerce input.button a,
+.woocommerce a.button a,
+.woocommerce button.button a,
+.woocommerce button a,
 button a,
 .button a {
   color: inherit;
@@ -1144,41 +1239,47 @@ main#product-index > section, main#product-category > section, main#product-sing
 main#product-index figure, main#product-category figure, main#product-single figure {
   border: 1px solid #A5B2B7;
 }
-main#product-single .images figure {
+main#product-single > header:after {
+  background-color: #F8F8F8;
+}
+main#product-single section.product-content {
+  background-color: #F8F8F8;
+}
+main#product-single section.product-content .images figure {
   overflow: hidden;
   margin: 0;
 }
-main#product-single .details {
+main#product-single section.product-content .details {
   padding: 0 0 0 50px;
 }
-main#product-single .details h1 {
+main#product-single section.product-content .details h1 {
   margin: 0;
 }
-main#product-single .details .category {
+main#product-single section.product-content .details .category {
   padding: 10px 0;
   font-size: 1.4rem;
 }
-main#product-single .details .category a {
+main#product-single section.product-content .details .category a {
   color: #6B6B6B;
 }
-main#product-single .details .excerpt {
+main#product-single section.product-content .details .excerpt {
   border-bottom: 1px solid #6B6B6B;
 }
-main#product-single .options {
+main#product-single section.product-content .options {
   padding-top: 20px;
   margin-left: 20px;
 }
-main#product-single .options .variations {
+main#product-single section.product-content .options .variations {
   padding-bottom: 20px;
   display: flex;
   flex-wrap: wrap;
 }
-main#product-single .options .variations fieldset {
+main#product-single section.product-content .options .variations fieldset {
   margin: 0;
   padding: 0 0 0 30px;
   width: 50%;
 }
-main#product-single .options .variations fieldset label {
+main#product-single section.product-content .options .variations fieldset label {
   text-transform: uppercase;
   font-size: 1.1em;
   color: #6B6B6B;
@@ -1186,34 +1287,34 @@ main#product-single .options .variations fieldset label {
   margin: 0.75em 0;
   display: block;
 }
-main#product-single .options .add-to-cart {
+main#product-single section.product-content .options .add-to-cart {
   margin-left: 30px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
-main#product-single .options .add-to-cart .quantity,
-main#product-single .options .add-to-cart button {
+main#product-single section.product-content .options .add-to-cart .quantity,
+main#product-single section.product-content .options .add-to-cart button {
   width: 50%;
 }
-main#product-single .options .add-to-cart button {
+main#product-single section.product-content .options .add-to-cart button {
   margin-left: 30px;
   border-radius: 0;
   font-size: 1.4rem;
   background-color: #00ADEE;
 }
-main#product-single .options .add-to-cart input {
+main#product-single section.product-content .options .add-to-cart input {
   border: 1px solid #2C383D;
   padding: 10px 15px;
   width: 100%;
   font-size: 1.4rem;
 }
-main#product-single .options .quantity .pseudo-qty {
+main#product-single section.product-content .options .quantity .pseudo-qty {
   display: flex;
   border: 1px solid #2C383D;
   justify-content: space-between;
 }
-main#product-single .options .quantity .pseudo-qty button {
+main#product-single section.product-content .options .quantity .pseudo-qty button {
   background-color: #FFFFFF;
   border: none;
   color: #6B6B6B;
@@ -1223,36 +1324,36 @@ main#product-single .options .quantity .pseudo-qty button {
   font-size: 1.4rem;
   line-height: 1;
 }
-main#product-single .options .quantity .pseudo-qty button.qty-inc {
+main#product-single section.product-content .options .quantity .pseudo-qty button.qty-inc {
   border-left: 1px solid #2C383D;
 }
-main#product-single .options .quantity .pseudo-qty button.qty-dec {
+main#product-single section.product-content .options .quantity .pseudo-qty button.qty-dec {
   border-right: 1px solid #2C383D;
 }
-main#product-single .options .quantity .pseudo-qty input {
+main#product-single section.product-content .options .quantity .pseudo-qty input {
   flex: 1 1 auto;
   margin: 0;
   text-align: center;
   border: none;
 }
-main#product-single ul.tabs {
+main#product-single section.product-content ul.tabs {
   border-bottom: 1px solid #B3B3B3;
   padding: 0;
   margin: 0 auto;
   list-style: none;
 }
-main#product-single ul.tabs li {
+main#product-single section.product-content ul.tabs li {
   display: inline-block;
   width: calc(100% / 3);
   padding: 0;
   margin: 0 0 -2px 0;
   color: #B3B3B3;
 }
-main#product-single ul.tabs li.active {
+main#product-single section.product-content ul.tabs li.active {
   border-bottom: 4px solid #00ADEE;
   color: #00ADEE;
 }
-main#product-single ul.tabs li a {
+main#product-single section.product-content ul.tabs li a {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 1pt;
@@ -1263,18 +1364,18 @@ main#product-single ul.tabs li a {
   padding: 2em;
   color: inherit;
 }
-main#product-single .backlink {
+main#product-single section.product-content .backlink {
   text-align: center;
   margin: 40px auto;
 }
-main#product-single .backlink a {
+main#product-single section.product-content .backlink a {
   color: #6B6B6B;
   display: inline-block;
   vertical-align: middle;
   line-height: 1;
   font-size: 1.2em;
 }
-main#product-single .backlink a i {
+main#product-single section.product-content .backlink a i {
   display: inline-block;
   height: 1.2em;
   width: 1.2em;
@@ -1288,10 +1389,11 @@ main#product-single .backlink a i {
   -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="st0" d="M14.2085,9.45557c0,2.625-2.12793,4.75293-4.75293,4.75293s-4.75293-2.12793-4.75293-4.75293 s2.12793-4.75293,4.75293-4.75293S14.2085,6.83057,14.2085,9.45557z M9.45557,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293S14.2085,27.625,14.2085,25S12.08057,20.24707,9.45557,20.24707z M9.45557,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293 S12.08057,35.79199,9.45557,35.79199z M25,4.70264c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,14.2085,25,14.2085 s4.75293-2.12793,4.75293-4.75293S27.625,4.70264,25,4.70264z M25,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 S22.375,29.75293,25,29.75293S29.75293,27.625,29.75293,25S27.625,20.24707,25,20.24707z M25,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,45.29785,25,45.29785s4.75293-2.12793,4.75293-4.75293 S27.625,35.79199,25,35.79199z M40.54492,14.2085c2.625,0,4.75293-2.12793,4.75293-4.75293s-2.12793-4.75293-4.75293-4.75293 s-4.75293,2.12793-4.75293,4.75293S37.91992,14.2085,40.54492,14.2085z M40.54492,20.24707 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293S45.29785,27.625,45.29785,25 S43.16992,20.24707,40.54492,20.24707z M40.54492,35.79199c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293S43.16992,35.79199,40.54492,35.79199z"/></svg>');
           mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="st0" d="M14.2085,9.45557c0,2.625-2.12793,4.75293-4.75293,4.75293s-4.75293-2.12793-4.75293-4.75293 s2.12793-4.75293,4.75293-4.75293S14.2085,6.83057,14.2085,9.45557z M9.45557,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293S14.2085,27.625,14.2085,25S12.08057,20.24707,9.45557,20.24707z M9.45557,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293 S12.08057,35.79199,9.45557,35.79199z M25,4.70264c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,14.2085,25,14.2085 s4.75293-2.12793,4.75293-4.75293S27.625,4.70264,25,4.70264z M25,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 S22.375,29.75293,25,29.75293S29.75293,27.625,29.75293,25S27.625,20.24707,25,20.24707z M25,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,45.29785,25,45.29785s4.75293-2.12793,4.75293-4.75293 S27.625,35.79199,25,35.79199z M40.54492,14.2085c2.625,0,4.75293-2.12793,4.75293-4.75293s-2.12793-4.75293-4.75293-4.75293 s-4.75293,2.12793-4.75293,4.75293S37.91992,14.2085,40.54492,14.2085z M40.54492,20.24707 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293S45.29785,27.625,45.29785,25 S43.16992,20.24707,40.54492,20.24707z M40.54492,35.79199c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293S43.16992,35.79199,40.54492,35.79199z"/></svg>');
 }
-main#product-single .related header {
+main#product-single section.product-related header {
   text-align: center;
+  padding-bottom: 55px;
 }
-main#product-single .related header h5 {
+main#product-single section.product-related header h5 {
   color: #00ADEE;
 }
 
@@ -1395,11 +1497,11 @@ main article.get-a-quote::before {
 main section.get-a-quote .button,
 main article.get-a-quote .button {
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #FFFFFF !important;
 }
 main section.get-a-quote .button::before,
 main article.get-a-quote .button::before {
-  background: #EE3829;
+  background: #EE3829 !important;
 }
 main#home-page article h5 {
   color: #00ADEE;
