@@ -11,7 +11,7 @@ function the_breadcrumb()
 
     if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
 
-      echo '<li class="item-current item-archive"><strong class="breadcrumb-current breadcrumb-archive">' . post_type_archive_title($prefix, false) . '</strong></li>';
+      echo '<li class="item-current item-archive"><span class="breadcrumb-current breadcrumb-archive">' . post_type_archive_title($prefix, false) . '</span></li>';
     } else if (is_archive() && is_tax() && !is_category() && !is_tag()) {
 
       $post_type = get_post_type();
@@ -25,7 +25,7 @@ function the_breadcrumb()
       }
 
       $custom_tax_name = get_queried_object()->name;
-      echo '<li class="item-current item-archive"><strong class="breadcrumb-current breadcrumb-archive">' . $custom_tax_name . '</strong></li>';
+      echo '<li class="item-current item-archive"><span class="breadcrumb-current breadcrumb-archive">' . $custom_tax_name . '</span></li>';
     } else if (is_single()) {
 
       $post_type = get_post_type();
@@ -55,18 +55,18 @@ function the_breadcrumb()
 
       if (!empty($last_category)) {
         echo $cat_display;
-        echo '<li class="item-current item-' . $post->ID . '"><strong class="breadcrumb-current breadcrumb-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+        echo '<li class="item-current item-' . $post->ID . '"><span class="breadcrumb-current breadcrumb-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</span></li>';
       } else if (!empty($cat_id)) {
 
         echo '<li class="item-cat item-cat-' . $cat_id . ' item-cat-' . $cat_nicename . '"><a class="breadcrumb-cat breadcrumb-cat-' . $cat_id . ' breadcrumb-cat-' . $cat_nicename . '" href="' . $cat_link . '" title="' . $cat_name . '">' . $cat_name . '</a></li>';
-        echo '<li class="item-current item-' . $post->ID . '"><strong class="breadcrumb-current breadcrumb-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+        echo '<li class="item-current item-' . $post->ID . '"><span class="breadcrumb-current breadcrumb-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</span></li>';
       } else {
 
-        echo '<li class="item-current item-' . $post->ID . '"><strong class="breadcrumb-current breadcrumb-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</strong></li>';
+        echo '<li class="item-current item-' . $post->ID . '"><span class="breadcrumb-current breadcrumb-' . $post->ID . '" title="' . get_the_title() . '">' . get_the_title() . '</span></li>';
       }
     } else if (is_category()) {
 
-      echo '<li class="item-current item-cat"><strong class="breadcrumb-current breadcrumb-cat">' . single_cat_title('', false) . '</strong></li>';
+      echo '<li class="item-current item-cat"><span class="breadcrumb-current breadcrumb-cat">' . single_cat_title('', false) . '</span></li>';
     } else if (is_page()) {
 
       if ($post->post_parent) {
@@ -82,10 +82,10 @@ function the_breadcrumb()
 
         echo $parents;
 
-        echo '<li class="item-current item-' . $post->ID . '"><strong title="' . get_the_title() . '"> ' . get_the_title() . '</strong></li>';
+        echo '<li class="item-current item-' . $post->ID . '"><span title="' . get_the_title() . '"> ' . get_the_title() . '</span></li>';
       } else {
 
-        echo '<li class="item-current item-' . $post->ID . '"><strong class="breadcrumb-current breadcrumb-' . $post->ID . '"> ' . get_the_title() . '</strong></li>';
+        echo '<li class="item-current item-' . $post->ID . '"><span class="breadcrumb-current breadcrumb-' . $post->ID . '"> ' . get_the_title() . '</span></li>';
       }
     } else if (is_tag()) {
 
@@ -97,34 +97,34 @@ function the_breadcrumb()
       $get_term_slug  = $terms[0]->slug;
       $get_term_name  = $terms[0]->name;
 
-      echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><strong class="breadcrumb-current breadcrumb-tag-' . $get_term_id . ' breadcrumb-tag-' . $get_term_slug . '">' . $get_term_name . '</strong></li>';
+      echo '<li class="item-current item-tag-' . $get_term_id . ' item-tag-' . $get_term_slug . '"><span class="breadcrumb-current breadcrumb-tag-' . $get_term_id . ' breadcrumb-tag-' . $get_term_slug . '">' . $get_term_name . '</span></li>';
     } elseif (is_day()) {
 
       echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="breadcrumb-year breadcrumb-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
 
       echo '<li class="item-month item-month-' . get_the_time('m') . '"><a class="breadcrumb-month breadcrumb-month-' . get_the_time('m') . '" href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</a></li>';
 
-      echo '<li class="item-current item-' . get_the_time('j') . '"><strong class="breadcrumb-current breadcrumb-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</strong></li>';
+      echo '<li class="item-current item-' . get_the_time('j') . '"><span class="breadcrumb-current breadcrumb-' . get_the_time('j') . '"> ' . get_the_time('jS') . ' ' . get_the_time('M') . ' Archives</span></li>';
     } else if (is_month()) {
 
       echo '<li class="item-year item-year-' . get_the_time('Y') . '"><a class="breadcrumb-year breadcrumb-year-' . get_the_time('Y') . '" href="' . get_year_link(get_the_time('Y')) . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</a></li>';
 
-      echo '<li class="item-month item-month-' . get_the_time('m') . '"><strong class="breadcrumb-month breadcrumb-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</strong></li>';
+      echo '<li class="item-month item-month-' . get_the_time('m') . '"><span class="breadcrumb-month breadcrumb-month-' . get_the_time('m') . '" title="' . get_the_time('M') . '">' . get_the_time('M') . ' Archives</span></li>';
     } else if (is_year()) {
 
-      echo '<li class="item-current item-current-' . get_the_time('Y') . '"><strong class="breadcrumb-current breadcrumb-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</strong></li>';
+      echo '<li class="item-current item-current-' . get_the_time('Y') . '"><span class="breadcrumb-current breadcrumb-current-' . get_the_time('Y') . '" title="' . get_the_time('Y') . '">' . get_the_time('Y') . ' Archives</span></li>';
     } else if (is_author()) {
 
       global $author;
       $userdata = get_userdata($author);
 
-      echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><strong class="breadcrumb-current breadcrumb-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</strong></li>';
+      echo '<li class="item-current item-current-' . $userdata->user_nicename . '"><span class="breadcrumb-current breadcrumb-current-' . $userdata->user_nicename . '" title="' . $userdata->display_name . '">' . 'Author: ' . $userdata->display_name . '</span></li>';
     } else if (get_query_var('paged')) {
 
-      echo '<li class="item-current item-current-' . get_query_var('paged') . '"><strong class="breadcrumb-current breadcrumb-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">' . __('Page') . ' ' . get_query_var('paged') . '</strong></li>';
+      echo '<li class="item-current item-current-' . get_query_var('paged') . '"><span class="breadcrumb-current breadcrumb-current-' . get_query_var('paged') . '" title="Page ' . get_query_var('paged') . '">' . __('Page') . ' ' . get_query_var('paged') . '</span></li>';
     } else if (is_search()) {
 
-      echo '<li class="item-current item-current-' . get_search_query() . '"><strong class="breadcrumb-current breadcrumb-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</strong></li>';
+      echo '<li class="item-current item-current-' . get_search_query() . '"><span class="breadcrumb-current breadcrumb-current-' . get_search_query() . '" title="Search results for: ' . get_search_query() . '">Search results for: ' . get_search_query() . '</span></li>';
     } elseif (is_404()) {
 
       echo '<li>' . 'Error 404' . '</li>';
