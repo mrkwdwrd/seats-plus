@@ -31,14 +31,13 @@ img {
 }
 
 a {
-  color: rgba(100, 200, 255, 1);
+  color: rgba($brand-blue, 1);
   text-decoration: none;
-
+  transition: 0.5s;
   &:focus,
   &:hover {
-    text-decoration: underline;
+    color: darken($brand-blue, 10%);
   }
-
   &:active {}
 }
 
@@ -60,7 +59,7 @@ input[type="search"] {
 
 // Text selection
 ::selection {
-  background-color: rgba(100, 200, 255, 0.5);
-  color: rgba(0, 0, 0, 1);
+  background-color: rgba($brand-blue, 0.5);
+  color: rgba($brand-black, 1);
   text-shadow: none;
 }

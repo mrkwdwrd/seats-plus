@@ -6,12 +6,15 @@
       <h2><?php woocommerce_page_title(); ?></h2>
     </div>
   </header>
-  <section>
+  <section class="content">
     <div class="container">
-      <h5>Products</h5>
-      <h1><?php woocommerce_page_title(); ?></h1>
-      <?php do_action('woocommerce_archive_description'); ?>
-
+      <header class="row">
+        <div class="col-xs-6">
+          <h5>Products</h5>
+          <h1><?php woocommerce_page_title(); ?></h1>
+          <?php do_action('woocommerce_archive_description'); ?>
+        </div>
+      </header>
       <?php
       if (woocommerce_product_loop()) {
         woocommerce_product_loop_start();

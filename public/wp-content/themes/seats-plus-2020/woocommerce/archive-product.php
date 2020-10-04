@@ -6,10 +6,17 @@
       <h2><?php woocommerce_page_title(); ?></h2>
     </div>
   </header>
-  <section>
+  <section class="content">
     <div class="container">
-      <h5><?php woocommerce_page_title(); ?></h5>
-      <?php do_action('woocommerce_archive_description'); ?>
+      <header class="row">
+        <div class="col-xs-4">
+          <h5><?php woocommerce_page_title(); ?></h5>
+          <h1>Premium Aluminium Outdoor Furniture</h1>
+        </div>
+        <div class="intro col-xs-6 col-xs-offset-2">
+          <?php do_action('woocommerce_archive_description'); ?>
+        </div>
+      </header>
 
       <?php
       if (woocommerce_product_loop()) {
