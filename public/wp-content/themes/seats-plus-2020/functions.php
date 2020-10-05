@@ -215,12 +215,15 @@ function register_menus()
 function register_projects()
 {
     register_taxonomy_for_object_type('category', 'project');
-    register_taxonomy_for_object_type('post_tag', 'project');
+    register_taxonomy_for_object_type('tag', 'project');
     register_post_type(
         'project',
         array(
+            'rewrite' => array(
+                'slug'                  => 'our-work',
+            ),
             'labels' => array(
-                'name'                  => __('Projects'),
+                'name'                  => __('Our Work'),
                 'singular_name'         => __('Project'),
                 'add_new'               => __('Add New'),
                 'add_new_item'          => __('Add New Project'),
@@ -239,12 +242,11 @@ function register_projects()
             'supports'      => array(
                 'title',
                 'editor',
-                'excerpt',
                 'thumbnail'
             ),
             'can_export'    => true,
             'taxonomies'    => array(
-                'post_tag',
+                'tag',
                 'category'
             )
         )
@@ -300,6 +302,7 @@ function crb_attach_theme_options()
                 ->set_layout('grid')
         ]);
 
+    // Product Downloads
     Container::make('post_meta', 'Downloads')
         ->where('post_type', '=', 'product')
         ->add_fields([
@@ -311,6 +314,7 @@ function crb_attach_theme_options()
                 ->set_layout('grid')
         ]);
 
+    // Colour Guide
     Container::make('post_meta', 'Colours')
         ->where('post_type', '=', 'page')
         ->where('post_template', '=', 'template-colour-chart.php')
@@ -326,6 +330,27 @@ function crb_attach_theme_options()
                     Field::make('color', 'colour')->set_width(10)
                 ])
                 ->set_layout('grid')
+        ]);
+
+    // Project Content
+    Container::make('post_meta', 'Project Content')
+        ->where('post_type', '=', 'project')
+        ->add_fields([
+            Field::make('text', 'crb_client', 'Client'),
+            Field::make('text', 'crb_location', 'Location'),
+            Field::make('rich_text', 'crb_requirement_content', 'Requirement'),
+            Field::make('rich_text', 'crb_solution_content', 'Solution'),
+            Field::make('rich_text', 'crb_result_content', 'Result'),
+        ]);
+
+    // Project Images
+    Container::make('post_meta', 'Slider')
+        ->where('post_type', '=', 'project')
+        ->add_fields([
+            Field::make('complex', 'crb_slides', '')
+                ->add_fields([
+                    Field::make('image', 'image'),
+                ])->set_layout('tabbed-horizontal'),
         ]);
 }
 
@@ -390,3 +415,18 @@ add_action('after_setup_theme', 'add_woocommerce_support');
 
 add_filter('woocommerce_product_tabs', 'woo_rename_tab');
 add_filter('woocommerce_product_tabs', 'woo_new_product_tab');
+
+add_filter('get_the_archive_title', function ($title) {
+    if (is_category()) {
+        $title = single_cat_title('', false);
+    } elseif (is_tag()) {
+        $title = single_tag_title('', false);
+    } elseif (is_author()) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif (is_tax()) { //for custom post types
+        $title = sprintf(__('%1$s'), single_term_title('', false));
+    } elseif (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    }
+    return $title;
+});
