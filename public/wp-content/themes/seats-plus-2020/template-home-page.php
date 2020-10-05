@@ -209,9 +209,19 @@ get_header();
 			</header>
 			<div class="row">
 				<div class="col-xs-12">
-					<ul class="client-logos">
-
-					</ul>
+					<?php
+					$clients = carbon_get_the_post_meta('crb_clients');
+					if (!empty($clients)) { ?>
+						<ul class="client-logos">
+							<?php foreach ($clients as $key => $client) : ?>
+								<li>
+									<figure title="<?php echo $client['client'] ?>">
+										<?php echo wp_get_attachment_image($client['logo'], $icon = false) ?>
+									</figure>
+								</li>
+							<?php endforeach; ?>
+						</ul>
+					<?php } ?>
 				</div>
 			</div>
 		</div>

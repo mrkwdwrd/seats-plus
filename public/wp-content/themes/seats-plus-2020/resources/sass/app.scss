@@ -323,9 +323,39 @@ main {
             max-width: 730px;
           }
         }
+        ul.client-logos {
+          list-style: none;
+          padding: 0;
+          margin: 100px auto;
+          text-align: center;
+          display: flex;
+          justify-content: space-between;;
+          li {
+            img {
+              width: auto;
+              max-height: 100px;
+            }
+          }
+        }
       }
       &.get-a-quote {
         background-image: url('/wp-content/themes/seats-plus-2020/images/get-a-quote-bg.jpg');
+      }
+    }
+  }
+  &#colour-chart {
+    .colour-swatch {
+      padding: 10px;
+      background-color: $white;
+      box-shadow: 5px 5px 5px rgba($brand-black, 0.5);
+      figure {
+        width: 100%;
+        padding-top: 100%;
+      }
+      figcaption {
+        padding: 10px;
+        font-weight: $medium;
+        font-size: 1.4em;
       }
     }
   }

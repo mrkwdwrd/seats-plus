@@ -48,7 +48,7 @@ get_header();
 							$id = strtolower(str_replace(' ', '-', $name))
 						?>
 							<div class="col-xs-2 colour-swatch">
-								<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">&nbsp;</figure>
+								<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>"></figure>
 								<figcaption for="<?php echo $id; ?>">
 									<?php echo $name; ?>
 								</figcaption>
@@ -73,7 +73,7 @@ get_header();
 							$id = strtolower(str_replace(' ', '-', $name))
 						?>
 							<div class="col-xs-2 colour-swatch">
-								<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">&nbsp;</figure>
+								<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>"></figure>
 								<figcaption for="<?php echo $id; ?>">
 									<?php echo $name; ?>
 								</figcaption>

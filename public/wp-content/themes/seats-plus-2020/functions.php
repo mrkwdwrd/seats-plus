@@ -288,6 +288,18 @@ function crb_attach_theme_options()
                 ->set_layout('grid')
         ]);
 
+    Container::make('post_meta', 'Clients')
+        ->where('post_type', '=', 'page')
+        ->where('post_template', '=', 'template-home-page.php')
+        ->add_fields([
+            Field::make('complex', 'crb_clients', '')
+                ->add_fields([
+                    Field::make('image', 'logo')->set_width(10),
+                    Field::make('text', 'name')->set_width(10),
+                ])
+                ->set_layout('grid')
+        ]);
+
     Container::make('post_meta', 'Downloads')
         ->where('post_type', '=', 'product')
         ->add_fields([
