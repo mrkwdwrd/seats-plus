@@ -287,6 +287,26 @@ main {
         .buttons {
           text-align: center;
         }
+        ul {
+          display: block;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          li {
+            display: block;
+            list-style: none;
+            border: 1px solid $white;
+            h3 {
+              color: $white;
+              font-weight: $light;
+              font-size: 1.8em;
+            }
+            .button.secondary {
+              color: $brand-yellow;
+            }
+
+          }
+        }
       }
       &.about-us {
         overflow: visible;

@@ -338,6 +338,7 @@ function crb_attach_theme_options()
         ->add_fields([
             Field::make('text', 'crb_client', 'Client'),
             Field::make('text', 'crb_location', 'Location'),
+            // Field::make('rich_text', 'crb_location_content', 'Location'),
             Field::make('rich_text', 'crb_requirement_content', 'Requirement'),
             Field::make('rich_text', 'crb_solution_content', 'Solution'),
             Field::make('rich_text', 'crb_result_content', 'Result'),

@@ -1803,6 +1803,25 @@ main#home-page section.our-projects h2 {
 main#home-page section.our-projects .buttons {
   text-align: center;
 }
+main#home-page section.our-projects ul {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+main#home-page section.our-projects ul li {
+  display: block;
+  list-style: none;
+  border: 1px solid #FFFFFF;
+}
+main#home-page section.our-projects ul li h3 {
+  color: #FFFFFF;
+  font-weight: 300;
+  font-size: 1.8em;
+}
+main#home-page section.our-projects ul li .button.secondary {
+  color: #FCB823;
+}
 main#home-page section.about-us {
   overflow: visible;
 }

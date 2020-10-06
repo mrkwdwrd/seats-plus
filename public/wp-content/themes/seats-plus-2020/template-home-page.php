@@ -148,9 +148,9 @@ get_header();
 					<h5>Our Work</h5>
 					<h2>Our Latest Projects</h2>
 				</div>
-				<div>
+				<!--<div>
 					<label>Filter by</label>
-				</div>
+				</div>-->
 			</header>
 			<div class="row">
 				<?php
@@ -163,10 +163,12 @@ get_header();
 					<ul class="our-projects">
 						<?php foreach ($projects as $key => $project) {
 							$link_url = esc_url(get_permalink($project)); ?>
-							<li>
-								<figure></figure>
-								<?php echo $project->post_title; ?>
-								<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>">
+							<li class="col-xs-6">
+								<figure>
+									<?php echo get_the_post_thumbnail($project->ID, [600, 600]); ?>
+								</figure>
+								<h3><?php echo $project->post_title; ?></h3>
+								<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>" class="button secondary">
 									View Project
 								</a>
 							</li>
