@@ -11,7 +11,7 @@ function the_breadcrumb()
 
     if (is_archive() && !is_tax() && !is_category() && !is_tag()) {
 
-      echo '<li class="item-current item-archive"><span class="breadcrumb-current breadcrumb-archive">' . post_type_archive_title($prefix, false) . '</span></li>';
+      echo '<li class="item-current item-archive"><span class="breadcrumb-current breadcrumb-archive">' . post_type_archive_title() . '</span></li>';
     } else if (is_archive() && is_tax() && !is_category() && !is_tag()) {
 
       $post_type = get_post_type();

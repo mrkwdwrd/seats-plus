@@ -1431,6 +1431,95 @@ main#product-single section.product-related header h5 {
   color: #00ADEE;
 }
 
+main .project-backlink {
+  text-align: center;
+  margin: 40px auto;
+}
+main .project-backlink a {
+  color: #6B6B6B;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.1;
+  font-size: 1.2em;
+}
+main .project-backlink a i {
+  display: inline-block;
+  height: 1.2em;
+  width: 1.2em;
+  margin-right: 0.25em;
+  margin-bottom: 1pt;
+  vertical-align: middle;
+  background-color: currentColor;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="st0" d="M14.2085,9.45557c0,2.625-2.12793,4.75293-4.75293,4.75293s-4.75293-2.12793-4.75293-4.75293 s2.12793-4.75293,4.75293-4.75293S14.2085,6.83057,14.2085,9.45557z M9.45557,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293S14.2085,27.625,14.2085,25S12.08057,20.24707,9.45557,20.24707z M9.45557,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293 S12.08057,35.79199,9.45557,35.79199z M25,4.70264c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,14.2085,25,14.2085 s4.75293-2.12793,4.75293-4.75293S27.625,4.70264,25,4.70264z M25,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 S22.375,29.75293,25,29.75293S29.75293,27.625,29.75293,25S27.625,20.24707,25,20.24707z M25,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,45.29785,25,45.29785s4.75293-2.12793,4.75293-4.75293 S27.625,35.79199,25,35.79199z M40.54492,14.2085c2.625,0,4.75293-2.12793,4.75293-4.75293s-2.12793-4.75293-4.75293-4.75293 s-4.75293,2.12793-4.75293,4.75293S37.91992,14.2085,40.54492,14.2085z M40.54492,20.24707 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293S45.29785,27.625,45.29785,25 S43.16992,20.24707,40.54492,20.24707z M40.54492,35.79199c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293S43.16992,35.79199,40.54492,35.79199z"/></svg>');
+          mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><path class="st0" d="M14.2085,9.45557c0,2.625-2.12793,4.75293-4.75293,4.75293s-4.75293-2.12793-4.75293-4.75293 s2.12793-4.75293,4.75293-4.75293S14.2085,6.83057,14.2085,9.45557z M9.45557,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293S14.2085,27.625,14.2085,25S12.08057,20.24707,9.45557,20.24707z M9.45557,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293 S12.08057,35.79199,9.45557,35.79199z M25,4.70264c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,14.2085,25,14.2085 s4.75293-2.12793,4.75293-4.75293S27.625,4.70264,25,4.70264z M25,20.24707c-2.625,0-4.75293,2.12793-4.75293,4.75293 S22.375,29.75293,25,29.75293S29.75293,27.625,29.75293,25S27.625,20.24707,25,20.24707z M25,35.79199 c-2.625,0-4.75293,2.12793-4.75293,4.75293S22.375,45.29785,25,45.29785s4.75293-2.12793,4.75293-4.75293 S27.625,35.79199,25,35.79199z M40.54492,14.2085c2.625,0,4.75293-2.12793,4.75293-4.75293s-2.12793-4.75293-4.75293-4.75293 s-4.75293,2.12793-4.75293,4.75293S37.91992,14.2085,40.54492,14.2085z M40.54492,20.24707 c-2.625,0-4.75293,2.12793-4.75293,4.75293s2.12793,4.75293,4.75293,4.75293S45.29785,27.625,45.29785,25 S43.16992,20.24707,40.54492,20.24707z M40.54492,35.79199c-2.625,0-4.75293,2.12793-4.75293,4.75293 s2.12793,4.75293,4.75293,4.75293s4.75293-2.12793,4.75293-4.75293S43.16992,35.79199,40.54492,35.79199z"/></svg>');
+}
+main .project-backlink a:hover {
+  color: #00ADEE;
+}
+main#project-index > section, main#project-single > section {
+  padding: 110px 0;
+}
+main#project-index figure, main#project-single figure {
+  border: 1px solid #A5B2B7;
+}
+main#project-index section.content header {
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 100px;
+}
+main#project-index section.content header h1 {
+  margin: 0;
+}
+main#project-index section.content header h5 {
+  color: #00ADEE;
+  margin-bottom: 10px;
+}
+main#project-index section.content header .intro {
+  padding: 60px 0 0;
+}
+main#project-index ul.projects img {
+  border: 1px solid #A5B2B7;
+}
+main#project-index ul.projects h2, main#project-index ul.projects h3 {
+  font-size: 1.6em;
+  line-height: 1.4;
+  font-weight: normal;
+  color: #2C383D;
+  transition: 0.5s;
+  width: 80%;
+}
+main#project-index ul.projects a:hover h2, main#project-index ul.projects a:hover h3 {
+  color: #00ADEE;
+}
+main#project-single > header:after {
+  background-color: #F8F8F8;
+}
+main#project-single article.project-content,
+main#project-single section.project-content {
+  background-color: #F8F8F8;
+}
+main#project-single article.project-slides,
+main#project-single section.project-slides {
+  background-color: #2C383D;
+}
+main#project-single article.project-info,
+main#project-single section.project-info {
+  background-color: #2C383D;
+}
+main#project-single article.project-related header,
+main#project-single section.project-related header {
+  text-align: center;
+  padding-bottom: 55px;
+}
+main#project-single article.project-related header h5,
+main#project-single section.project-related header h5 {
+  color: #00ADEE;
+}
+
 body {
   background-color: #2C383D;
   color: #2C383D;
