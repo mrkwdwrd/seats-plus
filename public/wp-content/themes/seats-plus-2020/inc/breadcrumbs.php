@@ -42,15 +42,16 @@ function the_breadcrumb()
 
       if (!empty($category)) {
 
-        $last_category = end(array_values($category));
+        // $last_category = end(array_values($category));
+        $last_category = $category[count($category) - 1];
 
         $get_cat_parents = rtrim(get_category_parents($last_category->term_id, true, ','), ',');
         $cat_parents = explode(',', $get_cat_parents);
 
         $cat_display = '';
-        foreach ($cat_parents as $parents) {
-          $cat_display .= '<li class="item-cat">' . $parents . '</li>';
-        }
+        // foreach ($cat_parents as $parents) {
+        //   $cat_display .= '<li class="item-cat">' . $parents . '</li>';
+        // }
       }
 
       if (!empty($last_category)) {
