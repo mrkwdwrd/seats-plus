@@ -24,33 +24,25 @@ get_header(); ?>
           'post_status' => 'publish',
           'numberposts' => 1
         );
-        $post = get_posts($args);
+        $page = get_posts($args);
         ?>
-        <h5>Projects</h5>
-
+        <div class="col-xs-8">
+          <h5>Projects</h5>
+          <?php echo $page[0]->post_content; ?>
+        </div>
       </header>
-      <div class="row">
-        <?php
-        if (have_posts()) :
-        ?>
-          <?php
-          while (have_posts()) : the_post(); ?>
-            <div class="col-xs-4">
-
-              <?php
-              the_title();
-
-              the_post_thumbnail(array(600, 600));
-
-              the_permalink();
-
-              the_content(); ?>
-
-            </div>
-        <?php endwhile;
-        endif;
-        ?>
-      </div>
+      <?php if (have_posts()) : ?>
+        <ul class="projects row">
+          <?php while (have_posts()) : the_post(); ?>
+            <li class="project col-xs-4">
+              <a href="<?php echo esc_url(the_permalink()); ?>">
+                <figure style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></figure>
+                <h3 class="project-title"><?php echo the_title(); ?></h3>
+              </a>
+            </li>
+          <?php endwhile; ?>
+        </ul>
+      <?php endif; ?>
     </div>
   </section>
   <section class="get-a-quote">

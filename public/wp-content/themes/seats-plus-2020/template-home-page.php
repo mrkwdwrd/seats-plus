@@ -152,30 +152,28 @@ get_header();
 					<label>Filter by</label>
 				</div>-->
 			</header>
-			<div class="row">
+			<ul class="projects row">
 				<?php
 				$args = array(
 					'post_type' => 'project',
 					'order'    => 'ASC'
 				);
 				$projects = get_posts($args);
-				if (!empty($projects)) { ?>
-					<ul class="our-projects">
-						<?php foreach ($projects as $key => $project) {
-							$link_url = esc_url(get_permalink($project)); ?>
-							<li class="col-xs-6">
-								<figure>
-									<?php echo get_the_post_thumbnail($project->ID, [600, 600]); ?>
-								</figure>
-								<h3><?php echo $project->post_title; ?></h3>
-								<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>" class="button secondary">
-									View Project
-								</a>
-							</li>
-					</ul>
-				<?php } ?>
-			<?php } ?>
-			</div>
+				if (!empty($projects)) : ?>
+					<?php foreach ($projects as $key => $project) {
+						$link_url = esc_url(get_permalink($project)); ?>
+						<li class="project col-xs-6">
+							<figure>
+								<?php echo get_the_post_thumbnail($project->ID, [600, 600]); ?>
+							</figure>
+							<h3><?php echo $project->post_title; ?></h3>
+							<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>" class="button secondary">
+								View Project
+							</a>
+						</li>
+					<?php } ?>
+				<?php endif; ?>
+			</ul>
 			<div class="row">
 				<div class="buttons col-xs-12">
 					<a href="" class="button primary" title="Our work">

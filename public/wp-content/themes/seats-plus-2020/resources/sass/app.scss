@@ -44,6 +44,10 @@ main {
     color: $white;
     padding: 120px 0;
     position: relative;
+    background-image: url('/wp-content/themes/seats-plus-2020/images/header-default-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     &::after {
       content: '';
       display: block;
@@ -287,15 +291,10 @@ main {
         .buttons {
           text-align: center;
         }
-        ul {
-          display: block;
-          width: 100%;
-          margin: 0;
+        ul.projects {
+          list-style: none;
           padding: 0;
-          li {
-            display: block;
-            list-style: none;
-            border: 1px solid $white;
+          li.project{
             h3 {
               color: $white;
               font-weight: $light;

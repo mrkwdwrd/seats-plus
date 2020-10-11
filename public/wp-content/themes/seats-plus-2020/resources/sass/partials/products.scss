@@ -54,32 +54,32 @@ main {
         }
       }
     }
-      ul.products {
-        li {
-          &.product-category {
+    ul.products {
+      li {
+        &.product-category {
 
-          }
-          &.product {
+        }
+        &.product {
 
-          }
-        }
-        img {
-          border: 1px solid $cool-grey;
-        }
-        h2, h3 {
-          font-size: 1.6em;
-          line-height: 1.4;
-          font-weight: normal;
-          color: $brand-black;
-          transition: 0.5s;
-          width: 80%;
-        }
-        a:hover {
-          h2, h3 {
-            color: $brand-blue;
-          }
         }
       }
+      img {
+        border: 1px solid $cool-grey;
+      }
+      h2, h3 {
+        font-size: 1.6em;
+        line-height: 1.4;
+        font-weight: normal;
+        color: $brand-black;
+        transition: 0.5s;
+        width: 80%;
+      }
+      a:hover {
+        h2, h3 {
+          color: $brand-blue;
+        }
+      }
+    }
   }
   &#product-single {
     & > header {

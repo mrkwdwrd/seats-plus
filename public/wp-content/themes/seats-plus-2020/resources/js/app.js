@@ -34,6 +34,22 @@ require('./bootstrap');
 				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
 			});
 
+			$('.project-slider > .slider').slick({
+				fade: false,
+				autoplaySpeed: 2000,
+				autoplay: true,
+				speed: 2000,
+				arrows: true,
+				dots: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				// centerMode: true,
+				prevArrow: ".project-slider-nav a.previous",
+				nextArrow: ".project-slider-nav a.next",
+				cssEase: "cubic-bezier(0.87, 0.03, 0.41, 0.9)"
+			});
+
 			$('select').selectize();
 
 			// Custom qty field
