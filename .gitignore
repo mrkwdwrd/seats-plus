@@ -22,4 +22,4 @@ node_modules/
 *.sql
 *.sqlite
 wp-config.php
-public/wp-content/uploads
+wp-content/uploads
