@@ -28,19 +28,6 @@ get_header();
 							</div>
 						</div>
 					</div>
-					<div class="slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
-						<div class="container">
-							<div class="row content">
-								<div class="col-xs-5">
-									<h5><?php echo $link_title ?></h5>
-									<h2><?php echo $caption ?></h2>
-									<a href="<?php echo $link_url ?>" class="button primary hollow" title="<?php echo $link_title ?>">
-										<?php echo $button_text ?>
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
 				<?php	} ?>
 			<?php	} ?>
 			<ul class="main-slider-nav container">
@@ -61,6 +48,7 @@ get_header();
 							<?php $features = carbon_get_the_post_meta('crb_features');
 							if (!empty($features)) : foreach ($features as  $feature) { ?>
 									<div class="feature">
+										<?php echo wp_get_attachment_image($feature['icon'], $icon = false) ?>
 										<h3><?php echo $feature['title'] ?></h3>
 										<p><?php echo $feature['content'] ?></p>
 									</div>
@@ -161,12 +149,19 @@ get_header();
 				$projects = get_posts($args);
 				if (!empty($projects)) : ?>
 					<?php foreach ($projects as $key => $project) {
-						$link_url = esc_url(get_permalink($project)); ?>
+						$link_url = esc_url(get_permalink($project));
+						$categories = get_the_category($project->ID);
+					?>
 						<li class="project col-xs-6">
 							<figure>
 								<?php echo get_the_post_thumbnail($project->ID, [600, 600]); ?>
 							</figure>
 							<h3><?php echo $project->post_title; ?></h3>
+							<p>
+								<?php foreach ($categories as $key => $categ) : ?>
+									<?php echo $categ->cat_name . ($key + 1 < count($categories) ? ', ' : '') ?>
+								<?php endforeach; ?>
+							</p>
 							<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>" class="button secondary">
 								View Project
 							</a>
@@ -185,16 +180,17 @@ get_header();
 	</section>
 
 	<section class="about-us">
+		<?php
+		$about = get_page_by_path('about-us');
+		$link_url = esc_url(get_permalink($about)); ?>
 		<div class="container">
 			<div class="row">
-				<div class="image col-xs-4 col-xs-offset-1"></div>
+				<div class="image col-xs-4 col-xs-offset-1">
+					<?php echo get_the_post_thumbnail($about->ID, $icon = false); ?>
+				</div>
 				<div class="col-xs-5 col-xs-offset-1">
-					<?php
-					$about = get_page_by_path('about-us');
-					$link_url = esc_url(get_permalink($about)); ?>
-
 					<h2><?php echo $about->post_title; ?></h2>
-					<p><?php echo get_the_excerpt($about) ?></p>
+					<?php echo apply_filters('the_content', get_the_excerpt($about)) ?></p>
 					<a href="<?php echo $link_url; ?>" class="button secondary" title="<?php echo $about->post_title; ?>">Read More</a>
 				</div>
 			</div>

@@ -17,18 +17,10 @@ get_header(); ?>
   <section class="content">
     <div class="container">
       <header class="row">
-        <?php
-        $args = array(
-          'name'        => 'our-work',
-          'post_type'   => 'page',
-          'post_status' => 'publish',
-          'numberposts' => 1
-        );
-        $page = get_posts($args);
-        ?>
+        <?php $page = get_page_by_path('our-work'); ?>
         <div class="col-xs-8">
           <h5>Projects</h5>
-          <?php echo $page[0]->post_content; ?>
+          <?php echo $page->post_content; ?>
         </div>
       </header>
       <?php if (have_posts()) : ?>

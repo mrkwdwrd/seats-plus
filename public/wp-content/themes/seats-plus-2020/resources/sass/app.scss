@@ -135,7 +135,11 @@ main {
         .feature {
           width: 50%;
           flex: 0 0 50%;
-          padding-right: 4rem;
+          padding: 2rem 4rem 2rem 0;
+          img {
+            width: 70px;
+            height: auto;
+          }
         }
       }
     }

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main>
-	<header role="banner">
+	<header role="banner" <?php echo get_the_post_thumbnail() ? 'style="background-image: url(' . get_the_post_thumbnail_url() . ')"' : '' ?>>
 		<div class="container">
 			<nav class="breadcrumbs">
 				<?php the_breadcrumb(); ?>

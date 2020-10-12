@@ -1790,7 +1790,11 @@ main#home-page article .features {
 main#home-page article .features .feature {
   width: 50%;
   flex: 0 0 50%;
-  padding-right: 4rem;
+  padding: 2rem 4rem 2rem 0;
+}
+main#home-page article .features .feature img {
+  width: 70px;
+  height: auto;
 }
 main#home-page section.main-slider::after {
   content: "";

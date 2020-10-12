@@ -102,7 +102,7 @@
 					);
 					$related = get_posts($args);
 					// var_dump($related);
-					foreach ($related as $post) {
+					foreach ($related as $post) :
 						setup_postdata($post); ?>
 						<li <?php post_class(); ?>>
 							<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
@@ -110,7 +110,7 @@
 								<h2><?php the_title(); ?></h2>
 							</a>
 						</li>
-					<?php }
+					<?php endforeach;
 					wp_reset_postdata(); ?>
 				</ul>
 			</div>

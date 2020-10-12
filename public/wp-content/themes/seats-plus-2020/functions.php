@@ -399,6 +399,15 @@ function downloads_callback()
     echo '</ul>';
 }
 
+// Customise exceprt display
+function custom_excerpt_length($length)
+{
+    return 300;
+}
+function custom_excerpt_more($more)
+{
+    return '';
+}
 
 // Actions
 add_action('init', 'header_scripts');
@@ -412,7 +421,6 @@ add_action('init', 'register_projects');
 add_action('carbon_fields_register_fields', 'crb_attach_theme_options');
 add_action('after_setup_theme', 'crb_load');
 add_action('after_setup_theme', 'add_woocommerce_support');
-
 
 add_filter('woocommerce_product_tabs', 'woo_rename_tab');
 add_filter('woocommerce_product_tabs', 'woo_new_product_tab');
@@ -431,3 +439,6 @@ add_filter('get_the_archive_title', function ($title) {
     }
     return $title;
 });
+
+add_filter('excerpt_length', 'custom_excerpt_length');
+add_filter('excerpt_more', 'custom_excerpt_more');
