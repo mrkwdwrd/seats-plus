@@ -1,5 +1,3 @@
-require('./bootstrap');
-
 (function ($) {
 		$(function () {
 

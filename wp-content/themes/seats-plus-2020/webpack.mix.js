@@ -22,9 +22,11 @@ let options = {
 
 // Assets build
 mix.js('resources/js/app.js', 'js')
-  .extract(['lodash', 'slick-carousel', 'selectize'], 'js/vendor.js')
+  .extract(['slick-carousel', 'selectize'], 'js/vendor.js')
+  .copyDirectory('node_modules/selectize/dist', 'lib/selectize')
+  .copyDirectory('node_modules/slick-carousel/slick', 'lib/slick')
   .sass('resources/sass/vendor.scss', 'css')
-  .sass('resources/sass/app.scss', 'css/app.css')
+  .sass('resources/sass/app.scss', 'css')
   .options(options)
   .sourceMaps()
   .mergeManifest()
