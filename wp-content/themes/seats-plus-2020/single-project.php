@@ -39,24 +39,23 @@
 				</div>
 			</div>
 		</article>
-		<section class="project-slides">
+		<section class="project-image-slider">
 			<div class="container">
-				<?php
-				$slider = carbon_get_the_post_meta('crb_slides');
-				if (!empty($slider)) : ?>
-					<div class="project-slider">
-						<div class="slider">
-							<?php foreach ($slider as $key => $slide) { ?>
-								<div class="slide">
-									<figure>
+				<?php $slider = carbon_get_the_post_meta('crb_slides'); ?>
+				<?php if (!empty($slider)) : ?>
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<?php foreach ($slider as $key => $slide) : ?>
+								<div class="swiper-slide">
+									<figure style="background-image: url(<?php echo wp_get_attachment_url($slide['image'], $icon = false) ?>);">
 										<?php echo wp_get_attachment_image($slide['image'], $icon = false) ?>
 									</figure>
 								</div>
-							<?php } ?>
+								<?php endforeach; ?>;
 						</div>
-						<ul class="project-slider-nav">
-							<li><a class="previous">Previous</a></li>
-							<li><a class="next">Next</a></li>
+						<ul class="project-image-slider-nav">
+							<li><a class="swiper-button-prev">Previous</a></li>
+							<li><a class="swiper-button-next">Next</a></li>
 						</ul>
 					</div>
 				<?php endif; ?>

@@ -131,7 +131,7 @@ main {
     }
     article,
     section {
-      &.project-slides {
+      &.project-image-slider {
         background-color: $brand-black;
         position: relative;
         color: $white;
@@ -151,14 +151,6 @@ main {
         .container {
           position: relative;
           z-index: 1;
-          .project-slider {
-            margin: 0;
-            figure {
-              img {
-                height: auto;
-              }
-            }
-          }
         }
       }
       &.project-info {
