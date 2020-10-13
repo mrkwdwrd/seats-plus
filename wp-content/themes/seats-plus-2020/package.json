@@ -13,7 +13,6 @@
     "jquery": "^3.5.1",
     "laravel-mix": "^4.1.2",
     "laravel-mix-merge-manifest": "^0.1.2",
-    "lodash": "^4.17.20",
     "normalize.css": "^8.0.1",
     "ora": "^3.4.0",
     "postcss": "^7.0.17",
@@ -21,7 +20,7 @@
     "sass": "^1.22.5",
     "sass-loader": "7.*",
     "selectize": "^0.12.6",
-    "slick-carousel": "^1.8.1"
+    "swiper": "^6.3.3"
   },
   "devDependencies": {
     "vue-template-compiler": "^2.6.12"

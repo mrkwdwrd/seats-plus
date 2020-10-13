@@ -5,17 +5,66 @@ get_header();
 
 <main id="home-page" role="main">
 	<section class="main-slider">
-		<?php
-		$slider = carbon_get_the_post_meta('crb_slides');
-		if (!empty($slider)) { ?>
-			<div class="slider">
+
+		<?php $slider = carbon_get_the_post_meta('crb_slides');
+		if (!empty($slider)) : ?>
+
+			<!-- Slider main container -->
+			<div class="swiper-container">
+
+				<!-- Additional required wrapper -->
+				<div class="swiper-wrapper">
+
+					<!-- Slides -->
+					<?php foreach ($slider as $key => $slide) : ?>
+
+						<?php
+						$caption = $slide['crb_caption'];
+						$link_url = esc_url(get_permalink($slide['crb_association'][0]['id']));
+						$link_title = get_the_title($slide['crb_association'][0]['id']);
+						$button_text = $slide['button_text'];
+						?>
+
+						<div class="swiper-slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
+							<div class="container">
+								<div class="row content">
+									<div class="col-xs-5">
+										<h5><?php echo $link_title ?></h5>
+										<h2><?php echo $caption ?></h2>
+										<a href="<?php echo $link_url ?>" class="button primary hollow" title="<?php echo $link_title ?>">
+											<?php echo $button_text ?>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</div>
+
+				<!-- If we need pagination -->
+				<div class="swiper-pagination"></div>
+
+				<ul class="main-slider-nav container">
+					<li><a class="swiper-button-next">Next</a></li>
+					<li><a class="swiper-button-prev">Previous</a></li>
+				</ul>
+
+			</div>
+		<?php endif; ?>
+		<!-- <?php
+					$slider = carbon_get_the_post_meta('crb_slides');
+					if (!empty($slider)) { ?>
+			<div class="slider swiper-wrapper">
 				<?php foreach ($slider as $key => $slide) {
-					$caption = $slide['crb_caption'];
-					$link_url = esc_url(get_permalink($slide['crb_association'][0]['id']));
-					$link_title = get_the_title($slide['crb_association'][0]['id']);
-					$button_text = $slide['button_text'];
+							$caption = $slide['crb_caption'];
+							$link_url = esc_url(get_permalink($slide['crb_association'][0]['id']));
+							$link_title = get_the_title($slide['crb_association'][0]['id']);
+							$button_text = $slide['button_text'];
 				?>
-					<div class="slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
+					<div class="slide swiper-slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
+
+					</div>
+					<div class="slide swiper-slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
 						<div class="container">
 							<div class="row content">
 								<div class="col-xs-5">
@@ -29,11 +78,9 @@ get_header();
 						</div>
 					</div>
 				<?php	} ?>
-			<?php	} ?>
-			<ul class="main-slider-nav container">
-				<li><a class="next">Next</a></li>
-				<li><a class="previous">Previous</a></li>
-			</ul>
+			</div>
+		<?php	} ?> -->
+
 	</section>
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>

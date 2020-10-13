@@ -20,13 +20,16 @@ let options = {
   processCssUrls: false
 }
 
+mix.setPublicPath(path.resolve('./'));
+
 // Assets build
 mix.js('resources/js/app.js', 'js')
-  .extract(['slick-carousel', 'selectize'], 'js/vendor.js')
+  .extract(['swiper', 'selectize'], 'js/vendor.js')
   .copyDirectory('node_modules/selectize/dist', 'lib/selectize')
-  .copyDirectory('node_modules/slick-carousel/slick', 'lib/slick')
+  .copyDirectory('node_modules/swiper', 'lib/swiper')
   .sass('resources/sass/vendor.scss', 'css')
   .sass('resources/sass/app.scss', 'css')
+  .version()
   .options(options)
   .sourceMaps()
   .mergeManifest()
