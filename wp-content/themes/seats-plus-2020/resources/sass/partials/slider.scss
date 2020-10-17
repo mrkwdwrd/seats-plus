@@ -140,7 +140,8 @@
   }
 }
 ul.product-category-slider-nav,
-ul.project-image-slider-nav {
+ul.project-image-slider-nav,
+ul.product-image-slider-nav {
   padding: 0;
   margin: 0;
     li {
@@ -182,6 +183,21 @@ ul.project-image-slider-nav {
         height: 46px;
         width: 46px;
         background-color: $brand-black;
+        mask-size: 14px;
+      }
+    }
+  }
+
+  ul.product-image-slider-nav {
+    margin-top: 35px;
+    li {
+      background-color: $brand-blue;
+      height: 46px;
+      width: 46px;
+      a {
+        height: 46px;
+        width: 46px;
+        background-color: $white;
         mask-size: 14px;
       }
     }

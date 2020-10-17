@@ -42,6 +42,19 @@ import selectize from 'selectize';
 			}
 		});
 
+		let productImageSlider = new Swiper('.product-image-slider .swiper-container', {
+			autoplay: {
+				delay: 4000,
+			},
+			speed: 500,
+			loop: false,
+			slidesPerView: 1,
+			navigation: {
+				nextEl: '.product-image-slider-nav .swiper-button-next',
+				prevEl: '.product-image-slider-nav .swiper-button-prev'
+			}
+		});
+
 		let projectImageSlider = new Swiper('.project-image-slider .swiper-container', {
 			// autoplay: {
 			// 	delay: 4000,

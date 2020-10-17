@@ -442,3 +442,11 @@ add_filter('get_the_archive_title', function ($title) {
 
 add_filter('excerpt_length', 'custom_excerpt_length');
 add_filter('excerpt_more', 'custom_excerpt_more');
+
+add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
+    return array(
+        'width' => 900,
+        'height' => 600,
+        'crop' => 0,
+    );
+});
