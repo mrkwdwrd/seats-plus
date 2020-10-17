@@ -369,9 +369,9 @@ main {
   }
   &#colour-chart {
     .colour-swatch {
-      padding: 10px;
+      margin: 5px;
       background-color: $white;
-      box-shadow: 5px 5px 5px rgba($brand-black, 0.5);
+      box-shadow: 1px 1px 5px rgba($brand-black, 0.25);
       figure {
         width: 100%;
         padding-top: 100%;

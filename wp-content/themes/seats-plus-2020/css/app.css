@@ -1798,9 +1798,9 @@ main#home-page section.get-a-quote {
   background-image: url("/wp-content/themes/seats-plus-2020/images/get-a-quote-bg.jpg");
 }
 main#colour-chart .colour-swatch {
-  padding: 10px;
+  margin: 5px;
   background-color: #FFFFFF;
-  box-shadow: 5px 5px 5px rgba(44, 56, 61, 0.5);
+  box-shadow: 1px 1px 5px rgba(44, 56, 61, 0.25);
 }
 main#colour-chart .colour-swatch figure {
   width: 100%;
