@@ -837,6 +837,39 @@ nav.main ul > li > a:hover::after {
 .main-slider .swiper-container .swiper-slide .content .button {
   color: #FFFFFF;
 }
+.main-slider div.main-slider-pagination {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% - 100px);
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: left;
+}
+.main-slider div.main-slider-pagination .swiper-pagination {
+  color: #FFFFFF;
+  position: static;
+  text-align: left;
+  font-size: 16px;
+}
+.main-slider div.main-slider-pagination .swiper-pagination i {
+  font-style: normal;
+}
+.main-slider div.main-slider-pagination .swiper-pagination i.curr {
+  font-weight: 600;
+}
+.main-slider div.main-slider-pagination .swiper-pagination i.curr::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  border-top: 1px solid #FFFFFF;
+  margin-left: 10px;
+  height: 0.35em;
+}
+.main-slider div.main-slider-pagination .swiper-pagination i.tot {
+  padding-left: 10px;
+  opacity: 0.7;
+}
 .main-slider ul.main-slider-nav {
   position: absolute;
   z-index: 10;

@@ -33,9 +33,9 @@ get_header();
 						</div>
 					<?php endforeach; ?>
 				</div>
-
-				<div class="swiper-pagination"></div>
-
+				<div class="main-slider-pagination container">
+					<div class="swiper-pagination"></div>
+				</div>
 				<ul class="main-slider-nav container">
 					<li><a class="swiper-button-next">Next</a></li>
 					<li><a class="swiper-button-prev">Previous</a></li>
