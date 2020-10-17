@@ -90,7 +90,7 @@ import selectize from 'selectize';
 
 		$(document).on('click', '.add-to-cart .quantity .pseudo-qty button', function (e) {
 			e.preventDefault();
-			$qty = parseInt($('.add-to-cart .quantity input.qty').val());
+			let $qty = parseInt($('.add-to-cart .quantity input.qty').val());
 			if ($(this).hasClass('qty-dec')) {
 				$('.add-to-cart .quantity input.qty').val($qty - 1 > 0 ? $qty - 1 : 1);
 			} else {

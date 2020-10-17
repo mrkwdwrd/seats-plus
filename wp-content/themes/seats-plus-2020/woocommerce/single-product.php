@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main id="product-single">
-	<header role="banner">
+	<header role="banner" <?php echo get_the_post_thumbnail() ? 'style="background-image: url(' . get_the_post_thumbnail_url() . ')"' : '' ?>>
 		<div class="container">
 			<?php woocommerce_breadcrumb(); ?>
 			<h2><?php the_title(); ?></h2>
