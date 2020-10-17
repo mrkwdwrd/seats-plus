@@ -918,19 +918,23 @@ nav.main ul > li > a:hover::after {
 }
 
 .product-category-slider,
-.project-image-slider {
+.project-image-slider,
+.realted-product-slider {
   margin: 55px 0 20px;
 }
 .product-category-slider .swiper-container,
-.project-image-slider .swiper-container {
+.project-image-slider .swiper-container,
+.realted-product-slider .swiper-container {
   overflow: visible;
 }
 .product-category-slider .swiper-container .swiper-slide figure,
-.project-image-slider .swiper-container .swiper-slide figure {
+.project-image-slider .swiper-container .swiper-slide figure,
+.realted-product-slider .swiper-container .swiper-slide figure {
   background-color: #A5B2B7;
 }
 .product-category-slider .swiper-container .swiper-slide h3 a,
-.project-image-slider .swiper-container .swiper-slide h3 a {
+.project-image-slider .swiper-container .swiper-slide h3 a,
+.realted-product-slider .swiper-container .swiper-slide h3 a {
   color: #2C383D;
 }
 
@@ -1291,11 +1295,11 @@ main#product-single section.product-content ul.tabs li a {
   padding: 2em;
   color: inherit;
 }
-main#product-single section.product-related header {
+main#product-single section.related header {
   text-align: center;
   padding-bottom: 55px;
 }
-main#product-single section.product-related header h5 {
+main#product-single section.related header h5 {
   color: #00ADEE;
 }
 

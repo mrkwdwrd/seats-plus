@@ -55,6 +55,21 @@ import selectize from 'selectize';
 			}
 		});
 
+		let relatedProductSlider = new Swiper('.related-product-slider .swiper-container', {
+			autoplay: {
+				delay: 4000,
+			},
+			speed: 500,
+			loop: false,
+			slidesPerView: 3,
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.related-product-slider-nav .swiper-button-next',
+				prevEl: '.related-product-slider-nav .swiper-button-prev'
+			}
+		});
+
+
 		let projectImageSlider = new Swiper('.project-image-slider .swiper-container', {
 			// autoplay: {
 			// 	delay: 4000,

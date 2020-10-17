@@ -44,8 +44,4 @@ if (post_password_required()) {
   </div>
 </section>
 
-<section class="product-related">
-  <div class="container">
-    <?php woocommerce_output_related_products(); ?>
-  </div>
-</section>
+<?php woocommerce_output_related_products(); ?>

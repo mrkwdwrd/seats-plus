@@ -32,5 +32,5 @@ if ($gallery_image_ids = $product->get_gallery_image_ids()) : ?>
 		<li><a class="swiper-button-next">Next</a></li>
 	</ul>
 <?php else : ?>
-	<?php echo apply_filters('woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id); ?>
+	<?php echo apply_filters('woocommerce_single_product_image_html', $html, $post_thumbnail_id); ?>
 <?php endif; ?>

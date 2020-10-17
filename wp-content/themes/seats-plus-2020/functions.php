@@ -443,10 +443,20 @@ add_filter('get_the_archive_title', function ($title) {
 add_filter('excerpt_length', 'custom_excerpt_length');
 add_filter('excerpt_more', 'custom_excerpt_more');
 
-add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
+add_filter('woocommerce_get_image_size_gallery_thumbnail', function () {
     return array(
         'width' => 900,
         'height' => 600,
-        'crop' => 0,
+        'crop' => 1,
     );
+});
+
+add_filter('woocommerce_output_related_products_args', function () {
+    return array(
+        'posts_per_page' => 6
+    );
+});
+
+add_filter('woocommerce_single_product_image_thumbnail_html', function ($html) {
+    return preg_replace("!<(a|/a).*?>!", '', $html);
 });
