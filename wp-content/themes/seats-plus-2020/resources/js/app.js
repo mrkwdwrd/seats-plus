@@ -69,6 +69,20 @@ import selectize from 'selectize';
 			}
 		});
 
+		let relatedProjectSlider = new Swiper('.project-slider .swiper-container', {
+			autoplay: {
+				delay: 4000,
+			},
+			speed: 500,
+			loop: false,
+			slidesPerView: 3,
+			spaceBetween: 30,
+			navigation: {
+				nextEl: '.project-slider-nav .swiper-button-next',
+				prevEl: '.project-slider-nav .swiper-button-prev'
+			}
+		});
+
 
 		let projectImageSlider = new Swiper('.project-image-slider .swiper-container', {
 			// autoplay: {

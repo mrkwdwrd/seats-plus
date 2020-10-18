@@ -173,27 +173,10 @@ main {
             color: $brand-blue;
           }
         }
-        ul.projects {
-          li {
-            list-style: none;
-            float: left;
-            margin: 0 3.8% 2.992em 0;
-            padding: 0;
-            position: relative;
-            width: 22.05%;
-            margin-left: 0;
-            img {
-              width: 100%;
-              height: auto;
-              display: block;
-              margin: 0 0 1em;
-            }
-            h2 {
-              padding: .5em 0;
-              margin: 0;
-              font-size: 1em;
-            }
-          }
+        .swiper-slide figure {
+          height: 345px;
+          width: 100%;
+          max-width: 460px;
         }
       }
     }

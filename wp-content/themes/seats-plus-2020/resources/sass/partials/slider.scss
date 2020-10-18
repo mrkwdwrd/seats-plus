@@ -100,6 +100,7 @@
 
 .product-category-slider,
 .product-slider,
+.project-slider,
 .project-image-slider {
     margin: 55px 0 20px;
     .swiper-container  {
@@ -147,8 +148,9 @@
 }
 ul.product-category-slider-nav,
 ul.product-slider-nav,
-ul.project-image-slider-nav,
-ul.product-image-slider-nav {
+ul.project-slider-nav,
+ul.product-image-slider-nav,
+ul.project-image-slider-nav {
   padding: 0;
   margin: 0;
     li {
@@ -180,7 +182,7 @@ ul.product-image-slider-nav {
       }
     }
   }
-  ul.project-slider-nav {
+  ul.project-image-slider-nav {
     margin-top: 55px;
     li {
       background-color: $white;
@@ -191,6 +193,7 @@ ul.product-image-slider-nav {
   }
 
   ul.product-slider-nav,
+  ul.project-slider-nav,
   ul.product-image-slider-nav {
     margin-top: 35px;
     li {

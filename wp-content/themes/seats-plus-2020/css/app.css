@@ -919,16 +919,19 @@ nav.main ul > li > a:hover::after {
 
 .product-category-slider,
 .product-slider,
+.project-slider,
 .project-image-slider {
   margin: 55px 0 20px;
 }
 .product-category-slider .swiper-container,
 .product-slider .swiper-container,
+.project-slider .swiper-container,
 .project-image-slider .swiper-container {
   overflow: visible;
 }
 .product-category-slider .swiper-container .swiper-slide figure,
 .product-slider .swiper-container .swiper-slide figure,
+.project-slider .swiper-container .swiper-slide figure,
 .project-image-slider .swiper-container .swiper-slide figure {
   background-color: #A5B2B7;
   background-position: center center;
@@ -939,6 +942,8 @@ nav.main ul > li > a:hover::after {
 .product-category-slider .swiper-container .swiper-slide h3 a,
 .product-slider .swiper-container .swiper-slide h3,
 .product-slider .swiper-container .swiper-slide h3 a,
+.project-slider .swiper-container .swiper-slide h3,
+.project-slider .swiper-container .swiper-slide h3 a,
 .project-image-slider .swiper-container .swiper-slide h3,
 .project-image-slider .swiper-container .swiper-slide h3 a {
   color: #2C383D;
@@ -962,15 +967,17 @@ nav.main ul > li > a:hover::after {
 
 ul.product-category-slider-nav,
 ul.product-slider-nav,
-ul.project-image-slider-nav,
-ul.product-image-slider-nav {
+ul.project-slider-nav,
+ul.product-image-slider-nav,
+ul.project-image-slider-nav {
   padding: 0;
   margin: 0;
 }
 ul.product-category-slider-nav li,
 ul.product-slider-nav li,
-ul.project-image-slider-nav li,
-ul.product-image-slider-nav li {
+ul.project-slider-nav li,
+ul.product-image-slider-nav li,
+ul.project-image-slider-nav li {
   display: block;
   background-color: #EE3829;
   border-radius: 50%;
@@ -982,8 +989,9 @@ ul.product-image-slider-nav li {
 }
 ul.product-category-slider-nav li a,
 ul.product-slider-nav li a,
-ul.project-image-slider-nav li a,
-ul.product-image-slider-nav li a {
+ul.project-slider-nav li a,
+ul.product-image-slider-nav li a,
+ul.project-image-slider-nav li a {
   left: 0;
   position: absolute;
   cursor: pointer;
@@ -1004,30 +1012,34 @@ ul.product-image-slider-nav li a {
 }
 ul.product-category-slider-nav li a.swiper-button-prev,
 ul.product-slider-nav li a.swiper-button-prev,
-ul.project-image-slider-nav li a.swiper-button-prev,
-ul.product-image-slider-nav li a.swiper-button-prev {
+ul.project-slider-nav li a.swiper-button-prev,
+ul.product-image-slider-nav li a.swiper-button-prev,
+ul.project-image-slider-nav li a.swiper-button-prev {
   transform: rotate(180deg);
 }
 
-ul.project-slider-nav {
+ul.project-image-slider-nav {
   margin-top: 55px;
 }
-ul.project-slider-nav li {
+ul.project-image-slider-nav li {
   background-color: #FFFFFF;
 }
-ul.project-slider-nav li a {
+ul.project-image-slider-nav li a {
   background-color: #2C383D;
 }
 
 ul.product-slider-nav,
+ul.project-slider-nav,
 ul.product-image-slider-nav {
   margin-top: 35px;
 }
 ul.product-slider-nav li,
+ul.project-slider-nav li,
 ul.product-image-slider-nav li {
   background-color: #00ADEE;
 }
 ul.product-slider-nav li a,
+ul.project-slider-nav li a,
 ul.product-image-slider-nav li a {
   background-color: #FFFFFF;
 }
@@ -1494,28 +1506,11 @@ main#project-single article.related header h5,
 main#project-single section.related header h5 {
   color: #00ADEE;
 }
-main#project-single article.related ul.projects li,
-main#project-single section.related ul.projects li {
-  list-style: none;
-  float: left;
-  margin: 0 3.8% 2.992em 0;
-  padding: 0;
-  position: relative;
-  width: 22.05%;
-  margin-left: 0;
-}
-main#project-single article.related ul.projects li img,
-main#project-single section.related ul.projects li img {
+main#project-single article.related .swiper-slide figure,
+main#project-single section.related .swiper-slide figure {
+  height: 345px;
   width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 0 1em;
-}
-main#project-single article.related ul.projects li h2,
-main#project-single section.related ul.projects li h2 {
-  padding: 0.5em 0;
-  margin: 0;
-  font-size: 1em;
+  max-width: 460px;
 }
 
 body {

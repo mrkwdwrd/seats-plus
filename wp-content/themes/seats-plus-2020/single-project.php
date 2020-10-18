@@ -85,34 +85,45 @@
 			</div>
 		</section>
 		<section class="related projects">
-			<header class="row">
-				<div class="col-xs-12">
-					<h5>Releated Projects</h5>
-					<h2>You may also like</h2>
+			<div class="container">
+				<header class="row">
+					<div class="col-xs-12">
+						<h5>Releated Projects</h5>
+						<h2>You may also like</h2>
+					</div>
+				</header>
+
+				<div class="project-slider">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<?php
+							$args = array(
+								'post_type' => 'project',
+								'order'    => 'ASC',
+								'numberposts' => 6
+							);
+							$related_projects = get_posts($args);
+							foreach ($related_projects as $project) :
+								$post_thumbnail_id = get_post_thumbnail_id($project->ID); ?>
+								<div class="swiper-slide">
+									<?php $post_object = get_post($project->ID);
+									setup_postdata($GLOBALS['post'] = &$post_object); ?>
+
+									<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+										<figure style="background-image: url('<?php echo get_the_post_thumbnail_url($project->ID); ?>')">
+										</figure>
+										<h3><?php the_title(); ?></h3>
+									</a>
+								</div>
+							<?php endforeach;
+							wp_reset_postdata(); ?>
+						</div>
+					</div>
+					<ul class="project-slider-nav">
+						<li><a class="swiper-button-prev">Previous</a></li>
+						<li><a class="swiper-button-next">Next</a></li>
+					</ul>
 				</div>
-			</header>
-			<div class="row">
-				<ul class="projects columns-4">
-					<?php
-					$args = array(
-						'post_type' => 'project',
-						'order'    => 'ASC',
-						'numberposts' => 5
-					);
-					$related = get_posts($args);
-					// var_dump($related);
-					foreach ($related as $post) :
-						setup_postdata($post); ?>
-						<li <?php post_class(); ?>>
-							<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-								<?php echo the_post_thumbnail(); ?>
-								<h2><?php the_title(); ?></h2>
-							</a>
-						</li>
-					<?php endforeach;
-					wp_reset_postdata(); ?>
-				</ul>
-			</div>
 		</section>
 	<?php endwhile; ?>
 
