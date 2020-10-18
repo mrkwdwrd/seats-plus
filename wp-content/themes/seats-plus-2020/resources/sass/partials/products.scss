@@ -214,6 +214,26 @@ main {
             }
           }
         }
+        table.woocommerce-product-attributes {
+          border-collapse: collapse;
+          tr {
+            th, td {
+              font-style: normal;
+              background: none;
+              vertical-align: top;
+              padding: 20px 10px;
+              p {
+                font-size: 13px;
+                padding: 0;
+              }
+            }
+            &:nth-of-type(even) {
+              th, td {
+                background: $white;
+              }
+            }
+          }
+        }
       }
       &.related {
         header {

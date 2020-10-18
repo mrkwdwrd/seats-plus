@@ -95,8 +95,11 @@ get_header();
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							<?php foreach ($product_categories as $key => $category) : ?>
+								<?php $thumbnail_id =  get_term_meta($category->term_id, 'thumbnail_id', true);
+								$image = wp_get_attachment_url($thumbnail_id); ?>
 								<div class="swiper-slide">
-									<figure></figure>
+									<figure style="background-image: url('<?php echo $image ?>')">
+									</figure>
 									<h3>
 										<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
 											<?php echo $category->name ?>

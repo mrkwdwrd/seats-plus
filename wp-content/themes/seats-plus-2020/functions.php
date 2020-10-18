@@ -445,8 +445,15 @@ add_filter('excerpt_more', 'custom_excerpt_more');
 
 add_filter('woocommerce_get_image_size_gallery_thumbnail', function () {
     return array(
-        'width' => 900,
-        'height' => 600,
+        'width' => 1200,
+        'height' => 900,
+        'crop' => 1,
+    );
+});
+add_filter('woocommerce_get_image_size_thumbnail', function () {
+    return array(
+        'width' => 920,
+        'height' => 690,
         'crop' => 1,
     );
 });
@@ -460,3 +467,16 @@ add_filter('woocommerce_output_related_products_args', function () {
 add_filter('woocommerce_single_product_image_thumbnail_html', function ($html) {
     return preg_replace("!<(a|/a).*?>!", '', $html);
 });
+
+add_filter('woocommerce_placeholder_img_src', function () {
+    $theme = get_stylesheet_directory_uri();
+    return $theme . '/images/placeholder.png';
+});
+
+add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
+
+function custom_woocommerce_placeholder_img_src($src)
+{
+    $theme = get_stylesheet_directory_uri();
+    return $theme . '/images/placeholder.png';
+}

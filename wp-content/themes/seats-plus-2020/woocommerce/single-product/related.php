@@ -11,25 +11,29 @@ if ($related_products) : ?>
 					</div>
 				</header>
 			<?php endif; ?>
-			<div class="product-category-slider">
+			<div class="product-slider">
 				<div class="swiper-container">
 					<div class="swiper-wrapper">
 						<?php foreach ($related_products as $related_product) :
 							$post_thumbnail_id = $related_product->get_image_id(); ?>
 							<div class="swiper-slide">
-
 								<?php $post_object = get_post($related_product->get_id());
 								setup_postdata($GLOBALS['post'] = &$post_object); ?>
 
-
 								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-									<?php echo apply_filters('woocommerce_single_product_image_thumbnail_html', woocommerce_get_product_thumbnail($post_thumbnail_id), $post_thumbnail_id); ?>
-									<h2><?php the_title(); ?></h2>
+									<figure>
+										<?php echo apply_filters('woocommerce_single_product_image_thumbnail_html', woocommerce_get_product_thumbnail($post_thumbnail_id, true), $post_thumbnail_id); ?>
+									</figure>
+									<h3><?php the_title(); ?></h3>
 								</a>
 							</div>
 						<?php endforeach; ?>
 					</div>
 				</div>
+				<ul class="product-slider-nav">
+					<li><a class="swiper-button-prev">Previous</a></li>
+					<li><a class="swiper-button-next">Next</a></li>
+				</ul>
 			</div>
 		</div>
 	</section>

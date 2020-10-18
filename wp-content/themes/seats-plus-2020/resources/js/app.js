@@ -55,7 +55,7 @@ import selectize from 'selectize';
 			}
 		});
 
-		let relatedProductSlider = new Swiper('.related-product-slider .swiper-container', {
+		let relatedProductSlider = new Swiper('.product-slider .swiper-container', {
 			autoplay: {
 				delay: 4000,
 			},
@@ -64,8 +64,8 @@ import selectize from 'selectize';
 			slidesPerView: 3,
 			spaceBetween: 30,
 			navigation: {
-				nextEl: '.related-product-slider-nav .swiper-button-next',
-				prevEl: '.related-product-slider-nav .swiper-button-prev'
+				nextEl: '.product-slider-nav .swiper-button-next',
+				prevEl: '.product-slider-nav .swiper-button-prev'
 			}
 		});
 
