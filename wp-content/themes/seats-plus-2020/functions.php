@@ -353,6 +353,19 @@ function crb_attach_theme_options()
                     Field::make('image', 'image'),
                 ])->set_layout('tabbed-horizontal'),
         ]);
+
+    // FAQs
+    Container::make('post_meta', 'FAQs')
+        ->where('post_type', '=', 'page')
+        ->where('post_template', '=', 'template-faqs.php')
+        ->add_fields([
+            Field::make('complex', 'crb_faqs', '')
+                ->add_fields([
+                    Field::make('text', 'title'),
+                    Field::make('rich_text', 'content'),
+                ])
+                ->set_layout('grid')
+        ]);
 }
 
 function crb_load()
