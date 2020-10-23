@@ -384,6 +384,61 @@ main {
       }
     }
   }
+  &#faqs {
+    ul.accordion {
+      max-width: 980px;
+      margin: 0 auto 80px;
+      li {
+        list-style: none;
+        padding: 0;
+        margin: 5px 0;
+        .title {
+          position: relative;
+          cursor: pointer;
+          background: rgba($cool-grey, 0.5);
+          border-radius: 5px;
+          padding: 0 1em;
+          h3 {
+            margin: 0;
+          }
+          &::after {
+            content: '';
+            display: block;
+            background: $brand-black;
+            height: 100%;
+            width: 1em;
+            position: absolute;
+            right: 1em;
+            top: 0;
+            transition: 0.5s;
+            mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><polygon points="10,17 1,3 19,3 "/></svg>');
+            mask-position: center center;
+            mask-repeat: no-repeat;
+          }
+        }
+        .content {
+          display: block;
+          overflow: hidden;
+          max-height: 0;
+          transition: 1s;
+          opacity: 0;
+          padding: 0 1em;
+        }
+        &.active {
+          .title {
+            background: rgba($brand-blue, 0.5);
+            &::after {
+              transform: rotate(180deg);
+            }
+          }
+          .content {
+            max-height: 100vh;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
 }
 
 .notice-wrapper {
@@ -440,8 +495,4 @@ main {
     top: 0;
     opacity: 1;
   }
-}
-.woocommerce-cart-form {
-  width: 100%;
-  clear: both;
 }

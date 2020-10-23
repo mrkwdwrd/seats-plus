@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-<main id="colour-chart">
+<main id="faqs">
 	<header role="banner">
 		<div class="container">
 			<nav class="breadcrumbs">
@@ -29,9 +29,9 @@ get_header();
 					</div>
 
 					<?php $faqs = carbon_get_the_post_meta('crb_faqs');	?>
-					<ol class="accordion row">
+					<ul class="accordion">
 						<?php foreach ($faqs as $key => $faq) : ?>
-							<li class="col-xs-12">
+							<li>
 								<div class="title">
 									<h3><?php echo $faq['title']; ?></h3>
 								</div>
@@ -40,7 +40,7 @@ get_header();
 								</div>
 							</li>
 						<?php endforeach; ?>
-					</ol>
+						</ol>
 		</div>
 	<?php endwhile; ?>
 

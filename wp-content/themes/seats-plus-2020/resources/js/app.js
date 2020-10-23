@@ -127,6 +127,10 @@ import selectize from 'selectize';
 			}
 			$('.add-to-cart .quantity .pseudo-qty input').val($('.add-to-cart .quantity input.qty').val());
 		});
+
+		$(document).on('click', 'ul.accordion li > .title', function () {
+			$(this).parent('li').toggleClass('active');
+		});
 	});
 
 	function pad(n, width, z) {
