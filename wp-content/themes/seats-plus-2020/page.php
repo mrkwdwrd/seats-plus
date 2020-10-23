@@ -13,9 +13,9 @@
 		<div class="container">
 			<div class="row">
 				<h1><?php the_title(); ?></h1>
-
-				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+			</div>
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<div class="row">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 							<?php the_content(); ?>
 							<?php edit_post_link(); ?>
@@ -28,9 +28,9 @@
 					<article>
 						<h2><?php _e('Sorry, nothing to display.'); ?></h2>
 					</article>
-
+					</div>
 				<?php endif; ?>
-			</div>
+		</div>
 		</div>
 	</section>
 </main>

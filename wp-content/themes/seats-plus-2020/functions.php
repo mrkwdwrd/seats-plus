@@ -487,9 +487,26 @@ add_filter('woocommerce_placeholder_img_src', function () {
 });
 
 add_filter('woocommerce_placeholder_img_src', 'custom_woocommerce_placeholder_img_src');
-
 function custom_woocommerce_placeholder_img_src($src)
 {
     $theme = get_stylesheet_directory_uri();
     return $theme . '/images/placeholder.png';
 }
+
+add_filter('woocommerce_product_single_add_to_cart_text', 'custom_single_add_to_cart_text');
+function custom_single_add_to_cart_text()
+{
+    return 'Add To Quote';
+}
+
+add_filter('gettext', 'replace_text');
+add_filter('ngettext', 'replace_text');
+function replace_text($replaced)
+{
+    return str_ireplace('cart', 'quote', $replaced);
+}
+
+remove_action('woocommerce_before_shop_loop', 'wc_print_notices', 10); /*Archive Product*/
+remove_action('woocommerce_before_single_product', 'wc_print_notices', 10); /*Single Product*/
+remove_action('woocommerce_before_cart', 'wc_print_notices', 10); /*Single Product*/
+remove_action('storefront_content_top', 'storefront_shop_messages', 1);

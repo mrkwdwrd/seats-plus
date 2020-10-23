@@ -488,6 +488,7 @@ main p, main li {
   font-size: 1.25rem;
 }
 
+.woocommerce-checkout .wc-proceed-to-checkout a.button,
 .woocommerce-page input#submit,
 .woocommerce-page input.button,
 .woocommerce-page a.button,
@@ -500,21 +501,34 @@ main p, main li {
 .woocommerce button,
 button,
 .button {
-  background-color: transparent;
+  background: none !important;
   border-radius: 0;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.primary, .woocommerce-checkout .wc-proceed-to-checkout a.button.checkout-button,
 .woocommerce-page input#submit.primary,
+.woocommerce-page input#submit.checkout-button,
 .woocommerce-page input.button.primary,
+.woocommerce-page input.button.checkout-button,
 .woocommerce-page a.button.primary,
+.woocommerce-page a.button.checkout-button,
 .woocommerce-page button.button.primary,
+.woocommerce-page button.button.checkout-button,
 .woocommerce-page button.primary,
+.woocommerce-page button.checkout-button,
 .woocommerce input#submit.primary,
+.woocommerce input#submit.checkout-button,
 .woocommerce input.button.primary,
+.woocommerce input.button.checkout-button,
 .woocommerce a.button.primary,
+.woocommerce a.button.checkout-button,
 .woocommerce button.button.primary,
+.woocommerce button.button.checkout-button,
 .woocommerce button.primary,
+.woocommerce button.checkout-button,
 button.primary,
-.button.primary {
+button.checkout-button,
+.button.primary,
+.button.checkout-button {
   position: relative;
   display: inline-block;
   width: auto;
@@ -525,18 +539,31 @@ button.primary,
   text-decoration: none;
   z-index: 1;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.primary::before, .woocommerce-checkout .wc-proceed-to-checkout a.button.checkout-button::before,
 .woocommerce-page input#submit.primary::before,
+.woocommerce-page input#submit.checkout-button::before,
 .woocommerce-page input.button.primary::before,
+.woocommerce-page input.button.checkout-button::before,
 .woocommerce-page a.button.primary::before,
+.woocommerce-page a.button.checkout-button::before,
 .woocommerce-page button.button.primary::before,
+.woocommerce-page button.button.checkout-button::before,
 .woocommerce-page button.primary::before,
+.woocommerce-page button.checkout-button::before,
 .woocommerce input#submit.primary::before,
+.woocommerce input#submit.checkout-button::before,
 .woocommerce input.button.primary::before,
+.woocommerce input.button.checkout-button::before,
 .woocommerce a.button.primary::before,
+.woocommerce a.button.checkout-button::before,
 .woocommerce button.button.primary::before,
+.woocommerce button.button.checkout-button::before,
 .woocommerce button.primary::before,
+.woocommerce button.checkout-button::before,
 button.primary::before,
-.button.primary::before {
+button.checkout-button::before,
+.button.primary::before,
+.button.checkout-button::before {
   content: "";
   display: block;
   position: absolute;
@@ -548,35 +575,62 @@ button.primary::before,
   transform: skew(-10deg);
   z-index: -1;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.primary.hollow::before, .woocommerce-checkout .wc-proceed-to-checkout a.button.checkout-button.hollow::before,
 .woocommerce-page input#submit.primary.hollow::before,
+.woocommerce-page input#submit.checkout-button.hollow::before,
 .woocommerce-page input.button.primary.hollow::before,
+.woocommerce-page input.button.checkout-button.hollow::before,
 .woocommerce-page a.button.primary.hollow::before,
+.woocommerce-page a.button.checkout-button.hollow::before,
 .woocommerce-page button.button.primary.hollow::before,
+.woocommerce-page button.button.checkout-button.hollow::before,
 .woocommerce-page button.primary.hollow::before,
+.woocommerce-page button.checkout-button.hollow::before,
 .woocommerce input#submit.primary.hollow::before,
+.woocommerce input#submit.checkout-button.hollow::before,
 .woocommerce input.button.primary.hollow::before,
+.woocommerce input.button.checkout-button.hollow::before,
 .woocommerce a.button.primary.hollow::before,
+.woocommerce a.button.checkout-button.hollow::before,
 .woocommerce button.button.primary.hollow::before,
+.woocommerce button.button.checkout-button.hollow::before,
 .woocommerce button.primary.hollow::before,
+.woocommerce button.checkout-button.hollow::before,
 button.primary.hollow::before,
-.button.primary.hollow::before {
+button.checkout-button.hollow::before,
+.button.primary.hollow::before,
+.button.checkout-button.hollow::before {
   background: transparent;
   border: 1px solid;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.primary:hover, .woocommerce-checkout .wc-proceed-to-checkout a.button.checkout-button:hover,
 .woocommerce-page input#submit.primary:hover,
+.woocommerce-page input#submit.checkout-button:hover,
 .woocommerce-page input.button.primary:hover,
+.woocommerce-page input.button.checkout-button:hover,
 .woocommerce-page a.button.primary:hover,
+.woocommerce-page a.button.checkout-button:hover,
 .woocommerce-page button.button.primary:hover,
+.woocommerce-page button.button.checkout-button:hover,
 .woocommerce-page button.primary:hover,
+.woocommerce-page button.checkout-button:hover,
 .woocommerce input#submit.primary:hover,
+.woocommerce input#submit.checkout-button:hover,
 .woocommerce input.button.primary:hover,
+.woocommerce input.button.checkout-button:hover,
 .woocommerce a.button.primary:hover,
+.woocommerce a.button.checkout-button:hover,
 .woocommerce button.button.primary:hover,
+.woocommerce button.button.checkout-button:hover,
 .woocommerce button.primary:hover,
+.woocommerce button.checkout-button:hover,
 button.primary:hover,
-.button.primary:hover {
+button.checkout-button:hover,
+.button.primary:hover,
+.button.checkout-button:hover {
   text-decoration: none;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.secondary,
 .woocommerce-page input#submit.secondary,
 .woocommerce-page input.button.secondary,
 .woocommerce-page a.button.secondary,
@@ -593,6 +647,7 @@ button.secondary,
   font-size: 1.25rem;
   font-weight: 800;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.secondary::before,
 .woocommerce-page input#submit.secondary::before,
 .woocommerce-page input.button.secondary::before,
 .woocommerce-page a.button.secondary::before,
@@ -609,6 +664,7 @@ button.secondary::before,
   display: inline-block;
   width: 1.2em;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button.secondary:hover,
 .woocommerce-page input#submit.secondary:hover,
 .woocommerce-page input.button.secondary:hover,
 .woocommerce-page a.button.secondary:hover,
@@ -623,6 +679,7 @@ button.secondary:hover,
 .button.secondary:hover {
   text-decoration: underline;
 }
+.woocommerce-checkout .wc-proceed-to-checkout a.button a,
 .woocommerce-page input#submit a,
 .woocommerce-page input.button a,
 .woocommerce-page a.button a,
@@ -1245,7 +1302,7 @@ main#product-single section.product-content .options .add-to-cart button {
   margin-left: 30px;
   border-radius: 0;
   font-size: 1.4rem;
-  background-color: #00ADEE;
+  background-color: #00ADEE !important;
 }
 main#product-single section.product-content .options .add-to-cart input {
   border: 1px solid #2C383D;
@@ -1259,7 +1316,7 @@ main#product-single section.product-content .options .quantity .pseudo-qty {
   justify-content: space-between;
 }
 main#product-single section.product-content .options .quantity .pseudo-qty button {
-  background-color: #FFFFFF;
+  background-color: #FFFFFF !important;
   border: none;
   color: #6B6B6B;
   margin: 0;
@@ -1511,6 +1568,66 @@ main#project-single section.related .swiper-slide figure {
   height: 345px;
   width: 100%;
   max-width: 460px;
+}
+
+body.woocommerce-checkout article {
+  width: 100%;
+}
+body.woocommerce-checkout article .woocommerce {
+  max-width: 980px;
+  margin: 0 auto;
+}
+body.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button {
+  display: inline-block;
+  color: #FFFFFF !important;
+  text-transform: uppercase;
+}
+body.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button::before {
+  background-color: #00ADEE !important;
+}
+body.woocommerce-checkout table.cart .product-remove {
+  width: 20px;
+}
+body.woocommerce-checkout table.cart .product-remove a.remove {
+  line-height: 0.75;
+}
+body.woocommerce-checkout table.cart .product-thumbnail {
+  width: 96px;
+}
+body.woocommerce-checkout table.cart .product-thumbnail img {
+  width: 100%;
+}
+body.woocommerce-checkout table.cart .product-name a {
+  font-weight: 600;
+}
+body.woocommerce-checkout table.cart .product-name dl.variation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: start;
+  margin: 0.25em 0;
+}
+body.woocommerce-checkout table.cart .product-name dl.variation dt, body.woocommerce-checkout table.cart .product-name dl.variation dd {
+  display: inline-block;
+  flex: 0 1 auto;
+  margin: 0 !important;
+  float: none !important;
+}
+body.woocommerce-checkout table.cart .product-name dl.variation dt p, body.woocommerce-checkout table.cart .product-name dl.variation dd p {
+  font-size: 13px;
+  margin: 0;
+}
+body.woocommerce-checkout table.cart .product-name dl.variation dt {
+  font-weight: 600;
+  padding-right: 1em;
+}
+body.woocommerce-checkout table.cart .product-name dl.variation dd {
+  padding-right: 2em;
+}
+body.woocommerce-checkout .cart-collaterals {
+  text-align: right;
+}
+body.woocommerce-checkout .woocommerce-notices-wrapper {
+  text-align: center;
 }
 
 body {
@@ -1879,4 +1996,88 @@ main#colour-chart .colour-swatch figcaption {
   padding: 10px;
   font-weight: 600;
   font-size: 1.4em;
+}
+
+.notice-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 120px;
+  z-index: 1;
+  text-align: center;
+}
+
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  margin: 0 auto;
+  background: none;
+  width: auto;
+  border: none;
+  font-size: 16px;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-animation: slideDown 1s;
+          animation: slideDown 1s;
+  position: relative;
+}
+.woocommerce-error::first-letter,
+.woocommerce-info::first-letter,
+.woocommerce-message::first-letter {
+  text-transform: capitalize;
+}
+.woocommerce-error a.button,
+.woocommerce-info a.button,
+.woocommerce-message a.button {
+  background: none !important;
+  display: inline-block;
+  padding: 0 0 0 1em;
+  vertical-align: bottom;
+  color: #00ADEE;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 2.1;
+}
+.woocommerce-error a.button:hover,
+.woocommerce-info a.button:hover,
+.woocommerce-message a.button:hover {
+  color: #2C383D;
+}
+.woocommerce-error:before,
+.woocommerce-info:before,
+.woocommerce-message:before {
+  color: #00ADEE;
+}
+
+@-webkit-keyframes slideDown {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+.woocommerce-cart-form {
+  width: 100%;
+  clear: both;
 }

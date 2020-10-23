@@ -1,5 +1,8 @@
 <?php get_header(); ?>
 <main id="product-single">
+	<div class="notice-wrapper">
+		<?php wc_print_notices(); ?>
+	</div>
 	<header role="banner" <?php echo get_the_post_thumbnail() ? 'style="background-image: url(' . get_the_post_thumbnail_url() . ')"' : '' ?>>
 		<div class="container">
 			<?php woocommerce_breadcrumb(); ?>

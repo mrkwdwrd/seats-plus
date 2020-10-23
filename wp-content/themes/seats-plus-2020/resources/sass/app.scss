@@ -22,6 +22,7 @@
 
 @import "partials/products";
 @import "partials/projects";
+@import "partials/checkout";
 
 body {
   background-color: $brand-black;
@@ -383,4 +384,64 @@ main {
       }
     }
   }
+}
+
+.notice-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 120px;
+  z-index: 1;
+  text-align: center;
+}
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+  margin: 0 auto;
+  background: none;
+  width: auto;
+  border: none;
+  font-size: 16px;
+  display: inline-block;
+  background-color: rgba($white, 0.85);
+  animation: slideDown 1s;
+  position: relative;
+  &::first-letter {
+    text-transform: capitalize;
+  }
+  a.button {
+    background: none!important;
+    display: inline-block;
+    padding: 0 0 0 1em;
+    vertical-align: bottom;
+    color: $brand-blue;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 2.1;
+    &:hover {
+      color: $brand-black;
+    }
+  }
+  &:before {
+    color: $brand-blue;
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+.woocommerce-cart-form {
+  width: 100%;
+  clear: both;
 }
