@@ -2051,6 +2051,65 @@ main#faqs ul.accordion li.active .content {
   max-height: 100vh;
   opacity: 1;
 }
+main#contact-us .hbspt-form {
+  width: auto;
+  padding: 0 40px;
+}
+main#contact-us .hbspt-form label {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: #6B6B6B;
+  letter-spacing: 1pt;
+  margin: 0.75em 0;
+  display: block;
+}
+main#contact-us .hbspt-form label.hs-main-font-element, main#contact-us .hbspt-form label.hs-error-msg {
+  font-size: inherit;
+  text-transform: initial;
+  letter-spacing: initial;
+  color: inherit;
+}
+main#contact-us .hbspt-form input, main#contact-us .hbspt-form textarea {
+  border: 1px solid #2C383D;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+main#contact-us .hbspt-form input[type=submit], main#contact-us .hbspt-form textarea[type=submit] {
+  border: none;
+  border-radius: 0;
+  font-size: 1.4rem;
+  background-color: #00ADEE !important;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-weight: 600;
+  width: auto;
+  padding: 15px 45px;
+  font-size: 14px;
+}
+main#contact-us .hbspt-form textarea {
+  resize: none;
+  min-height: 280px;
+}
+main#contact-us .hbspt-form .hs-error-msgs {
+  margin: -10px 0 20px;
+}
+main#contact-us .hbspt-form .hs-error-msgs li {
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
+  font-size: 1em;
+  text-transform: initial;
+  color: #EE3829;
+  list-style-type: none;
+}
+main#contact-us .hbspt-form .hs-error-msgs li:before {
+  content: "\D7";
+  position: relative;
+  left: -20px;
+  float: left;
+}
 
 .notice-wrapper {
   position: fixed;
@@ -2128,6 +2187,22 @@ main#faqs ul.accordion li.active .content {
   }
   100% {
     top: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }

@@ -40,7 +40,7 @@ get_header();
 								</div>
 							</li>
 						<?php endforeach; ?>
-						</ol>
+					</ul>
 		</div>
 	<?php endwhile; ?>
 
