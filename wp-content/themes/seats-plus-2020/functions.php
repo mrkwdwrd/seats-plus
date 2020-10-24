@@ -86,7 +86,7 @@ function main_nav()
             'theme_location'  => 'header-menu',
             'menu'            => '',
             'container'       => 'div',
-            'container_class' => 'menu-{menu slug}-container',
+            'container_class' => 'menu-main-nav-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
@@ -110,7 +110,7 @@ function secondary_nav()
             'theme_location'  => 'header-secondary',
             'menu'            => '',
             'container'       => 'div',
-            'container_class' => 'menu-{menu slug}-container',
+            'container_class' => 'menu-secondary-nav-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
@@ -134,7 +134,7 @@ function footer_nav()
             'theme_location'  => 'footer-sitemap',
             'menu'            => '',
             'container'       => 'div',
-            'container_class' => 'menu-{menu slug}-container',
+            'container_class' => 'menu-footer-nav-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
@@ -158,7 +158,7 @@ function footer_contact()
             'theme_location'  => 'footer-contact',
             'menu'            => '',
             'container'       => 'div',
-            'container_class' => 'menu-{menu slug}-container',
+            'container_class' => 'menu-footer-contact-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
@@ -182,7 +182,7 @@ function footer_legal()
             'theme_location'  => 'footer-legal',
             'menu'            => '',
             'container'       => 'div',
-            'container_class' => 'menu-{menu slug}-container',
+            'container_class' => 'menu-footer-legal-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
@@ -258,6 +258,11 @@ function register_projects()
 // https://carbonfields.net/docs/
 function crb_attach_theme_options()
 {
+    Container::make('theme_options', 'SeatsPlus')
+        ->add_fields([
+            Field::make('file', 'catalogue', 'Catalogue PDF')
+        ]);
+
     Container::make('post_meta', 'Slider')
         ->where('post_type', '=', 'page')
         ->where('post_template', '=', 'template-home-page.php')
@@ -510,3 +515,20 @@ remove_action('woocommerce_before_shop_loop', 'wc_print_notices', 10); /*Archive
 remove_action('woocommerce_before_single_product', 'wc_print_notices', 10); /*Single Product*/
 remove_action('woocommerce_before_cart', 'wc_print_notices', 10); /*Single Product*/
 remove_action('storefront_content_top', 'storefront_shop_messages', 1);
+
+
+add_filter('wp_nav_menu_objects', 'inject_catalogue_links_into_menu', 10, 2);
+
+function inject_catalogue_links_into_menu($items, $args)
+{
+    $catalogue_id = carbon_get_theme_option('catalogue');
+    $catalogue_url = wp_get_attachment_url($catalogue_id);
+
+    foreach ($items as $item) {
+        if ($item->title == 'Catalogue') {
+            $item->target = '_blank';
+            $item->url = $catalogue_url;
+        }
+    }
+    return $items;
+}
