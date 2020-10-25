@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <main>
-	<header role="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
+	<header role="banner" <?php echo get_the_post_thumbnail() ? 'style="background-image: url(' . get_the_post_thumbnail_url() . ')"' : '' ?>>
 		<div class="container">
 			<nav class="breadcrumbs">
 				<?php the_breadcrumb(); ?>
