@@ -551,7 +551,7 @@ function cart_to_quote($replaced)
     return str_ireplace('cart', 'quote', $replaced);
 }
 
-add_filter('gettext', 'order_to_quote_request');
+// add_filter('gettext', 'order_to_quote_request');
 add_filter('ngettext', 'order_to_quote_request');
 
 function order_to_quote_request($replaced)

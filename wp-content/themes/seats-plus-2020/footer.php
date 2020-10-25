@@ -39,7 +39,7 @@
             <p>&copy; <?php echo date('Y') ?> SeatsPlus</p>
           </div>
           <div>
-            <p>Website by 360South</p>
+            <p><a href="//360south.com.au" target"_blank" title="Website by 360South">Website by 360South</a></p>
           </div>
         </div>
       </div>

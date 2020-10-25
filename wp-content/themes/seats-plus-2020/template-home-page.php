@@ -73,7 +73,7 @@ get_header();
 	<section class="product-categories">
 		<div class="container">
 			<header class="row">
-				<div class="col-xs-4">
+				<div class="col-xs-5">
 					<h5>Products</h5>
 					<h2>Premium Aluminium Outdoor Furniture Specialists</h2>
 				</div>
@@ -145,11 +145,8 @@ get_header();
 					<h5>Our Work</h5>
 					<h2>Our Latest Projects</h2>
 				</div>
-				<!--<div>
-					<label>Filter by</label>
-				</div>-->
 			</header>
-			<ul class="projects row">
+			<ul class="projects row between-xs">
 				<?php
 				$args = array(
 					'post_type' => 'project',
@@ -162,8 +159,8 @@ get_header();
 						$categories = get_the_category($project->ID);
 					?>
 						<li class="project col-xs-6">
-							<figure>
-								<?php echo get_the_post_thumbnail($project->ID, [600, 600]); ?>
+							<figure style="background-image: url(<?php echo get_the_post_thumbnail_url($project->ID, $icon = false); ?>);">
+
 							</figure>
 							<h3><?php echo $project->post_title; ?></h3>
 							<p>

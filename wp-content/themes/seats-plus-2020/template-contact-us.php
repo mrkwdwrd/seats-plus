@@ -1,6 +1,7 @@
 <?php
-/* Template Name: Contact Us Template */
-get_header(); ?>
+/* Template Name: Contact Us */
+get_header();
+?>
 
 <main id="contact-us">
 	<header role="banner">
@@ -11,8 +12,7 @@ get_header(); ?>
 			<h2><?php the_title(); ?></h2>
 		</div>
 	</header>
-
-	<section>
+	<section class="content">
 		<div class="container">
 			<header class="row">
 				<div class="col-xs-12">
@@ -20,23 +20,24 @@ get_header(); ?>
 				</div>
 			</header>
 			<div class="row">
-				<div class="col-xs-5">
+				<div class="text col-xs-5">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> class="col-xs-8">
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<?php the_content(); ?>
 								<?php edit_post_link(); ?>
 							</article>
 						<?php endwhile; ?>
+
 					<?php else : ?>
 						<article>
 							<h2><?php _e('Sorry, nothing to display.'); ?></h2>
 						</article>
 					<?php endif; ?>
 				</div>
-				<div class="col-xs-6 col-xs-offset-1">
+				<div class="form col-xs-6 col-xs-offset-1">
 					<!--[if lte IE 8]>
-						<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-					<![endif]-->
+					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+				<![endif]-->
 					<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
 					<script>
 						hbspt.forms.create({

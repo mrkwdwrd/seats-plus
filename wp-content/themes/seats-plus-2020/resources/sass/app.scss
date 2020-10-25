@@ -123,13 +123,22 @@ main {
         &::before {
           background: $brand-red!important;
         }
+        &:hover::before {
+          background: darken($brand-red, 5%)!important;
+        }
       }
     }
   }
   &#home-page {
     article {
+      margin-top: 110px;
+      padding-bottom: 85px;
       h5 {
         color: $brand-blue;
+        font-size: 1.3em;
+      }
+      p {
+        width: 75%;
       }
       .features {
         display: flex;
@@ -141,6 +150,15 @@ main {
           img {
             width: 70px;
             height: auto;
+          }
+          h3 {
+            font-size: 2.1em;
+            font-weight: 400;
+            margin: 0.5em 0;
+          }
+          p {
+            margin-top: 0;
+            width: auto;
           }
         }
       }
@@ -160,7 +178,8 @@ main {
       }
       &.product-categories {
         position: relative;
-        padding-top: 200px;
+        padding-top: 155px;
+        padding-bottom: 110px;
         color: $white;
         &::before {
           content: '';
@@ -177,12 +196,21 @@ main {
           position: relative;
           z-index: 1;
         }
+        h3 {
+          font-size: 2.1em;
+          font-weight: 400;
+          margin: 0.5em 0;
+        }
         .button {
           color: $white;
+          &:hover {
+            color: $brand-yellow;
+          }
         }
       }
       &.our-process {
         position: relative;
+        padding-bottom: 110px;
         header {
           text-align: center;
           margin-bottom: 55px;
@@ -190,7 +218,7 @@ main {
         ol {
           width: 100%;
           padding: 0;
-          margin: 40px auto 80px;
+          margin: 40px auto 0;
           display: flex;
           justify-content: center;
           counter-reset: step;
@@ -280,6 +308,8 @@ main {
         background-color: $brand-black;
         color: $cool-grey;
         padding-bottom: 600px;
+        position: relative;
+        padding-top: 200px;
         &::before {
           content: '';
           display: block;
@@ -287,30 +317,60 @@ main {
           background-color: $white;
           height: 50px;
           clip-path: polygon(100% 100%, 100% 100%, 100% 0, 0 0);
+          position: absolute;
+          top: 0;
+          left: 0;
         }
         h5 {
           color: $brand-yellow;
+          margin: 0;
         }
         h2 {
+          margin: 0.5em 0;
+          font-weight: 400;
           color: $white;
         }
         .buttons {
           text-align: center;
+          .button {
+            &:hover::before {
+              opacity: 0.85;
+            }
+          }
         }
         ul.projects {
+          margin-top: 100px;
           list-style: none;
           padding: 0;
           li.project{
+            padding: 0 12px;
+            figure {
+              width: 100%;
+              padding-top: 65%;
+              background-size: cover;
+              background-position: center center;
+            }
             h3 {
               color: $white;
-              font-weight: $light;
-              font-size: 1.8em;
+              font-weight: normal;
+              font-size: 1.65em;
+              margin: 0.5em 0;
+            }
+            p {
+              margin: 0.5em 0;
             }
             .button.secondary {
+              margin-top: 2em;
+              display: block;
               color: $brand-yellow;
+              &:hover {
+                color: $white;
+              }
             }
-
           }
+        }
+        .buttons {
+          padding-top: 110px;
         }
       }
       &.about-us {
@@ -319,6 +379,7 @@ main {
           position: relative;
           padding: 130px 0 0;
           top: -360px;
+          margin-bottom: -250px;
           &::before {
             content: '';
             display: block;
@@ -337,8 +398,12 @@ main {
           }
         }
         .image {
-          height: 600px;
-          background-color: $cool-grey;
+          height: auto;
+          width: 100%;
+          text-align: center;
+          img {
+            margin: 0 auto;
+          }
         }
       }
       &.our-clients {
@@ -373,7 +438,8 @@ main {
     .colour-swatch {
       margin: 5px;
       background-color: $white;
-      box-shadow: 1px 1px 5px rgba($brand-black, 0.25);
+      border: 1px solid $cool-grey;
+      // box-shadow: 1px 1px 5px rgba($brand-black, 0.25);
       figure {
         width: 100%;
         padding-top: 100%;
@@ -440,8 +506,40 @@ main {
       }
     }
   }
-  &#contact-us {
-
+  &#colour-chart,
+  &#contact-us,
+  &#text-col-with-image-col {
+    .content {
+      .container {
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          background-color: $off-white;
+          height: 50vmin;
+          width: 80vmin;
+          position: absolute;
+          z-index: 0;
+          top: 140px;
+          left: 50%;
+          transform: translateX(-50%) skewY(5deg);
+        }
+      }
+      .text {
+        position: relative;
+        z-index: 1;
+      }
+      .form,
+      .image {
+        position: relative;
+        z-index: 1;
+        figure {
+          img {
+            margin: 30px auto;
+          }
+        }
+      }
+    }
   }
 }
 

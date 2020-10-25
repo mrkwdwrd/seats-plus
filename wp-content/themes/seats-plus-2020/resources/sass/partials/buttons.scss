@@ -44,6 +44,11 @@ button,
         background: transparent;
         border: 1px solid;
       }
+      &:hover {
+        &::before {
+          background-color: rgba($white, 0.15);
+        }
+      }
     }
     &:hover {
       text-decoration: none;
@@ -59,7 +64,7 @@ button,
       width: 1.2em;
     }
     &:hover {
-      text-decoration: underline;
+      color: $brand-blue;
     }
   }
   a {
