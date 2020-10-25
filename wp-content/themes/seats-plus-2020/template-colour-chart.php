@@ -38,12 +38,12 @@ get_header();
 							<h3>Brights</h3>
 						</div>
 					</div>
+
 					<div class="row">
 						<?php foreach ($brights as $key => $colour) :
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
-							$id = strtolower(str_replace(' ', '-', $name))
-						?>
+							$id = strtolower(str_replace(' ', '-', $name)) ?>
 							<div class="col-xs-2">
 								<div class="colour-swatch">
 									<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>"></figure>
@@ -68,8 +68,7 @@ get_header();
 						<?php foreach ($colorbond as $key => $colour) :
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
-							$id = strtolower(str_replace(' ', '-', $name))
-						?>
+							$id = strtolower(str_replace(' ', '-', $name)) ?>
 							<div class="col-xs-2">
 								<div class="colour-swatch">
 									<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">
@@ -81,16 +80,21 @@ get_header();
 							</div>
 						<?php endforeach; ?>
 					</div>
+				<?php endwhile; ?>
+			<?php endif; ?>
 		</div>
-	<?php endwhile; ?>
+	</section>
 
-<?php else : ?>
-	<article>
-		<h2><?php _e('Sorry, nothing to display.'); ?></h2>
-	</article>
-<?php endif; ?>
-</div>
-</div>
+	<section class="get-a-quote">
+		<div class="container">
+			<div class="row">
+				<div class="content">
+					<h5>Get a Quote</h5>
+					<h2>Reliable quality outdoor seating and aluminium furniture</h2>
+					<a href="" class="button primary" title="Get a quote">Get a quote</a>
+				</div>
+			</div>
+		</div>
 	</section>
 </main>
 
