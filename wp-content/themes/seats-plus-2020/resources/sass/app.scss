@@ -435,6 +435,9 @@ main {
     }
   }
   &#colour-chart {
+    .category {
+      padding-bottom: 110px;
+    }
     .colour-swatch {
       margin: 5px;
       background-color: $white;

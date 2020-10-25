@@ -39,7 +39,7 @@ get_header();
 						</div>
 					</div>
 
-					<div class="row">
+					<div class="category row">
 						<?php foreach ($brights as $key => $colour) :
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
@@ -64,7 +64,7 @@ get_header();
 							<h3>Colourbond</h3>
 						</div>
 					</div>
-					<div class="row">
+					<div class="category row">
 						<?php foreach ($colorbond as $key => $colour) :
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
