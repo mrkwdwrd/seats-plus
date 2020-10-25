@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main id="faqs">
-	<header role="banner">
+	<header role="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
 		<div class="container">
 			<nav class="breadcrumbs">
 				<?php the_breadcrumb(); ?>
@@ -13,7 +13,7 @@ get_header();
 		</div>
 	</header>
 
-	<section>
+	<sectionn class="content">
 		<div class="container">
 			<header class="row">
 				<div class="col-xs-12">
@@ -51,7 +51,7 @@ get_header();
 <?php endif; ?>
 </div>
 </div>
-	</section>
+</section>
 </main>
 
 <?php get_footer(); ?>

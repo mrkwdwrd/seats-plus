@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <main>
-	<header role="banner">
+	<header role="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
 		<div class="container">
 			<nav class="breadcrumbs">
 				<?php the_breadcrumb(); ?>
@@ -11,7 +11,7 @@ get_header();
 			<h2><?php the_title(); ?></h2>
 		</div>
 	</header>
-	<section>
+	<section class="content">
 		<div class="container">
 			<div class="row">
 				<h1><?php the_title(); ?></h1>

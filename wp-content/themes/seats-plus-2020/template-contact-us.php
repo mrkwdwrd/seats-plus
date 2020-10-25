@@ -4,7 +4,7 @@ get_header();
 ?>
 
 <main id="contact-us">
-	<header role="banner">
+	<header role="banner" style="background-image: url('<?php echo get_the_post_thumbnail_url(); ?>');">
 		<div class="container">
 			<nav class="breadcrumbs">
 				<?php the_breadcrumb(); ?>
