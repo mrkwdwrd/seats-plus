@@ -131,6 +131,15 @@ import selectize from 'selectize';
 		$(document).on('click', 'ul.accordion li > .title', function () {
 			$(this).parent('li').toggleClass('active');
 		});
+
+
+		$(document).on('change', '#billing_country', function (e) {
+			if (e.target.value.length) {
+				setTimeout(function () {
+					window.location.reload();
+				}, 1000);
+			}
+		});
 	});
 
 	function pad(n, width, z) {

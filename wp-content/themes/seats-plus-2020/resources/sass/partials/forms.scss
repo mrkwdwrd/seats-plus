@@ -1,0 +1,136 @@
+label {
+  text-transform: uppercase;
+  font-size: 1.1em;
+  color: $grey-dark;
+  letter-spacing: 1pt;
+  margin: 0.75em 0;
+  display: block;
+}
+p > label {
+  font-size: inherit!important;
+  line-height: inherit!important;
+}
+input, textarea {
+  border: 1px solid $brand-black!important;
+  padding: 10px 15px;
+  width: 100%;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  &[type=submit] {
+    border: none!important;
+    border-radius: 0;
+    font-size: 1.4rem;
+    background-color: $brand-blue!important;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: 600;
+    width: auto;
+    padding: 15px 45px;
+    font-size: 14px;
+  }
+}
+
+.woocommerce form .form-row {
+  line-height: 1!important;
+  font-size: 1rem!important;
+  margin: 0!important;
+  padding: 0!important;
+  label {
+    color: $grey-dark!important;
+    .required {
+      color: $brand-red;
+    }
+  }
+  input.input-text,
+  textarea,
+  .selectize-control {
+    margin-bottom: 20px;
+    .selectize-input {
+      font-weight: normal;
+      padding: 10px 15px;
+      font-size: 1.1rem;
+      input {
+        font-size: 1.1rem;
+        padding: 0;
+      }
+    }
+    .selectize-dropdown.single {
+      .selectize-dropdown-content {
+        .option {
+          padding: 10px 15px;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+.hbspt-form {
+  width: auto;
+  padding: 0 40px;
+  .hs-error-msgs {
+    margin: -10px 0 20px;
+    li {
+      animation: fadeIn 0.5s;
+      font-size: 1em;
+      text-transform: initial;
+      color: $brand-red;
+      list-style-type: none;
+      &:before {
+        content: '\00d7';
+        position: relative;
+        left: -20px;
+        float: left;
+      }
+    }
+  }
+  label {
+    font-size: 1.1em;
+    &.hs-main-font-element,
+    &.hs-error-msg {
+      font-size: inherit;
+      text-transform: initial;
+      letter-spacing: initial;
+      color: inherit;
+    }
+    .hs-form-required {
+      color: $brand-red;
+      padding-left: 0.5em;
+    }
+  }
+  textarea {
+    resize: none;
+    min-height: 280px;
+  }
+}
+
+.pseudo-qty {
+  display: flex;
+  border: 1px solid $brand-black;
+  justify-content: space-between;
+  button,
+  button.qty-dec,
+  button.qty-inc {
+    background-color: $white!important;
+    border: none;
+    color: $grey-dark;
+    margin: 0!important;
+    cursor: pointer;
+    padding: 20px 15px;
+    font-size: 1.4rem;
+    line-height: 1;
+    &.qty-inc {
+      border-left: 1px solid $brand-black;
+    }
+    &.qty-dec {
+      border-right: 1px solid $brand-black;
+    }
+  }
+  input {
+    flex: 1 1 auto;
+    margin: 0;
+    text-align: center;
+    border: none!important;
+  }
+}

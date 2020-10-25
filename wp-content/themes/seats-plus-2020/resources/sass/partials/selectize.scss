@@ -26,7 +26,7 @@
         padding: 20px 15px;
         font-size: 1.4rem;
         .selected {
-          background-color: aquamarine;
+          background-color: rgba($brand-blue, 0.25);
         }
       }
     }
@@ -36,3 +36,4 @@
     }
   }
 }
+

@@ -1,5 +1,6 @@
 
 .woocommerce-checkout .wc-proceed-to-checkout a.button,
+.woocommerce-checkout .woocommerce-checkout-payment button,
 .woocommerce-page input#submit,
 .woocommerce-page input.button,
 .woocommerce-page a.button,
@@ -15,7 +16,8 @@ button,
   background: none!important;
   border-radius: 0;
   &.primary,
-  &.checkout-button {
+  &.checkout-button,
+  &#place_order {
     position: relative;
     display: inline-block;
     width: auto;

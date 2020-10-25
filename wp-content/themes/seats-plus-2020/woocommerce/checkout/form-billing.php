@@ -1,6 +1,6 @@
 <div class="woocommerce-billing-fields">
 
-	<h3><?php esc_html_e('Billing details', 'woocommerce'); ?></h3>
+	<h3><?php esc_html_e('Customer details', 'woocommerce'); ?></h3>
 
 	<?php do_action('woocommerce_before_checkout_billing_form', $checkout); ?>
 

@@ -379,6 +379,24 @@ function crb_load()
     \Carbon_Fields\Carbon_Fields::boot();
 }
 
+// Add catalogue link to menu
+add_filter('wp_nav_menu_objects', 'inject_catalogue_links_into_menu', 10, 2);
+
+function inject_catalogue_links_into_menu($items, $args)
+{
+    $catalogue_id = carbon_get_theme_option('catalogue');
+    $catalogue_url = wp_get_attachment_url($catalogue_id);
+
+    foreach ($items as $item) {
+        if ($item->title == 'Catalogue') {
+            $item->target = '_blank';
+            $item->url = $catalogue_url;
+        }
+    }
+    return $items;
+}
+
+
 // Add WooCommerce Support
 function add_woocommerce_support()
 {
@@ -498,37 +516,45 @@ function custom_woocommerce_placeholder_img_src($src)
     return $theme . '/images/placeholder.png';
 }
 
+remove_action('woocommerce_before_shop_loop', 'wc_print_notices', 10); /*Archive Product*/
+remove_action('woocommerce_before_single_product', 'wc_print_notices', 10); /*Single Product*/
+remove_action('storefront_content_top', 'storefront_shop_messages', 1);
+
+// Customise WooCommerce text
 add_filter('woocommerce_product_single_add_to_cart_text', 'custom_single_add_to_cart_text');
 function custom_single_add_to_cart_text()
 {
     return 'Add To Quote';
 }
 
-add_filter('gettext', 'replace_text');
-add_filter('ngettext', 'replace_text');
-function replace_text($replaced)
+add_filter('gettext', 'proceed_to_checkout_to_add_your_details');
+add_filter('ngettext', 'proceed_to_checkout_to_add_your_details');
+
+function proceed_to_checkout_to_add_your_details($replaced)
+{
+    return str_ireplace('proceed to checkout', 'add your details', $replaced);
+}
+
+add_filter('gettext', 'place_order_to_request_quote');
+add_filter('ngettext', 'place_order_to_request_quote');
+
+function place_order_to_request_quote($replaced)
+{
+    return str_ireplace('place order', 'request quote', $replaced);
+}
+
+add_filter('gettext', 'cart_to_quote');
+add_filter('ngettext', 'cart_to_quote');
+
+function cart_to_quote($replaced)
 {
     return str_ireplace('cart', 'quote', $replaced);
 }
 
-remove_action('woocommerce_before_shop_loop', 'wc_print_notices', 10); /*Archive Product*/
-remove_action('woocommerce_before_single_product', 'wc_print_notices', 10); /*Single Product*/
-remove_action('woocommerce_before_cart', 'wc_print_notices', 10); /*Single Product*/
-remove_action('storefront_content_top', 'storefront_shop_messages', 1);
+add_filter('gettext', 'order_to_quote_request');
+add_filter('ngettext', 'order_to_quote_request');
 
-
-add_filter('wp_nav_menu_objects', 'inject_catalogue_links_into_menu', 10, 2);
-
-function inject_catalogue_links_into_menu($items, $args)
+function order_to_quote_request($replaced)
 {
-    $catalogue_id = carbon_get_theme_option('catalogue');
-    $catalogue_url = wp_get_attachment_url($catalogue_id);
-
-    foreach ($items as $item) {
-        if ($item->title == 'Catalogue') {
-            $item->target = '_blank';
-            $item->url = $catalogue_url;
-        }
-    }
-    return $items;
+    return str_ireplace('order', 'quote request', $replaced);
 }
