@@ -38,11 +38,18 @@
   <header class="clear">
     <div class="container">
       <div class="row">
-        <a href="/" class="logo" title="<?php bloginfo('name') ?>">
-          <?php bloginfo('name') ?>
-        </a>
-        <nav class="nav main" role="navigation">
+        <div class="logo">
+          <a href="/" title="<?php bloginfo('name') ?>">
+            <?php bloginfo('name') ?>
+          </a>
+        </div>
+        <nav class="nav main" role=" navigation">
           <?php main_nav(); ?>
+          <a class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
         </nav>
         <nav class="nav secondary">
           <?php secondary_nav(); ?>

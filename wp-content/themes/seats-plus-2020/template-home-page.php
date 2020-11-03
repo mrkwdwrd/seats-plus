@@ -49,11 +49,11 @@ get_header();
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-4">
+						<div class="col-xs-12 col-md-4">
 							<?php the_content() ?>
 							<?php edit_post_link() ?>
 						</div>
-						<div class="features col-xs-offset-1 col-xs-7">
+						<div class="features col-xs-12 col-md-offset-1 col-md-7">
 							<?php $features = carbon_get_the_post_meta('crb_features');
 							if (!empty($features)) : foreach ($features as  $feature) { ?>
 									<div class="feature">
@@ -73,7 +73,7 @@ get_header();
 	<section class="product-categories">
 		<div class="container">
 			<header class="row">
-				<div class="col-xs-5">
+				<div class="col-xs-12 col-md-5">
 					<h5>Products</h5>
 					<h2>Premium Aluminium Outdoor Furniture Specialists</h2>
 				</div>
@@ -141,7 +141,7 @@ get_header();
 	<section class="our-projects">
 		<div class="container">
 			<header class="row">
-				<div class="col-xs-4">
+				<div class="col-xs-12 col-md-4">
 					<h5>Our Work</h5>
 					<h2>Our Latest Projects</h2>
 				</div>
@@ -158,7 +158,7 @@ get_header();
 						$link_url = esc_url(get_permalink($project));
 						$categories = get_the_category($project->ID);
 					?>
-						<li class="project col-xs-6">
+						<li class="project col-xs-12 col-md-6">
 							<figure style="background-image: url(<?php echo get_the_post_thumbnail_url($project->ID, $icon = false); ?>);">
 
 							</figure>
@@ -191,10 +191,10 @@ get_header();
 		$link_url = esc_url(get_permalink($about)); ?>
 		<div class="container">
 			<div class="row">
-				<div class="image col-xs-4 col-xs-offset-1">
+				<div class="image col-xs-12 col-md-4 col-md-offset-1">
 					<?php echo get_the_post_thumbnail($about->ID, $icon = false); ?>
 				</div>
-				<div class="col-xs-5 col-xs-offset-1">
+				<div class="col-xs-12 col-md-5 col-md-offset-1">
 					<h2><?php echo $about->post_title; ?></h2>
 					<?php echo apply_filters('the_content', get_the_excerpt($about)) ?></p>
 					<a href="<?php echo $link_url; ?>" class="button secondary" title="<?php echo $about->post_title; ?>">Read More</a>

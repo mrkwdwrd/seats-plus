@@ -5,6 +5,7 @@
 @import "modules/variables";
 @import "modules/mixins";
 @import "modules/fonts";
+@import "modules/breakpoints";
 
 // Partials
 @import "partials/reset";
@@ -28,9 +29,35 @@
 body {
   background-color: $brand-black;
   color: $brand-black;
+  &.menu-active {
+    overflow: hidden;
+  }
+  &:before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    background: $white;
+    border: 1px solid red;
+    z-index: 1000;
+    padding: 10px 20px;
+    content: 'xl';
+    @include lg {
+      content: 'lg';
+    }
+    @include md {
+      content: 'md';
+    }
+    @include sm {
+      content: 'sm';
+    }
+    @include xs {
+      content: 'xs';
+    }
+  }
 }
 .container {
-  box-sizing: initial;
+    box-sizing: border-box;
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
@@ -40,6 +67,9 @@ body {
 main {
   padding-top: 120px;
   background-color: $white;
+  @include sm {
+    padding-top: 90px;
+  }
   > header {
     background-color: $brand-black;
     overflow: hidden;

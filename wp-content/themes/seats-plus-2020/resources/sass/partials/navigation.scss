@@ -1,7 +1,15 @@
 nav.main {
+  text-align: center;
   ul {
     overflow: visible;
     padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    @include sm {
+      display: none;
+    }
     > li {
       float: left;
       display: block;
@@ -58,6 +66,112 @@ nav.main {
           background-color: $brand-blue;
         }
       }
+    }
+  }
+  .menu-toggle {
+    display: none;
+    @include sm {
+      display: block;
+    }
+    span {
+      background-color: $brand-black;
+    }
+  }
+}
+.menu-toggle {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  overflow: hidden;
+  display: block;
+  height: 30px;
+  width: 30px;
+  span {
+      position: absolute;
+      display: block;
+      top: calc(50% - 1px);
+      height: 3px;
+      width: 40px;
+      transition: 0.5s;
+      &:first-child {
+          top: 3px;
+      }
+      &:last-child {
+          top: auto;
+          bottom: 2px;
+      }
+  }
+  &.active {
+      span {
+          width: 0;
+          &:first-child {
+              top: 50%;
+              transform: rotate(45deg);
+              width: 100%;
+          }
+          &:last-child {
+              bottom: calc(50% - 3px);
+              transform: rotate(-45deg);
+              width: 100%;
+          }
+      }
+  }
+}
+nav.mobile {
+  position: fixed;
+  background: $brand-black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 1.8em;
+  padding: 0 20px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  z-index: -1;
+  body.menu-active & {
+    opacity: 1;
+    z-index: 1000;
+  }
+  .menu-main-nav-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 420px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    ul {
+      margin: 0 auto;
+      display: block;
+      padding: 0;
+      max-height: 100vh;
+      overflow: scroll;
+      li {
+        display: block;
+        text-align: center;
+        color: $white;
+        border-bottom: 1px solid $white;
+        font-weight: normal;
+        ul {
+          border-top: 1px solid $white;
+        }
+        li {
+          font-size: 0.85em;
+          background: rgba($white, 0.15 );
+          border: none;
+        }
+        a {
+          color: inherit;
+          padding: 10px;
+          display: block;
+        }
+      }
+    }
+  }
+  .menu-toggle {
+    span {
+      background-color: $white;
     }
   }
 }

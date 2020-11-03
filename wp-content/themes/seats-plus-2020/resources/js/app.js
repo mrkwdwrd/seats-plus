@@ -4,6 +4,13 @@ import selectize from 'selectize';
 (function ($) {
 	$(function () {
 
+		$(document).on('click', '.menu-toggle', function () {
+			$('.menu-toggle').each(function () {
+				$(this).toggleClass('active');
+			})
+			$('body').toggleClass('menu-active');
+		});
+
 		let mainSlider = new Swiper('.main-slider .swiper-container', {
 			direction: 'vertical',
 			loop: true,
@@ -132,12 +139,18 @@ import selectize from 'selectize';
 			$(this).parent('li').toggleClass('active');
 		});
 
-
 		$(document).on('change', '#billing_country', function (e) {
 			if (e.target.value.length) {
 				setTimeout(function () {
 					window.location.reload();
 				}, 1000);
+			}
+		});
+
+		window.addEventListener('message', event => {
+			console.warn(event.data);
+			if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+				$('body > footer .hbspt-form input[type=email]').attr('placeholder', 'Your email');
 			}
 		});
 	});
