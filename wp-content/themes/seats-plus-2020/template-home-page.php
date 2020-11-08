@@ -195,9 +195,11 @@ get_header();
 					<?php echo get_the_post_thumbnail($about->ID, $icon = false); ?>
 				</div>
 				<div class="col-xs-12 col-md-5 col-md-offset-1">
-					<h2><?php echo $about->post_title; ?></h2>
-					<?php echo apply_filters('the_content', get_the_excerpt($about)) ?></p>
-					<a href="<?php echo $link_url; ?>" class="button secondary" title="<?php echo $about->post_title; ?>">Read More</a>
+					<div class="container">
+						<h2><?php echo $about->post_title; ?></h2>
+						<?php echo apply_filters('the_content', get_the_excerpt($about)) ?></p>
+						<a href="<?php echo $link_url; ?>" class="button secondary" title="<?php echo $about->post_title; ?>">Read More</a>
+					</div>
 				</div>
 			</div>
 	</section>

@@ -7,7 +7,7 @@ nav.main {
     text-align: center;
     display: inline-block;
     width: auto;
-    @include sm {
+    @media (max-width: 880px) {
       display: none;
     }
     > li {
@@ -15,6 +15,10 @@ nav.main {
       display: block;
       position: relative;
       padding: 10px;
+      @media (max-width: 1200px) {
+        padding: 10px 6px;
+        font-size: 1.1em;
+      }
       &.menu-item-has-children {
         > a {
           padding: 20px 5px;
@@ -70,7 +74,7 @@ nav.main {
   }
   .menu-toggle {
     display: none;
-    @include sm {
+    @media (max-width: 880px) {
       display: block;
     }
     span {

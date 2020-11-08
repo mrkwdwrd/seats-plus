@@ -150,7 +150,9 @@ import selectize from 'selectize';
 		window.addEventListener('message', event => {
 			console.warn(event.data);
 			if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-				$('body > footer .hbspt-form input[type=email]').attr('placeholder', 'Your email');
+				$('body > footer .hbspt-form .hs_email input').attr('placeholder', 'Your email *');
+				$('body > footer .hbspt-form .hs_firstname input').attr('placeholder', 'First name');
+				$('body > footer .hbspt-form .hs_lastname input').attr('placeholder', 'Last name');
 			}
 		});
 	});

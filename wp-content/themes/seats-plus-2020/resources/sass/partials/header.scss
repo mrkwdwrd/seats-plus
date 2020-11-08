@@ -6,13 +6,13 @@ body > header {
   right: 0;
   z-index: 10;
   .container {
-    max-width: 1600px;
+    max-width: 1880px;
     width: 100%;
     .row {
       align-items: center;
       justify-content: space-between;
       height: 120px;
-      @include sm {
+      @media (max-width: 880px) {
         height: 90px;
       }
     }
@@ -27,8 +27,11 @@ body > header {
       background-size: contain;
       background-position: center center;
       text-indent: -999em;
+      @media (max-width: 1200px) {
+        width: 210px;
+      }
       @include md {
-        width: 220px;
+        width: 200px;
       }
     }
   }
@@ -49,20 +52,16 @@ body > header {
       }
     }
     &.main {
-      @include sm {
+      @media (max-width: 880px) {
         width: 60px;
         order: 3;
       }
     }
     &.secondary {
-      padding-right: 40px;
-      @include md {
-        padding-right: 60px;
-      }
-      @include sm {
+      padding-right: 10px;
+      @media (max-width: 880px) {
         order: 2;
         flex-grow: 1;
-        padding-right: 80px;
       }
       @include xs {
         display: none;
@@ -73,14 +72,14 @@ body > header {
         margin: 0;
         white-space: nowrap;
         li {
-          padding: 0 2em;
+          padding: 0 1.25em;
           @include md {
             padding: 0;
             display: block;
             width: 100%;
             margin-top: -20px;
           }
-          @include sm {
+          @media (max-width: 880px) {
             padding: 0 1em;
             display: inline-block;
             width: auto;
@@ -88,6 +87,7 @@ body > header {
         }
       }
       .phone {
+        padding-left: 0;
         &::before {
           content: '';
           display: inline-block;
@@ -106,6 +106,9 @@ body > header {
         &:hover {
           color: $brand-blue!important;
         }
+        @media (max-width: 1200px) {
+          font-size: 1.1em;
+        }
       }
       .button {
         padding: 0;
@@ -115,7 +118,7 @@ body > header {
         @include md {
           margin-top: 20px;
         }
-        @include sm {
+        @media (max-width: 880px) {
           margin-top: 0;
         }
         a {
@@ -135,8 +138,11 @@ body > header {
             transform: skew(-10deg);
             z-index: -1;
           }
+          @media (max-width: 1200px) {
+            padding: 1.4em 1.6em;
+          }
           @include md {
-            padding: 1em 1.4em;
+            padding: 1em 1.6em;
           }
           &:hover {
             &::before {

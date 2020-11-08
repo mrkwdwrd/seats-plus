@@ -1,5 +1,8 @@
 body > footer {
   padding: 110px 0 0;
+  @include md {
+    padding: 55px 0 0;
+  }
   .logo {
     display: block;
     width: 227px;
@@ -9,16 +12,21 @@ body > footer {
     background-size: contain;
     background-position: center center;
     text-indent: -999em;
+    @include md {
+      margin: 0 auto 30px;
+    }
   }
-  h4 {
-    color: $brand-blue;
-    margin: 0;
-  }
-  nav {
+  nav,
+  .form {
     color: $white;
+    h4 {
+      color: $brand-blue;
+      margin: 0;
+    }
     ul {
       padding: 0;
       list-style: none;
+      justify-content: center;
       li {
         font-size: 1.25rem;
         padding: 0.35em 0;
@@ -27,6 +35,29 @@ body > footer {
         }
       }
     }
+    @include md {
+      text-align: center;
+      padding: 10px 0 10px 0;
+      h4 {
+        border-bottom: 1px solid $grey-dark;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        li {
+          flex: 0 1 auto;
+          padding: 0.35em 0.5em;
+        }
+      }
+    }
+  }
+  .form {
+    @include md {
+      max-width: 768px;
+      margin: 0 auto;
+      // text-align: left;
+    }
   }
   .hbspt-form {
     padding: 0;
@@ -34,8 +65,8 @@ body > footer {
       color: $white;
     }
     form {
-      border-bottom: 1px solid $white;
       display: flex;
+      flex-wrap: wrap;
       align-items: stretch;
       label {
         display: none;
@@ -56,6 +87,7 @@ body > footer {
           padding: 10px 8px;
           cursor: pointer;
         }
+        &[type=text],
         &[type=email] {
           width: 100%;
           color: $white;
@@ -63,22 +95,54 @@ body > footer {
             outline: none;
           }
         }
+        &::placeholder {
+          color: rgba($white, 0.5);
+        }
+        &::-webkit-contacts-auto-fill-button {
+          background-color: rgba($white, 0.5);
+        }
+        &.error,
+        &.error::placeholder {
+          color: $brand-red;
+        }
       }
-      .hs_email {
+      .hs_email,
+      .hs_firstname,
+      .hs_lastname,
+      .hs_submit {
         flex: 1 1 auto;
+        border-bottom: 1px solid $white;
         .hs-error-msgs {
           position: absolute;
           margin-top: 13px;
+          li:before {
+            left: 0;
+            margin-right: 0.5em;
+          }
           label {
             display: inline;
+
           }
         }
       }
       .hs_submit {
         flex: 0 1 auto;
+        order: 4
       }
       .hs_firstname {
-        display: none;
+        order: 1;
+        @include md {
+          width: 50%;
+        }
+      }
+      .hs_lastname {
+        order: 2;
+        @include md {
+          width: 50%;
+        }
+      }
+      .hs_email {
+        order: 3;
       }
       .hs_error_rollup {
         display: none;

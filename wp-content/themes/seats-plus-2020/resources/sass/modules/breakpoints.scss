@@ -1,13 +1,16 @@
 
 @mixin xs {
-  @media (max-width: 42rem) { @content; }
+  @media (max-width: 640px) { @content; }
 }
 @mixin sm {
-  @media (max-width: 64rem) { @content; }
+  @media (max-width: 768px) { @content; }
 }
 @mixin md {
-  @media (max-width: 90rem) { @content; }
+  @media (max-width: 1024px) { @content; }
 }
 @mixin lg {
-  @media (max-width: 120rem) { @content; }
+  @media (max-width: 1880px) { @content; }
+}
+@mixin xl {
+  @media (min-width: 1881px) { @content; }
 }
