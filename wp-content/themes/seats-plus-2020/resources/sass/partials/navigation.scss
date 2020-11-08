@@ -133,7 +133,7 @@ nav.mobile {
   opacity: 0;
   transition: opacity 0.5s;
   z-index: -1;
-  body.menu-active & {
+  html.menu-active & {
     opacity: 1;
     z-index: 1000;
   }

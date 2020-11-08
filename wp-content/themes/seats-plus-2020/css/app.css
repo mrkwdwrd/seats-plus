@@ -1311,7 +1311,7 @@ nav.mobile {
   transition: opacity 0.5s;
   z-index: -1;
 }
-body.menu-active nav.mobile {
+html.menu-active nav.mobile {
   opacity: 1;
   z-index: 1000;
 }
@@ -1593,6 +1593,9 @@ body > footer {
   body > footer {
     padding: 55px 0 0;
   }
+  body > footer .container {
+    max-width: 780px;
+  }
 }
 body > footer .logo {
   display: block;
@@ -1639,25 +1642,24 @@ body > footer .form {
     text-align: center;
     padding: 10px 0 10px 0;
   }
-  body > footer nav h4,
-body > footer .form h4 {
-    border-bottom: 1px solid #6B6B6B;
-  }
-  body > footer nav ul,
-body > footer .form ul {
+  body > footer nav.sitemap ul,
+body > footer .form.sitemap ul {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
   }
-  body > footer nav ul li,
-body > footer .form ul li {
+  body > footer nav.sitemap ul li,
+body > footer .form.sitemap ul li {
     flex: 0 1 auto;
     padding: 0.35em 0.5em;
   }
 }
+body > footer .form {
+  text-align: left;
+}
 @media (max-width: 1024px) {
   body > footer .form {
-    max-width: 768px;
+    max-width: 640px;
     margin: 0 auto;
   }
 }
@@ -2352,12 +2354,13 @@ body.woocommerce-checkout .woocommerce-order {
   text-align: center;
 }
 
+html.menu-active {
+  overflow: hidden;
+}
+
 body {
   background-color: #2C383D;
   color: #2C383D;
-}
-body.menu-active {
-  overflow: hidden;
 }
 body:before {
   position: fixed;
@@ -2509,6 +2512,12 @@ main#home-page article {
   margin-top: 110px;
   padding-bottom: 85px;
 }
+@media (max-width: 1024px) {
+  main#home-page article {
+    margin-top: 55px;
+    padding-bottom: 35px;
+  }
+}
 main#home-page article h5 {
   color: #00ADEE;
   font-size: 1.3em;
@@ -2555,6 +2564,11 @@ main#home-page section.product-categories {
   padding-bottom: 110px;
   color: #FFFFFF;
 }
+@media (max-width: 1024px) {
+  main#home-page section.product-categories {
+    padding-bottom: 55px;
+  }
+}
 main#home-page section.product-categories::before {
   content: "";
   display: block;
@@ -2586,12 +2600,22 @@ main#home-page section.our-process {
   position: relative;
   padding-bottom: 110px;
 }
+@media (max-width: 1024px) {
+  main#home-page section.our-process {
+    padding-bottom: 55px;
+  }
+}
 main#home-page section.our-process .container {
   padding: 0;
 }
 main#home-page section.our-process header {
   text-align: center;
   margin-bottom: 55px;
+}
+@media (max-width: 1024px) {
+  main#home-page section.our-process header {
+    margin-bottom: 35px;
+  }
 }
 main#home-page section.our-process ol {
   width: 100%;
@@ -2701,6 +2725,12 @@ main#home-page section.our-projects {
   position: relative;
   padding-top: 200px;
 }
+@media (max-width: 1024px) {
+  main#home-page section.our-projects {
+    padding-top: 105px;
+    padding-bottom: 480px;
+  }
+}
 main#home-page section.our-projects::before {
   content: "";
   display: block;
@@ -2729,12 +2759,23 @@ main#home-page section.our-projects .buttons .button:hover::before {
   opacity: 0.85;
 }
 main#home-page section.our-projects ul.projects {
-  margin-top: 100px;
+  margin: 50px -12px;
   list-style: none;
   padding: 0;
 }
+@media (max-width: 1024px) {
+  main#home-page section.our-projects ul.projects {
+    margin: 35px -12px;
+  }
+}
 main#home-page section.our-projects ul.projects li.project {
   padding: 0 12px;
+  margin: 50px 0;
+}
+@media (max-width: 1024px) {
+  main#home-page section.our-projects ul.projects li.project {
+    margin: 35px 0;
+  }
 }
 main#home-page section.our-projects ul.projects li.project figure {
   width: 100%;
@@ -2760,7 +2801,7 @@ main#home-page section.our-projects ul.projects li.project .button.secondary:hov
   color: #FFFFFF;
 }
 main#home-page section.our-projects .buttons {
-  padding-top: 110px;
+  margin: 50px 0;
 }
 main#home-page section.about-us {
   overflow: visible;
@@ -2788,12 +2829,13 @@ main#home-page section.about-us > .container * {
   z-index: 1;
 }
 main#home-page section.about-us .image {
-  height: auto;
-  width: 100%;
   text-align: center;
 }
 main#home-page section.about-us .image img {
   margin: 0 auto;
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 main#home-page section.our-clients header {
   justify-content: center;
@@ -2810,6 +2852,11 @@ main#home-page section.our-clients ul.client-logos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+@media (max-width: 1024px) {
+  main#home-page section.our-clients ul.client-logos {
+    margin: 50px auto 25px;
+  }
 }
 main#home-page section.our-clients ul.client-logos li {
   padding: 10px;

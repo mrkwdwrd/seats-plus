@@ -8,7 +8,7 @@ import selectize from 'selectize';
 			$('.menu-toggle').each(function () {
 				$(this).toggleClass('active');
 			})
-			$('body').toggleClass('menu-active');
+			$('html').toggleClass('menu-active');
 		});
 
 		let mainSlider = new Swiper('.main-slider .swiper-container', {
@@ -41,11 +41,21 @@ import selectize from 'selectize';
 			},
 			speed: 500,
 			loop: false,
-			slidesPerView: 3,
+			slidesPerView: 1,
 			spaceBetween: 30,
 			navigation: {
 				nextEl: '.product-category-slider-nav .swiper-button-next',
 				prevEl: '.product-category-slider-nav .swiper-button-prev'
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				}
 			}
 		});
 
@@ -73,6 +83,16 @@ import selectize from 'selectize';
 			navigation: {
 				nextEl: '.product-slider-nav .swiper-button-next',
 				prevEl: '.product-slider-nav .swiper-button-prev'
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				}
 			}
 		});
 
@@ -87,6 +107,16 @@ import selectize from 'selectize';
 			navigation: {
 				nextEl: '.project-slider-nav .swiper-button-next',
 				prevEl: '.project-slider-nav .swiper-button-prev'
+			},
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+				1024: {
+					slidesPerView: 3,
+					spaceBetween: 30,
+				}
 			}
 		});
 
@@ -150,9 +180,9 @@ import selectize from 'selectize';
 		window.addEventListener('message', event => {
 			console.warn(event.data);
 			if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-				$('body > footer .hbspt-form .hs_email input').attr('placeholder', 'Your email *');
-				$('body > footer .hbspt-form .hs_firstname input').attr('placeholder', 'First name');
-				$('body > footer .hbspt-form .hs_lastname input').attr('placeholder', 'Last name');
+				$('body > footer .hbspt-form .hs_email input').attr('placeholder', 'Your email *').attr('tabindex', 3);
+				$('body > footer .hbspt-form .hs_firstname input').attr('placeholder', 'First name').attr('tabindex', 1);
+				$('body > footer .hbspt-form .hs_lastname input').attr('placeholder', 'Last name').attr('tabindex', 2);
 			}
 		});
 	});

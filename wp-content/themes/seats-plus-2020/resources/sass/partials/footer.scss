@@ -2,6 +2,9 @@ body > footer {
   padding: 110px 0 0;
   @include md {
     padding: 55px 0 0;
+    .container {
+      max-width: 780px;
+    }
   }
   .logo {
     display: block;
@@ -38,25 +41,24 @@ body > footer {
     @include md {
       text-align: center;
       padding: 10px 0 10px 0;
-      h4 {
-        border-bottom: 1px solid $grey-dark;
-      }
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        li {
-          flex: 0 1 auto;
-          padding: 0.35em 0.5em;
+      &.sitemap {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 auto;
+          li {
+            flex: 0 1 auto;
+            padding: 0.35em 0.5em;
+          }
         }
       }
     }
   }
   .form {
+    text-align: left;
     @include md {
-      max-width: 768px;
+      max-width: 640px;
       margin: 0 auto;
-      // text-align: left;
     }
   }
   .hbspt-form {

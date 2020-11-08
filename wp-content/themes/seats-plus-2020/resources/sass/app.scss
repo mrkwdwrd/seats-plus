@@ -26,12 +26,12 @@
 @import "partials/projects";
 @import "partials/checkout";
 
+html.menu-active {
+  overflow: hidden;
+}
 body {
   background-color: $brand-black;
   color: $brand-black;
-  &.menu-active {
-    overflow: hidden;
-  }
   &:before {
     position: fixed;
     top: 0;
@@ -163,6 +163,10 @@ main {
     article {
       margin-top: 110px;
       padding-bottom: 85px;
+      @include md {
+        margin-top: 55px;
+        padding-bottom: 35px;
+      }
       h5 {
         color: $brand-blue;
         font-size: 1.3em;
@@ -211,6 +215,9 @@ main {
         padding-top: 155px;
         padding-bottom: 110px;
         color: $white;
+        @include md {
+          padding-bottom: 55px;
+        }
         &::before {
           content: '';
           display: block;
@@ -241,12 +248,18 @@ main {
       &.our-process {
         position: relative;
         padding-bottom: 110px;
+        @include md {
+          padding-bottom: 55px;
+        }
         .container {
           padding: 0;
         }
         header {
           text-align: center;
           margin-bottom: 55px;
+          @include md {
+            margin-bottom: 35px;
+          }
         }
         ol {
           width: 100%;
@@ -344,6 +357,10 @@ main {
         padding-bottom: 600px;
         position: relative;
         padding-top: 200px;
+        @include md {
+          padding-top: 105px;
+          padding-bottom: 480px;
+        }
         &::before {
           content: '';
           display: block;
@@ -373,11 +390,18 @@ main {
           }
         }
         ul.projects {
-          margin-top: 100px;
+          margin: 50px -12px;
           list-style: none;
           padding: 0;
+          @include md {
+            margin: 35px -12px;
+          }
           li.project{
             padding: 0 12px;
+            margin: 50px 0;
+            @include md {
+              margin: 35px 0;
+            }
             figure {
               width: 100%;
               padding-top: 65%;
@@ -404,7 +428,8 @@ main {
           }
         }
         .buttons {
-          padding-top: 110px;
+          margin: 50px 0;
+
         }
       }
       &.about-us {
@@ -432,11 +457,14 @@ main {
           }
         }
         .image {
-          height: auto;
-          width: 100%;
+          // height: auto;
+          // width: 100%;
           text-align: center;
           img {
             margin: 0 auto;
+            width: auto;
+            max-width: 100%;
+            height: auto;
           }
         }
       }
@@ -456,6 +484,9 @@ main {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          @include md {
+            margin: 50px auto 25px;
+          }
           li {
             padding: 10px;
             img {
