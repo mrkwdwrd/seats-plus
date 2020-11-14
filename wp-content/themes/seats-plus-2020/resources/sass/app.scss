@@ -36,7 +36,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
+    display: block;
     background: $white;
     border: 1px solid red;
     z-index: 1000;
@@ -59,6 +59,7 @@ body {
 .container {
     box-sizing: border-box;
     max-width: 1440px;
+    min-width: 320px;
     width: 100%;
     margin: 0 auto;
     padding: 0 20px;
@@ -167,6 +168,10 @@ main {
         margin-top: 55px;
         padding-bottom: 35px;
       }
+      @include xs {
+        margin-top: 25px;
+        padding-bottom: 15px;
+      }
       h5 {
         color: $brand-blue;
         font-size: 1.3em;
@@ -181,6 +186,9 @@ main {
           width: 50%;
           flex: 0 0 50%;
           padding: 2rem 4rem 2rem 0;
+          @include xs {
+            padding: 2rem 2rem 2rem 0;
+          }
           img {
             width: 70px;
             height: auto;
@@ -232,6 +240,13 @@ main {
         .container {
           position: relative;
           z-index: 1;
+        }
+        header {
+          .link {
+            @include md {
+              margin-top: 25px;
+            }
+          }
         }
         h3 {
           font-size: 2.1em;
@@ -439,6 +454,7 @@ main {
           padding: 130px 0 0;
           top: -360px;
           margin-bottom: -250px;
+          min-height: 860px;
           &::before {
             content: '';
             display: block;

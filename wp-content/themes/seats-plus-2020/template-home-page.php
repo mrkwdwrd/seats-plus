@@ -21,7 +21,7 @@ get_header();
 						<div class="swiper-slide" style="background-image: url(<?php echo wp_get_attachment_url($slide['image']) ?>">
 							<div class="container">
 								<div class="row content">
-									<div class="col-xs-5">
+									<div class="col-xs-8  col-md-5">
 										<h5><?php echo $link_title ?></h5>
 										<h2><?php echo $caption ?></h2>
 										<a href="<?php echo $link_url ?>" class="button primary hollow" title="<?php echo $link_title ?>">
@@ -77,7 +77,7 @@ get_header();
 					<h5>Products</h5>
 					<h2>Premium Aluminium Outdoor Furniture Specialists</h2>
 				</div>
-				<div>
+				<div class="link">
 					<a href="products" class="button secondary" title="View all Products">View all Products</a>
 				</div>
 			</header>

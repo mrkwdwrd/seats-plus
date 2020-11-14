@@ -7,13 +7,18 @@ body > header {
   z-index: 10;
   .container {
     max-width: 1880px;
+    min-width: 320px;
     width: 100%;
     .row {
       align-items: center;
       justify-content: space-between;
       height: 120px;
+      min-width: 320px;
       @media (max-width: 880px) {
         height: 90px;
+      }
+      @media (max-width: 320px) {
+        position: relative;
       }
     }
   }

@@ -997,16 +997,23 @@ body > header {
 }
 body > header .container {
   max-width: 1880px;
+  min-width: 320px;
   width: 100%;
 }
 body > header .container .row {
   align-items: center;
   justify-content: space-between;
   height: 120px;
+  min-width: 320px;
 }
 @media (max-width: 880px) {
   body > header .container .row {
     height: 90px;
+  }
+}
+@media (max-width: 320px) {
+  body > header .container .row {
+    position: relative;
   }
 }
 body > header .logo a {
@@ -2397,6 +2404,7 @@ body:before {
 .container {
   box-sizing: border-box;
   max-width: 1440px;
+  min-width: 320px;
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
@@ -2518,6 +2526,12 @@ main#home-page article {
     padding-bottom: 35px;
   }
 }
+@media (max-width: 640px) {
+  main#home-page article {
+    margin-top: 25px;
+    padding-bottom: 15px;
+  }
+}
 main#home-page article h5 {
   color: #00ADEE;
   font-size: 1.3em;
@@ -2533,6 +2547,11 @@ main#home-page article .features .feature {
   width: 50%;
   flex: 0 0 50%;
   padding: 2rem 4rem 2rem 0;
+}
+@media (max-width: 640px) {
+  main#home-page article .features .feature {
+    padding: 2rem 2rem 2rem 0;
+  }
 }
 main#home-page article .features .feature img {
   width: 70px;
@@ -2584,6 +2603,11 @@ main#home-page section.product-categories::before {
 main#home-page section.product-categories .container {
   position: relative;
   z-index: 1;
+}
+@media (max-width: 1024px) {
+  main#home-page section.product-categories header .link {
+    margin-top: 25px;
+  }
 }
 main#home-page section.product-categories h3 {
   font-size: 2.1em;
@@ -2811,6 +2835,7 @@ main#home-page section.about-us > .container {
   padding: 130px 0 0;
   top: -360px;
   margin-bottom: -250px;
+  min-height: 860px;
 }
 main#home-page section.about-us > .container::before {
   content: "";
