@@ -42,6 +42,9 @@ body > footer {
       text-align: center;
       padding: 10px 0 10px 0;
       &.sitemap {
+        h4 {
+          font-size: 1.1em;
+        }
         ul {
           display: flex;
           flex-wrap: wrap;
@@ -49,16 +52,45 @@ body > footer {
           li {
             flex: 0 1 auto;
             padding: 0.35em 0.5em;
+            font-size: 1.1em;
           }
         }
+      }
+      &.contact,
+      &.legal {
+        padding: 0 20px;
+        h4 {
+          font-size: 0.9em;
+        }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 0;
+          li {
+            flex: 0 1 auto;
+            padding: 0.35em 0.5em;
+            font-size: 0.9em;
+          }
+        }
+      }
+    }
+    @include xs {
+      &.contact ul,
+      &.legal ul {
+        display: block;
       }
     }
   }
   .form {
     text-align: left;
     @include md {
-      max-width: 640px;
+      max-width: 480px;
       margin: 0 auto;
+      h4 {
+        font-size: 1.1em;
+        text-align: center;
+        margin: 20px auto;
+      }
     }
   }
   .hbspt-form {
