@@ -2350,6 +2350,11 @@ body.woocommerce-checkout article {
 body.woocommerce-cart article .woocommerce,
 body.woocommerce-checkout article .woocommerce {
   margin: 0 auto 55px auto;
+  text-align: center;
+}
+body.woocommerce-cart article .woocommerce .cart-empty,
+body.woocommerce-checkout article .woocommerce .cart-empty {
+  margin: 30px auto;
 }
 body.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 body.woocommerce-cart .woocommerce-checkout-payment button#place_order,
@@ -2358,6 +2363,7 @@ body.woocommerce-checkout .woocommerce-checkout-payment button#place_order {
   display: inline-block;
   color: #FFFFFF !important;
   text-transform: uppercase;
+  margin-right: 30px;
 }
 body.woocommerce-cart .wc-proceed-to-checkout a.checkout-button::before,
 body.woocommerce-cart .woocommerce-checkout-payment button#place_order::before,
@@ -2365,16 +2371,18 @@ body.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button::before,
 body.woocommerce-checkout .woocommerce-checkout-payment button#place_order::before {
   background-color: #00ADEE !important;
 }
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   body.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
 body.woocommerce-cart .woocommerce-checkout-payment button#place_order,
 body.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button,
 body.woocommerce-checkout .woocommerce-checkout-payment button#place_order {
-    margin-right: 30px;
+    margin: 0 30px;
+    display: block;
   }
 }
 body.woocommerce-cart .woocommerce-billing-fields,
 body.woocommerce-checkout .woocommerce-billing-fields {
+  text-align: left;
   margin-right: 20px;
 }
 @media (max-width: 768px) {
@@ -2385,6 +2393,7 @@ body.woocommerce-checkout .woocommerce-billing-fields {
 }
 body.woocommerce-cart .woocommerce-checkout-review-order,
 body.woocommerce-checkout .woocommerce-checkout-review-order {
+  text-align: left;
   margin-top: 15px;
 }
 @media (max-width: 768px) {
@@ -3420,7 +3429,7 @@ main#contact-us .contact-details ul li p a:hover {
   background-color: #F8F8F8;
 }
 .woocommerce-info:before {
-  color: #FCB823;
+  color: #00ADEE;
 }
 
 .woocommerce-message {

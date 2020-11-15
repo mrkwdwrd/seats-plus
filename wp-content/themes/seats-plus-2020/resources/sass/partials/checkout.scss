@@ -4,6 +4,11 @@ body.woocommerce-checkout {
     width: 100%;
     .woocommerce {
       margin: 0 auto 55px auto;
+      text-align: center;
+      .cart-empty {
+        margin: 30px auto;
+
+      }
     }
   }
   .wc-proceed-to-checkout a.checkout-button,
@@ -11,20 +16,24 @@ body.woocommerce-checkout {
     display: inline-block;
     color: $white!important;
     text-transform: uppercase;
+    margin-right: 30px;
     &::before {
       background-color: $brand-blue!important;
     }
-    @include sm {
-      margin-right: 30px;
+    @include xs {
+      margin: 0 30px;
+      display: block;
     }
   }
   .woocommerce-billing-fields {
+    text-align: left;
     margin-right: 20px;
     @include xs {
       margin-right: 0;
     }
   }
   .woocommerce-checkout-review-order {
+    text-align: left;
     margin-top: 15px;
     @include xs {
       margin-bottom: 30px;
