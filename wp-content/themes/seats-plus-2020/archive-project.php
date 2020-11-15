@@ -26,7 +26,7 @@ get_header(); ?>
       <?php if (have_posts()) : ?>
         <ul class="projects row">
           <?php while (have_posts()) : the_post(); ?>
-            <li class="project col-xs-4">
+            <li class="project col-xs-6 col-sm-4 col-md-3">
               <a href="<?php echo esc_url(the_permalink()); ?>">
                 <figure style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></figure>
                 <h3 class="project-title"><?php echo the_title(); ?></h3>
