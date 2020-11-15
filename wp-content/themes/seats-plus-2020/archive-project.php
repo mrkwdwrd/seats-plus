@@ -18,7 +18,7 @@ get_header(); ?>
     <div class="container">
       <header class="row">
         <?php $page = get_page_by_path('our-work'); ?>
-        <div class="col-xs-8">
+        <div class="col-xs-12 col-md-8 col-lg-6">
           <h5>Projects</h5>
           <?php echo $page->post_content; ?>
         </div>

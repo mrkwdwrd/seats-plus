@@ -13,8 +13,7 @@ main {
         height: 1.2em;
         width: 1.2em;
         margin-right: 0.25em;
-        margin-bottom: 1pt;
-        vertical-align: middle;
+        vertical-align: bottom;
         background-color: currentColor;
         mask-position: center center;
         mask-repeat: no-repeat;
@@ -30,6 +29,12 @@ main {
   &#product-single {
     & > section  {
       padding: 110px 0;
+      @include sm {
+        padding: 55px 0;
+      }
+      @include xs {
+        padding: 25px 0;
+      }
     }
     figure {
       border: 1px solid $cool-grey;
@@ -42,6 +47,9 @@ main {
         align-items: flex-start;
         justify-content: flex-start;
         margin-bottom: 100px;
+        @include sm {
+          margin-bottom: 50px;
+        }
         h1 {
           margin: 0;
         }
@@ -50,7 +58,10 @@ main {
           margin-bottom: 10px;
         }
         .intro {
-          padding: 60px 0 0;
+          padding-top: 60px;
+          @include sm {
+            padding-top: 0;
+          }
         }
       }
     }
@@ -73,6 +84,12 @@ main {
         color: $brand-black;
         transition: 0.5s;
         width: 80%;
+        @include sm {
+          font-size: 1.25em;
+        }
+        @include xs {
+          font-size: 1em;
+        }
       }
       a:hover {
         h2, h3 {
@@ -98,7 +115,9 @@ main {
 
         }
         .details {
-          padding: 0 0 0 50px;
+          @include xs {
+            margin-top: 30px;
+          }
           h1 {
             margin: 0;
           }
@@ -115,15 +134,20 @@ main {
         }
         .options {
           padding-top: 20px;
-          margin-left: 20px;
           .variations {
             padding-bottom: 20px;
             display: flex;
             flex-wrap: wrap;
             fieldset {
               margin: 0;
-              padding: 0 0 0 30px;
+              padding: 0;
               width: 50%;
+              &:nth-of-type(odd) {
+                padding-right: 15px;
+              }
+              &:nth-of-type(even) {
+                padding-left: 15px;
+              }
               label {
                 text-transform: uppercase;
                 font-size: 1.1em;
@@ -135,16 +159,16 @@ main {
             }
           }
           .add-to-cart {
-            margin-left: 30px;
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
             .quantity,
             button {
+              padding-right: 15px;
               width: 50%;
             }
             button[type=submit] {
-              margin-left: 30px;
+              margin-left: 15px;
               border-radius: 0;
               font-size: 1.4rem;
               background-color: $brand-blue!important;
@@ -210,6 +234,9 @@ main {
         header {
           text-align: center;
           padding-bottom: 55px;
+          @include xs {
+            padding-bottom: 0;
+          }
           h5 {
             color: $brand-blue;
           }

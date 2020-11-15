@@ -44,7 +44,7 @@ get_header();
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
 							$id = strtolower(str_replace(' ', '-', $name)) ?>
-							<div class="col-xs-2">
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
 								<div class="colour-swatch">
 									<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>"></figure>
 									<figcaption for="<?php echo $id; ?>">
@@ -69,7 +69,7 @@ get_header();
 							$name = $colour['name'];
 							$hexvalue = $colour['colour'];
 							$id = strtolower(str_replace(' ', '-', $name)) ?>
-							<div class="col-xs-2">
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
 								<div class="colour-swatch">
 									<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">
 									</figure>

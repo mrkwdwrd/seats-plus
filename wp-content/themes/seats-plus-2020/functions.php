@@ -18,7 +18,32 @@ include_once 'inc/breadcrumbs.php';
 if (function_exists('add_theme_support')) {
     // Add Menu Support
     add_theme_support('menus');
+    add_theme_support('post-thumbnails');
 }
+
+add_image_size('square-thumb', 500, 500, true);
+
+function theme_customize_register($wp_customize)
+{
+    $wp_customize->add_section('contact_details', array(
+        'title'      => 'Contact Details',
+        'priority'   => 30,
+    ));
+    $wp_customize->add_setting('phone');
+    $wp_customize->add_control('phone', array(
+        'id' => 'phone',
+        'label' => 'Phone:',
+        'section' => 'contact_details'
+    ));
+    $wp_customize->add_setting('email');
+    $wp_customize->add_control('email', array(
+        'id' => 'email',
+        'label' => 'Email:',
+        'section' => 'contact_details'
+    ));
+}
+
+add_action('customize_register', 'theme_customize_register');
 
 // Functions
 function header_scripts()
@@ -47,7 +72,7 @@ function theme_styles()
     wp_enqueue_style('styles');
 }
 
-// Cleanup  Wordpress stuff in the header that is likely uneeded
+// Cleanup Wordpress stuff in the header that is likely uneeded
 function header_cleanup()
 {
     remove_action('wp_head', 'feed_links_extra', 3);
@@ -120,7 +145,7 @@ function secondary_nav()
             'after'           => '',
             'link_before'     => '',
             'link_after'      => '',
-            'items_wrap'      => '<ul>%3$s</ul>',
+            'items_wrap'      => '<ul><li class="phone"><a title="Contact Us" href="tel:' . get_theme_mod('phone') . '">' . get_theme_mod('phone') . '</a></li> %3$s</ul>',
             'depth'           => 0,
             'walker'          => ''
         )
@@ -135,30 +160,6 @@ function footer_nav()
             'menu'            => '',
             'container'       => 'div',
             'container_class' => 'menu-footer-nav-container',
-            'container_id'    => '',
-            'menu_class'      => 'menu',
-            'menu_id'         => '',
-            'echo'            => true,
-            'fallback_cb'     => 'wp_page_menu',
-            'before'          => '',
-            'after'           => '',
-            'link_before'     => '',
-            'link_after'      => '',
-            'items_wrap'      => '<ul>%3$s</ul>',
-            'depth'           => 0,
-            'walker'          => ''
-        )
-    );
-}
-
-function footer_contact()
-{
-    wp_nav_menu(
-        array(
-            'theme_location'  => 'footer-contact',
-            'menu'            => '',
-            'container'       => 'div',
-            'container_class' => 'menu-footer-contact-container',
             'container_id'    => '',
             'menu_class'      => 'menu',
             'menu_id'         => '',
@@ -206,7 +207,6 @@ function register_menus()
         'header-menu'       => __('Header Menu'),
         'header-secondary'  => __('Header Secondary'),
         'footer-sitemap'    => __('Footer Sitemap'),
-        'footer-contact'    => __('Footer Contact'),
         'footer-legal'      => __('Footer Legal')
     ));
 }

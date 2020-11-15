@@ -9,11 +9,11 @@
   <section class="content">
     <div class="container">
       <header class="row">
-        <div class="col-xs-4">
+        <div class="col-xs-12 col-md-5 col-lg-4">
           <h5><?php woocommerce_page_title(); ?></h5>
           <h1>Premium Aluminium Outdoor Furniture</h1>
         </div>
-        <div class="intro col-xs-6 col-xs-offset-2">
+        <div class="intro col-xs-12 col-md-6">
           <?php do_action('woocommerce_archive_description'); ?>
         </div>
       </header>

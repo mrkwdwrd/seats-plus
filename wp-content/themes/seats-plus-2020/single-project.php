@@ -13,13 +13,13 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-5">
+					<div class="col-xs-12 col-sm-5">
 						<h5>Our Work</h5>
 						<h1><?php the_title(); ?></h1>
 						<?php the_content(); ?>
 						<?php edit_post_link(); ?>
 					</div>
-					<div class="col-xs-6 col-xs-offset-1">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-1">
 						<div class="feature requirement">
 							<i class="requirement"></i>
 							<h3>Requirement</h3>
@@ -64,17 +64,23 @@
 		<section class="project-info">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-4">
-						<h5>Client Name</h5>
-						<h3><?php echo carbon_get_the_post_meta('crb_client'); ?></h3>
+					<div class="col-xs-12 col-sm-4">
+						<div class="info">
+							<h5>Client Name</h5>
+							<h3><?php echo carbon_get_the_post_meta('crb_client'); ?></h3>
+						</div>
 					</div>
-					<div class="col-xs-4">
-						<h5>Project Name</h5>
-						<h3><?php the_title(); ?></h3>
+					<div class="col-xs-12 col-sm-4">
+						<div class="info">
+							<h5>Project Name</h5>
+							<h3><?php the_title(); ?></h3>
+						</div>
 					</div>
-					<div class="col-xs-4">
-						<h5>Project Location</h5>
-						<h3><?php echo carbon_get_the_post_meta('crb_location'); ?></h3>
+					<div class="col-xs-12 col-sm-4">
+						<div class="info">
+							<h5>Project Location</h5>
+							<h3><?php echo carbon_get_the_post_meta('crb_location'); ?></h3>
+						</div>
 					</div>
 				</div>
 				<div class="row">
@@ -110,7 +116,10 @@
 									setup_postdata($GLOBALS['post'] = &$post_object); ?>
 
 									<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-										<figure style="background-image: url('<?php echo get_the_post_thumbnail_url($project->ID); ?>')">
+										<!-- <figure style="background-image: url('<?php echo get_the_post_thumbnail_url($project->ID); ?>')">
+										</figure> -->
+										<figure>
+											<?php echo get_the_post_thumbnail($project->ID, 'square-thumb'); ?>
 										</figure>
 										<h3><?php the_title(); ?></h3>
 									</a>

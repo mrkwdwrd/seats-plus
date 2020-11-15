@@ -13,10 +13,10 @@ if (post_password_required()) {
 <section class="product-content">
   <div class="container">
     <div class="row">
-      <div class="images col-xs-7">
+      <div class="images col-xs-12 col-sm-7">
         <?php woocommerce_show_product_images() ?>
       </div>
-      <div class="col-xs-5">
+      <div class="col-xs-12 col-sm-4 col-sm-offset-1">
         <div class="details">
           <?php woocommerce_template_single_title(); ?>
           <div class="category">
@@ -32,7 +32,7 @@ if (post_password_required()) {
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-2">
         <?php woocommerce_output_product_data_tabs(); ?>
       </div>
     </div>

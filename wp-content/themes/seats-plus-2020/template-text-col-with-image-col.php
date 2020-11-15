@@ -20,7 +20,7 @@ get_header();
 				</div>
 			</header>
 			<div class="row">
-				<div class="text col-xs-6">
+				<div class="text col-xs-12 col-sm-6">
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<?php the_content(); ?>
@@ -34,7 +34,7 @@ get_header();
 						</article>
 					<?php endif; ?>
 				</div>
-				<div class="image col-xs-5 col-xs-offset-1">
+				<div class="image col-xs-12 col-sm-5 col-sm-offset-1">
 					<figure>
 						<?php echo get_the_post_thumbnail(); ?>
 					</figure>

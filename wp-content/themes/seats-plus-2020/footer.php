@@ -15,7 +15,12 @@
           <div class="col-xs-6 col-md-2">
             <nav class="contact" role="navigation">
               <h4>Contact</h4>
-              <?php footer_contact(); ?>
+              <div class="menu-footer-contact-container">
+                <ul>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3907"><a href="tel:<?php echo get_theme_mod('phone'); ?>"><?php echo get_theme_mod('phone'); ?></a></li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3908"><a href="mailto:<?php echo get_theme_mod('email'); ?>"><?php echo get_theme_mod('email'); ?></a></li>
+                </ul>
+              </div>
             </nav>
           </div>
           <div class="col-xs-6 col-md-2">

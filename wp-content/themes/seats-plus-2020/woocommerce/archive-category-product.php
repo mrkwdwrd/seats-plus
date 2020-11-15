@@ -9,7 +9,7 @@
   <section class="content">
     <div class="container">
       <header class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-12 col-md-8 col-lg-6">
           <h5>Products</h5>
           <h1><?php woocommerce_page_title(); ?></h1>
           <?php do_action('woocommerce_archive_description'); ?>

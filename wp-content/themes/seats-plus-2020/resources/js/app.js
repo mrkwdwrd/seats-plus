@@ -78,7 +78,7 @@ import selectize from 'selectize';
 			},
 			speed: 500,
 			loop: false,
-			slidesPerView: 3,
+			slidesPerView: 2,
 			spaceBetween: 30,
 			navigation: {
 				nextEl: '.product-slider-nav .swiper-button-next',
@@ -102,7 +102,7 @@ import selectize from 'selectize';
 			},
 			speed: 500,
 			loop: false,
-			slidesPerView: 3,
+			slidesPerView: 2,
 			spaceBetween: 30,
 			navigation: {
 				nextEl: '.project-slider-nav .swiper-button-next',
@@ -122,9 +122,9 @@ import selectize from 'selectize';
 
 
 		let projectImageSlider = new Swiper('.project-image-slider .swiper-container', {
-			// autoplay: {
-			// 	delay: 4000,
-			// },
+			autoplay: {
+				delay: 4000,
+			},
 			speed: 500,
 			loop: false,
 			slidesPerView: 'auto',
