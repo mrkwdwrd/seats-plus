@@ -3,8 +3,7 @@ body.woocommerce-checkout {
   article {
     width: 100%;
     .woocommerce {
-      max-width: 980px;
-      margin: 0 auto;
+      margin: 0 auto 55px auto;
     }
   }
   .wc-proceed-to-checkout a.checkout-button,
@@ -15,10 +14,21 @@ body.woocommerce-checkout {
     &::before {
       background-color: $brand-blue!important;
     }
+    @include sm {
+      margin-right: 30px;
+    }
+  }
+  .woocommerce-billing-fields {
+    margin-right: 20px;
+    @include xs {
+      margin-right: 0;
+    }
   }
   .woocommerce-checkout-review-order {
     margin-top: 15px;
-    padding: 0 20px;
+    @include xs {
+      margin-bottom: 30px;
+    }
   }
   table.cart,
   table.woocommerce-checkout-review-order-table {
@@ -35,8 +45,12 @@ body.woocommerce-checkout {
       }
     }
     .product-name {
+      @include xs {
+        text-align: left!important;
+      }
       a {
         font-weight: 600;
+        margin-left: 1em;
       }
       dl.variation {
         display: flex;

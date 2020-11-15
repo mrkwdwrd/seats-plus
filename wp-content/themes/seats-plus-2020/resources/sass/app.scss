@@ -746,6 +746,14 @@ main {
   top: 120px;
   z-index: 1;
   text-align: center;
+  @include sm {
+    top: 90px;
+    .button.wc-forward {
+      float: none;
+      width: 100%;
+      clear: both;
+    }
+  }
 }
 .woocommerce-error,
 .woocommerce-info,
@@ -762,6 +770,9 @@ main {
   &::first-letter {
     text-transform: capitalize;
   }
+  @include sm {
+    padding: 1em 2em;
+  }
   a.button {
     background: none!important;
     display: inline-block;
@@ -774,6 +785,9 @@ main {
     line-height: 2.1;
     &:hover {
       color: $brand-black;
+    }
+    @include sm {
+      padding: 0;
     }
   }
 }

@@ -148,6 +148,10 @@ main {
               &:nth-of-type(even) {
                 padding-left: 15px;
               }
+              @include md {
+                width: 100%;
+                padding: 0!important;
+              }
               label {
                 text-transform: uppercase;
                 font-size: 1.1em;
@@ -162,16 +166,32 @@ main {
             display: flex;
             flex-wrap: nowrap;
             justify-content: space-between;
-            .quantity,
-            button {
+            @include md {
+              display: block;
+            }
+            .quantity {
               padding-right: 15px;
               width: 50%;
+              @include md {
+                padding: 0 0 20px 0;
+                width: 100%;
+              }
+              button {
+                width: 50%;
+                max-width: 58px;
+              }
             }
             button[type=submit] {
               margin-left: 15px;
               border-radius: 0;
               font-size: 1.4rem;
+              width: 50%;
               background-color: $brand-blue!important;
+              @include md {
+                margin: 0;
+                width: 100%;
+                height: 58px;
+              }
             }
             input {
               border: 1px solid $brand-black;
