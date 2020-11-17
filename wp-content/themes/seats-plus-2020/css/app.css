@@ -2586,7 +2586,7 @@ body:before {
   position: fixed;
   top: 0;
   left: 0;
-  display: block;
+  display: none;
   background: #FFFFFF;
   border: 1px solid red;
   z-index: 1000;
