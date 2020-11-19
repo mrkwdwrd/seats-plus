@@ -404,6 +404,7 @@ function add_woocommerce_support()
 }
 
 add_filter('wc_product_has_unique_sku', '__return_false');
+add_filter('woocommerce_hide_invisible_variations', '__return_false');
 
 // Rename tab
 function woo_rename_tab($tabs)
