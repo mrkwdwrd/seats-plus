@@ -564,3 +564,15 @@ function order_to_quote_request($replaced)
 {
     return str_ireplace('order', 'quote request', $replaced);
 }
+
+add_filter('woocommerce_product_tabs', 'remove_empty_tabs', 20, 1);
+
+function remove_empty_tabs($tabs)
+{
+    foreach ($tabs as $title => $tab) {
+        if (count($tab) <= 1) {
+            unset($tabs[$title]);
+        }
+    }
+    return $tabs;
+}
