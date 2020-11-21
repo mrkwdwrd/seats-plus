@@ -125,7 +125,8 @@ main {
           display: inline-block;
           text-shadow: 1px 1px 3px $brand-black;
           a {
-            color: rgba($white, 0.5);
+            // color: rgba($white, 0.5);
+            color: $cool-grey;
             &::after {
               content: '';
               display: inline-block;
@@ -135,6 +136,7 @@ main {
               border-radius: 50%;
               margin: 0 10px;
               vertical-align: middle;
+              box-shadow: 1px 1px 3px $brand-black;
             }
           }
         }

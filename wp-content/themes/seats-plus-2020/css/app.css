@@ -2783,7 +2783,7 @@ main > header .breadcrumbs ul li {
   text-shadow: 1px 1px 3px #2C383D;
 }
 main > header .breadcrumbs ul li a {
-  color: rgba(255, 255, 255, 0.5);
+  color: #A5B2B7;
 }
 main > header .breadcrumbs ul li a::after {
   content: "";
@@ -2794,6 +2794,7 @@ main > header .breadcrumbs ul li a::after {
   border-radius: 50%;
   margin: 0 10px;
   vertical-align: middle;
+  box-shadow: 1px 1px 3px #2C383D;
 }
 main section,
 main article {
