@@ -127,6 +127,7 @@ main {
           a {
             // color: rgba($white, 0.5);
             color: $cool-grey;
+            text-shadow: none;
             &::after {
               content: '';
               display: inline-block;
