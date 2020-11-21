@@ -2770,6 +2770,9 @@ main > header::after {
   position: absolute;
   bottom: 0;
 }
+main > header h2 {
+  text-shadow: 1px 1px 3px #2C383D;
+}
 main > header .breadcrumbs ul {
   margin: 0;
   padding: 0;
@@ -2777,6 +2780,7 @@ main > header .breadcrumbs ul {
 }
 main > header .breadcrumbs ul li {
   display: inline-block;
+  text-shadow: 1px 1px 3px #2C383D;
 }
 main > header .breadcrumbs ul li a {
   color: rgba(255, 255, 255, 0.5);

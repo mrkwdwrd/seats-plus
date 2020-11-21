@@ -113,6 +113,9 @@ main {
       position: absolute;
       bottom: 0;
     }
+    h2 {
+      text-shadow: 1px 1px 3px $brand-black;
+    }
     .breadcrumbs {
       ul {
         margin: 0;
@@ -120,6 +123,7 @@ main {
         list-style: none;
         li {
           display: inline-block;
+          text-shadow: 1px 1px 3px $brand-black;
           a {
             color: rgba($white, 0.5);
             &::after {

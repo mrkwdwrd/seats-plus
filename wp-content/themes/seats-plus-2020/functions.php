@@ -346,7 +346,6 @@ function crb_attach_theme_options()
         ->add_fields([
             Field::make('text', 'crb_client', 'Client'),
             Field::make('text', 'crb_location', 'Location'),
-            // Field::make('rich_text', 'crb_location_content', 'Location'),
             Field::make('rich_text', 'crb_requirement_content', 'Requirement'),
             Field::make('rich_text', 'crb_solution_content', 'Solution'),
             Field::make('rich_text', 'crb_result_content', 'Result'),
@@ -557,7 +556,6 @@ function cart_to_quote($replaced)
     return str_ireplace('cart', 'quote', $replaced);
 }
 
-// add_filter('gettext', 'order_to_quote_request');
 add_filter('ngettext', 'order_to_quote_request');
 
 function order_to_quote_request($replaced)
