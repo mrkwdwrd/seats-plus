@@ -42,6 +42,9 @@ main {
         align-items: flex-start;
         justify-content: flex-start;
         margin-bottom: 100px;
+        @include sm {
+          margin-bottom: 50px;
+        }
         h1 {
           margin: 0;
         }
@@ -50,23 +53,21 @@ main {
           margin-bottom: 10px;
         }
         .intro {
-          padding: 60px 0 0;
+          padding-top: 60px;
+          @include sm {
+            padding-top: 0;
+          }
         }
       }
     }
     ul.projects {
-      padding: 0;
       li {
-        list-style: none;
         &.project {
-          figure {
-            padding-top: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center center;
-            display: block;
-          }
+
         }
+      }
+      img {
+        border: 1px solid $cool-grey;
       }
       h2, h3 {
         font-size: 1.6em;
@@ -204,6 +205,73 @@ main {
           height: auto;
         }
       }
+    }
+  }
+}
+
+// Repurpose Woocommerce list style
+ul.projects {
+    margin: 0 0 1em;
+    padding: 0;
+    list-style: none outside;
+    clear: both;
+    &::after,  &::before {
+      content: ' ';
+      display: table;
+    }
+    &::after {
+      clear: both;
+    }
+    li.project {
+      float: left;
+      margin: 0 3.8% 2.992em 0;
+      padding: 0;
+      position: relative;
+      width: 22.05%;
+      margin-left: 0;
+      &:first-of-type() {
+        clear:both;
+      }
+      &:last-of-type() {
+        margin-right: 0;
+      }
+   }
+   &.columns-1 {
+     li.project {
+        width: 100%;
+        margin-right: 0;
+     }
+   }
+   &.columns-2 {
+     li.project {
+       width: 48%;
+     }
+   }
+   &.columns-3 {
+     li.project {
+        width: 30.75%;
+     }
+   }
+   &.columns-5 {
+     li.project {
+        width: 16.95%;
+     }
+   }
+   &.columns-6 {
+     li.project {
+      width: 13.5%;
+     }
+   }
+}
+@include xs {
+  ul.projects[class*=columns-] li.project {
+    width: 48%;
+    float: left;
+    clear: both;
+    margin: 0 0 2.992em;
+    &:nth-child(2n) {
+      float: right;
+      clear: none!important;
     }
   }
 }

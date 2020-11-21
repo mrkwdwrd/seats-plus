@@ -17,8 +17,12 @@
               <h4>Contact</h4>
               <div class="menu-footer-contact-container">
                 <ul>
-                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3907"><a href="tel:<?php echo get_theme_mod('phone'); ?>"><?php echo get_theme_mod('phone'); ?></a></li>
-                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3908"><a href="mailto:<?php echo get_theme_mod('email'); ?>"><?php echo get_theme_mod('email'); ?></a></li>
+                  <?php if (get_theme_mod('phone')) : ?>
+                    <li class="menu-item"><a href="tel:<?php echo get_theme_mod('phone'); ?>"><?php echo get_theme_mod('phone'); ?></a></li>
+                  <?php endif; ?>
+                  <?php if (get_theme_mod('email')) : ?>
+                    <li class="menu-item"><a href="mailto:<?php echo get_theme_mod('email'); ?>"><?php echo get_theme_mod('email'); ?></a></li>
+                  <?php endif; ?>
                 </ul>
               </div>
             </nav>

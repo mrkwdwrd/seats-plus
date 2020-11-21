@@ -5,7 +5,7 @@
  */
 
 get_header(); ?>
-<main id="project-index">
+<main id="project-index" class="woocommerce woocommerce-page">
   <header role="banner">
     <div class="container">
       <nav class="breadcrumbs">
@@ -24,11 +24,11 @@ get_header(); ?>
         </div>
       </header>
       <?php if (have_posts()) : ?>
-        <ul class="projects row">
+        <ul class="projects columns-3">
           <?php while (have_posts()) : the_post(); ?>
-            <li class="project col-xs-6 col-sm-4 col-md-3">
+            <li class="project">
               <a href="<?php echo esc_url(the_permalink()); ?>">
-                <figure style="background-image: url('<?php echo the_post_thumbnail_url(); ?>');"></figure>
+                <?php echo the_post_thumbnail('list-image'); ?>
                 <h3 class="project-title"><?php echo the_title(); ?></h3>
               </a>
             </li>

@@ -148,7 +148,7 @@ function secondary_nav()
             'after'           => '',
             'link_before'     => '',
             'link_after'      => '',
-            'items_wrap'      => '<ul><li class="phone"><a title="Contact Us" href="tel:' . get_theme_mod('phone') . '">' . get_theme_mod('phone') . '</a></li> %3$s</ul>',
+            'items_wrap'      => get_theme_mod('phone') ? '<ul><li class="phone"><a title="Contact Us" href="tel:' . get_theme_mod('phone') . '">' . get_theme_mod('phone') . '</a></li> %3$s</ul>' : '<ul>%3$s</ul>',
             'depth'           => 0,
             'walker'          => ''
         )
