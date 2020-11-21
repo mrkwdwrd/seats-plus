@@ -73,6 +73,10 @@
       clear: both;
       margin: 5px;
       position: relative;
+      transition: 0.5s;
+      &:hover {
+        background-color: rgba($white, 0.15);
+      }
       a {
         position: absolute;
         left: 0;

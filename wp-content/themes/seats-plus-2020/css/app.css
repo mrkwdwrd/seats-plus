@@ -1463,6 +1463,10 @@ nav.mobile .menu-toggle span {
   clear: both;
   margin: 5px;
   position: relative;
+  transition: 0.5s;
+}
+.main-slider ul.main-slider-nav li:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 .main-slider ul.main-slider-nav li a {
   position: absolute;

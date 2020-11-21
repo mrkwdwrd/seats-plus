@@ -21,7 +21,10 @@ if (function_exists('add_theme_support')) {
     add_theme_support('post-thumbnails');
 }
 
-add_image_size('square-thumb', 500, 500, true);
+add_image_size('list-image', 500, 375, true);
+add_image_size('list-image-square', 500, 500, true);
+add_image_size('list-image-large', 750, 450, true);
+add_image_size('main-image', 1000, 750, true);
 
 function theme_customize_register($wp_customize)
 {
