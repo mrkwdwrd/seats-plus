@@ -47,8 +47,8 @@
 						<div class="swiper-wrapper">
 							<?php foreach ($slider as $key => $slide) : ?>
 								<div class="swiper-slide">
-									<figure style="background-image: url(<?php echo wp_get_attachment_url($slide['image'], $icon = false) ?>);">
-										<?php echo wp_get_attachment_image($slide['image'], $icon = false) ?>
+									<figure>
+										<?php echo wp_get_attachment_image($slide['image'], 'main-image') ?>
 									</figure>
 								</div>
 								<?php endforeach; ?>;
@@ -116,10 +116,8 @@
 									setup_postdata($GLOBALS['post'] = &$post_object); ?>
 
 									<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-										<!-- <figure style="background-image: url('<?php echo get_the_post_thumbnail_url($project->ID); ?>')">
-										</figure> -->
 										<figure>
-											<?php echo get_the_post_thumbnail($project->ID, 'square-thumb'); ?>
+											<?php echo get_the_post_thumbnail($project->ID, 'list-image'); ?>
 										</figure>
 										<h3><?php the_title(); ?></h3>
 									</a>

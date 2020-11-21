@@ -20,12 +20,14 @@ if ($related_products) : ?>
 								<?php $post_object = get_post($related_product->get_id());
 								setup_postdata($GLOBALS['post'] = &$post_object); ?>
 
-								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-									<figure>
-										<?php echo apply_filters('woocommerce_single_product_image_thumbnail_html', woocommerce_get_product_thumbnail($post_thumbnail_id, true), $post_thumbnail_id); ?>
-									</figure>
-									<h3><?php the_title(); ?></h3>
-								</a>
+								<figure>
+									<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+										<?php echo apply_filters('woocommerce_single_product_image_thumbnail_html', woocommerce_get_product_thumbnail($post_thumbnail_id, 'list-image'), $post_thumbnail_id); ?>
+									</a>
+								</figure>
+								<h3>
+									<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+								</h3>
 							</div>
 						<?php endforeach; ?>
 					</div>

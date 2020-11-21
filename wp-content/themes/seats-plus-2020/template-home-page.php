@@ -95,12 +95,12 @@ get_header();
 					<div class="swiper-container">
 						<div class="swiper-wrapper">
 							<?php foreach ($product_categories as $key => $category) : ?>
-								<?php $thumbnail_id =  get_term_meta($category->term_id, 'thumbnail_id', true);
-								$image = wp_get_attachment_image_src($thumbnail_id); ?>
+								<?php $thumbnail_id =  get_term_meta($category->term_id, 'thumbnail_id', true); ?>
 								<div class="swiper-slide">
-									<!-- <figure style="background-image: url('<?php echo $image ?>')"> -->
 									<figure>
-										<?php echo wp_get_attachment_image($thumbnail_id, 'list-image'); ?>
+										<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
+											<?php echo wp_get_attachment_image($thumbnail_id, 'list-image'); ?>
+										</a>
 									</figure>
 									<h3>
 										<a href="<?php echo get_term_link($category) ?>" title="<?php echo $category->name ?>">
@@ -162,7 +162,9 @@ get_header();
 					?>
 						<li class="project col-xs-12 col-md-6">
 							<figure>
-								<?php echo get_the_post_thumbnail($project->ID, 'list-image-large'); ?>
+								<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>">
+									<?php echo get_the_post_thumbnail($project->ID, 'list-image-large'); ?>
+								</a>
 							</figure>
 							<h3><?php echo $project->post_title; ?></h3>
 							<p>
