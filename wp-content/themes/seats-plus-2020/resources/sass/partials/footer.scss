@@ -15,7 +15,7 @@ body > footer {
     background-size: contain;
     background-position: center center;
     text-indent: -999em;
-    @include md {
+    @include lg {
       margin: 0 auto 30px;
     }
   }

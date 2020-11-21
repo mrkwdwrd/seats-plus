@@ -1,18 +1,18 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-3">
+          <div class="col-xs-12 col-lg-3">
             <a href="/" class="logo" title="<?php bloginfo('name') ?>">
               <?php bloginfo('name') ?>
             </a>
           </div>
-          <div class="col-xs-12 col-md-2">
+          <div class="col-xs-12 col-lg-2">
             <nav class="sitemap" role="navigation">
               <h4>Sitemap</h4>
               <?php footer_nav(); ?>
             </nav>
           </div>
-          <div class="col-xs-6 col-md-2">
+          <div class="col-xs-6 col-lg-2">
             <nav class="contact" role="navigation">
               <h4>Contact</h4>
               <div class="menu-footer-contact-container">
@@ -23,13 +23,13 @@
               </div>
             </nav>
           </div>
-          <div class="col-xs-6 col-md-2">
+          <div class="col-xs-6 col-lg-2">
             <nav class="legal" role="navigation">
               <h4>Legal</h4>
               <?php footer_legal(); ?>
             </nav>
           </div>
-          <div class="col-xs-12 col-md-3">
+          <div class="col-xs-12 col-lg-3">
             <div class="form">
               <h4>Newsletter</h4>
               <!--[if lte IE 8]>
@@ -56,6 +56,9 @@
       </div>
     </footer>
     <?php wp_footer(); ?>
+    <nav class="floating-get-quote">
+      <a href="<?php echo wc_get_cart_url() ?>" class="button primary" title="Get a quote">Get a quote</a>
+    </nav>
     <nav class="nav mobile" role="navigation">
       <a class="menu-toggle">
         <span></span>

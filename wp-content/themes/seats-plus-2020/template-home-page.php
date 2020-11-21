@@ -237,7 +237,7 @@ get_header();
 				<div class="content">
 					<h5>Get a Quote</h5>
 					<h2>Reliable quality outdoor seating and aluminium furniture</h2>
-					<a href="" class="button primary" title="Get a quote">Get a quote</a>
+					<a href="<?php echo wc_get_cart_url() ?>" class="button primary" title="Get a quote">Get a quote</a>
 				</div>
 			</div>
 		</div>

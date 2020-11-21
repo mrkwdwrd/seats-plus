@@ -38,6 +38,7 @@ button,
       background-color: $white;
       transform: skew(-10deg);
       z-index: -1;
+      transition: 0.5s;
     }
     &.hollow {
       &::before {

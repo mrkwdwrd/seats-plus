@@ -142,6 +142,7 @@ body > header {
             background-color: $brand-blue;
             transform: skew(-10deg);
             z-index: -1;
+            transition: 0.5s;
           }
           @media (max-width: 1200px) {
             padding: 1.4em 1.6em;

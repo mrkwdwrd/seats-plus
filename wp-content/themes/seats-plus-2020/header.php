@@ -31,6 +31,9 @@
   <meta name="msapplication-wide310x150logo" content="/wp-content/themes/seats-plus-2020/images/favicon/mstile-310x150.png" />
   <meta name="msapplication-square310x310logo" content="/wp-content/themes/seats-plus-2020/images/favicon/mstile-310x310.png" />
 
+  <!-- Share This  -->
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fb0ee183d5b13001279cc15&product=sop' async='async'></script>
+
   <?php wp_head(); ?>
 </head>
 

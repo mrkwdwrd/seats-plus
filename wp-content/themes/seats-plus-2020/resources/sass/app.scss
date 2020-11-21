@@ -37,6 +37,7 @@ body {
     top: 0;
     left: 0;
     display: none;
+    // display: block;
     background: $white;
     border: 1px solid red;
     z-index: 1000;
@@ -64,7 +65,28 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
+.floating-get-quote {
+  position: fixed;
+  right: 0;z-index: 1000;
+  top: 50%;
+  @include sm {
+    display: none;
+  }
+  .button.primary {
+    transform: rotate(-90deg) translateY(90%);
+    color: $white!important;
+    text-transform: uppercase;
+    &::before {
+      background-color: $brand-blue!important;
+      transition: 0.5s;
+    }
+    &:hover {
+      &::before {
+        background-color: darken($brand-blue, 10%)!important;
+      }
+    }
+  }
+}
 main {
   padding-top: 120px;
   background-color: $white;
@@ -155,7 +177,7 @@ main {
           background: $brand-red!important;
         }
         &:hover::before {
-          background: darken($brand-red, 5%)!important;
+          background: darken($brand-red, 10%)!important;
         }
       }
     }

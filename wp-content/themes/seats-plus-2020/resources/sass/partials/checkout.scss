@@ -6,10 +6,12 @@ body.woocommerce-checkout {
       margin: 0 auto 55px auto;
       text-align: center;
       .cart-empty {
-        margin: 30px auto;
-
+        margin: 30px auto!important;
       }
     }
+  }
+  .cart-empty {
+    padding: 1em 2em 1em 3.5em!important;
   }
   .wc-proceed-to-checkout a.checkout-button,
   .woocommerce-checkout-payment button#place_order {
