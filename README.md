@@ -20,6 +20,8 @@
 
 ## Set Up
 
+Run from commands in `wp-content/themes/seats-plus-2020`
+
 ### Javascript Dependencies
 
 **Install:** `npm install`
