@@ -67,7 +67,8 @@ body {
 }
 .floating-get-quote {
   position: fixed;
-  right: 0;z-index: 1000;
+  right: 0;
+  z-index: 1000;
   top: 50%;
   @include sm {
     display: none;
@@ -125,9 +126,7 @@ main {
           display: inline-block;
           text-shadow: 1px 1px 3px $brand-black;
           a {
-            // color: rgba($white, 0.5);
             color: $cool-grey;
-            text-shadow: none;
             &::after {
               content: '';
               display: inline-block;
