@@ -29,6 +29,13 @@ if (post_password_required()) {
         <div class="options">
           <?php woocommerce_template_single_add_to_cart(); ?>
         </div>
+        <?php
+
+        $product_tags = get_terms('product_tag');
+        // var_dump($product_tags);
+        echo wc_get_product_tag_list($product->get_id());
+        ?>
+
         <div class="share">
           <div class="button-wrap">
             <div class="button share-button facebook-share-button">share</div>

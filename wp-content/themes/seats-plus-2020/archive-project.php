@@ -20,7 +20,7 @@ get_header(); ?>
         <?php $page = get_page_by_path('our-work'); ?>
         <div class="col-xs-12 col-md-8 col-lg-6">
           <h5>Projects</h5>
-          <?php echo $page->post_content; ?>
+          <?php echo apply_filters('the_content', $page->post_content); ?>
         </div>
       </header>
       <?php if (have_posts()) : ?>

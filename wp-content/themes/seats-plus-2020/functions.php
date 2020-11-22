@@ -574,3 +574,17 @@ function remove_empty_tabs($tabs)
     }
     return $tabs;
 }
+
+add_filter('woocommerce_get_breadcrumb', 'remove_breadcrumb_tag_text', 10);
+
+function remove_breadcrumb_tag_text($breadcrumbs)
+{
+    if (is_product_tag()) {
+        end($breadcrumbs);
+        $last = $breadcrumbs[key($breadcrumbs)][0];
+        $replace = ucfirst(preg_replace('/[\s\S]+\&ldquo;([\s\S]+)\&rdquo;/', '$1', $last));
+        $breadcrumbs[key($breadcrumbs)][0] = $replace;
+        reset($breadcrumbs);
+    }
+    return $breadcrumbs;
+}

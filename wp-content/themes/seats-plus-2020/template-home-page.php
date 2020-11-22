@@ -119,7 +119,34 @@ get_header();
 			</ul>
 		</div>
 	</section>
-
+	<section class="industries">
+		<div class="container">
+			<header class="row">
+				<div class="col-xs-12">
+					<h2>Industries</h2>
+				</div>
+			</header>
+			<div class="row">
+				<ul>
+					<li>
+						<a href="/tag/education" title="View education products"><i class="education"></i></a>
+						<h3><a href="/tag/education" title="View education products">Education</a></h3>
+						<a href="/tag/education" title="View education products" class="button">View products</a>
+					</li>
+					<li>
+						<a href="/tag/councils" title="View council products"><i class="councils"></i></a>
+						<h3><a href="/tag/councils" title="View council products">Councils</a></h3>
+						<a href="/tag/councils" title="View council products" class="button">View products</a>
+					</li>
+					<li>
+						<a href="/tag/sporting" title="View sporting products"><i class="sporting"></i></a>
+						<h3><a href="/tag/sporting" title="View sporting products">Sporting</a></h3>
+						<a href="/tag/sporting" title="View sporting products" class="button">View products</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
 	<section class="our-process">
 		<div class="container">
 			<header class="row">
