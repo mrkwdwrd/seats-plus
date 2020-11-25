@@ -17,6 +17,7 @@ import selectize from 'selectize';
 			speed: 500,
 			effect: 'fade',
 			onlyExternal: true,
+			noSwipingClass: 'swiper-slide',
 			fadeEffect: {
 				crossFade: true
 			},

@@ -1360,7 +1360,7 @@ nav.mobile .menu-main-nav-container {
   margin: 0 auto;
   left: 20px;
   right: 20px;
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 140px);
   overflow: scroll;
 }
 @media (max-width: 768px) {
