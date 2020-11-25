@@ -1343,6 +1343,11 @@ nav.mobile {
   transition: opacity 0.5s;
   z-index: -1;
 }
+@media (max-width: 768px) {
+  nav.mobile {
+    font-size: 1.4em;
+  }
+}
 html.menu-active nav.mobile {
   opacity: 1;
   z-index: 1000;
@@ -1353,8 +1358,16 @@ nav.mobile .menu-main-nav-container {
   transform: translateY(-50%);
   max-width: 420px;
   margin: 0 auto;
-  left: 0;
-  right: 0;
+  left: 20px;
+  right: 20px;
+  max-height: calc(100vh - 100px);
+  overflow: scroll;
+}
+@media (max-width: 768px) {
+  nav.mobile .menu-main-nav-container {
+    top: 80px;
+    transform: none;
+  }
 }
 nav.mobile .menu-main-nav-container ul {
   margin: 0 auto;
