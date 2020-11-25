@@ -135,7 +135,7 @@ import selectize from 'selectize';
 			}
 		});
 
-		$('select').selectize();
+		// $('select').selectize();
 
 		// Custom qty field
 		$('.add-to-cart .qty').hide();
