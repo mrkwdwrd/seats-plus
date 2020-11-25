@@ -16,6 +16,7 @@ import selectize from 'selectize';
 			loop: true,
 			speed: 500,
 			effect: 'fade',
+			onlyExternal: true,
 			fadeEffect: {
 				crossFade: true
 			},
