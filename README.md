@@ -4,11 +4,12 @@
 
 ### Seats Plus 2020
 
-**Plugins:**
+**Plugins used:**
 * Classic Editor
 * Woocommerce
 * Regenerate Thumbnails
 * RSFirewall!
+* Woocommerce Composite Products
 
 **Theme Options:**
 * Contact Information (email, phone number)
@@ -19,8 +20,6 @@
 * Carbon Fields (custom fields) https://github.com/htmlburger/carbon-fields
 
 ## Set Up
-
-Run from commands in `wp-content/themes/seats-plus-2020`
 
 ### Javascript Dependencies
 
