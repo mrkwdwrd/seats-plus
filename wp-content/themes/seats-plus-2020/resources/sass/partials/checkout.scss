@@ -33,6 +33,15 @@ body.woocommerce-checkout {
     @include xs {
       margin-right: 0;
     }
+    .select2-container {
+      margin-bottom: 20px;
+      .select2-selection--single {
+        height: 38px;
+        .select2-selection__rendered  {
+          padding: 5px 15px;
+        }
+      }
+    }
   }
   .woocommerce-checkout-review-order {
     text-align: left;
