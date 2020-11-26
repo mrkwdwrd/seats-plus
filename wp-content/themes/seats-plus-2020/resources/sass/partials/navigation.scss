@@ -133,6 +133,9 @@ nav.mobile {
   opacity: 0;
   transition: opacity 0.5s;
   z-index: -1;
+  @include xs {
+    font-size: 1.4em;
+  }
   html.menu-active & {
     opacity: 1;
     z-index: 1000;
@@ -143,8 +146,14 @@ nav.mobile {
     transform: translateY(-50%);
     max-width: 420px;
     margin: 0 auto;
-    left: 0;
-    right: 0;
+    left: 20px;
+    right: 20px;
+    max-height: calc(100vh - 140px);
+    overflow: scroll;
+    @include xs {
+      top: 80px;
+      transform: none;
+    }
     ul {
       margin: 0 auto;
       display: block;

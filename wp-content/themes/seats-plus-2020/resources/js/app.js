@@ -16,6 +16,8 @@ import selectize from 'selectize';
 			loop: true,
 			speed: 500,
 			effect: 'fade',
+			onlyExternal: true,
+			noSwipingClass: 'swiper-slide',
 			fadeEffect: {
 				crossFade: true
 			},
@@ -135,7 +137,7 @@ import selectize from 'selectize';
 			}
 		});
 
-		$('select').selectize();
+		// $('select').selectize();
 
 		// Custom qty field
 		$('.add-to-cart .qty').hide();

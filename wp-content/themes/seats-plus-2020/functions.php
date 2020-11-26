@@ -591,3 +591,28 @@ function remove_breadcrumb_tag_text($breadcrumbs)
     }
     return $breadcrumbs;
 }
+
+function get_subcategory_terms($terms, $taxonomies, $args)
+{
+    $new_terms = [];
+    $hide_categories = [
+        'uncategorized',
+        'colour',
+        'finish',
+        'length',
+        'leg-type',
+        'table-top'
+    ];
+
+    if (in_array('product_cat', $taxonomies) && !is_admin() && is_shop()) {
+        foreach ($terms as $key => $term) {
+            if (!in_array($term->slug, $hide_categories)) {
+                $new_terms[] = $term;
+            }
+        }
+        $terms = $new_terms;
+    }
+    return $terms;
+}
+
+add_filter('get_terms', 'get_subcategory_terms', 10, 3);
