@@ -15,7 +15,7 @@
 * Contact Information (email, phone number)
 
 **Dependencies:**
-* Selectize (cutomised select inputs) https://selectize.github.io/selectize.js/
+* Select2 (cutomised select inputs) https://github.com/select2/select2
 * Swiper (sliders) https://github.com/nolimits4web/swiper
 * Carbon Fields (custom fields) https://github.com/htmlburger/carbon-fields
 

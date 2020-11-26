@@ -24,8 +24,8 @@ mix.setPublicPath(path.resolve('./'));
 
 // Assets build
 mix.js('resources/js/app.js', 'js')
-  .extract(['swiper', 'selectize'], 'js/vendor.js')
-  .copyDirectory('node_modules/selectize/dist', 'lib/selectize')
+  .extract(['swiper', 'select2'], 'js/vendor.js')
+  .copyDirectory('node_modules/select2/dist', 'lib/select2')
   .copyDirectory('node_modules/swiper', 'lib/swiper')
   .sass('resources/sass/vendor.scss', 'css')
   .sass('resources/sass/app.scss', 'css')

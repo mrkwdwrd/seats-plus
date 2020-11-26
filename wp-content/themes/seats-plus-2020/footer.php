@@ -59,6 +59,7 @@
         </div>
       </div>
     </footer>
+
     <?php wp_footer(); ?>
     <nav class="floating-get-quote">
       <a href="<?php echo wc_get_cart_url() ?>" class="button primary" title="Get a quote">Get a quote</a>

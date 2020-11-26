@@ -63,8 +63,8 @@ function header_scripts()
         wp_register_script('swiper', get_template_directory_uri() . '/lib/swiper/swiper-bundle.min.js', '', $cache_buster, true);
         wp_enqueue_script('swiper');
 
-        wp_register_script('selectize', get_template_directory_uri() . '/lib/selectize/js/standalone/selectize.min.js', '', $cache_buster, true);
-        wp_enqueue_script('selectize');
+        wp_register_script('select2', get_template_directory_uri() . '/lib/select2/js/select2.full.min.js', '', $cache_buster, true);
+        wp_enqueue_script('select2');
 
         wp_register_script('scripts', get_template_directory_uri() . '/js/app.js', '', $cache_buster, true);
         wp_enqueue_script('scripts');

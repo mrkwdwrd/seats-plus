@@ -1,5 +1,5 @@
 import Swiper from 'swiper/bundle';
-import selectize from 'selectize';
+import select2 from 'select2';
 
 (function ($) {
 	$(function () {
@@ -137,7 +137,32 @@ import selectize from 'selectize';
 			}
 		});
 
-		// $('select').selectize();
+
+		$('select').select2({
+			minimumResultsForSearch: -1
+		});
+
+		$("select#pa_colour option[value='none']").remove();
+
+		$('select#pa_finish').each(function (e, elem) {
+			toggleColourSelect(elem.value === 'powdercoated');
+		});
+
+		$(document).on('change', 'select#pa_finish', function (e) {
+			toggleColourSelect(e.target.value === 'powdercoated');
+		});
+
+		function toggleColourSelect(val) {
+			if (val) {
+				$('select#pa_colour').removeAttr('disabled').val(null).trigger('change');
+				$("select#pa_colour option[value='none']").remove();
+				$('input#pa_colour_none').remove();
+			} else {
+				$("select#pa_colour").append('<option value="none">None</option>');
+				$('select#pa_colour').attr('disabled', true).val('none').trigger('change');
+				$('select#pa_colour').after('<input type="hidden" id="pa_colour_none" name="attribute_pa_colour" value="none" />');
+			}
+		}
 
 		// Custom qty field
 		$('.add-to-cart .qty').hide();
