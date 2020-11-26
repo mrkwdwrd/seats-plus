@@ -596,9 +596,12 @@ function get_subcategory_terms($terms, $taxonomies, $args)
 {
     $new_terms = [];
     $hide_categories = [
+        'uncategorized',
         'colour',
         'finish',
-        'length'
+        'length',
+        'leg-type',
+        'table-top'
     ];
 
     if (in_array('product_cat', $taxonomies) && !is_admin() && is_shop()) {
