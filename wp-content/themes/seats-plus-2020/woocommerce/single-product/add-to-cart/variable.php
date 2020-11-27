@@ -15,9 +15,13 @@ do_action('woocommerce_before_add_to_cart_form');
 		<p class="stock out-of-stock"><?php echo esc_html(apply_filters('woocommerce_out_of_stock_message', __('This product is currently out of stock and unavailable.', 'woocommerce'))); ?></p>
 	<?php else : ?>
 		<div class="variations">
+
 			<?php foreach ($attributes as $attribute_name => $options) : ?>
 				<fieldset>
-					<label for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>"><?php echo wc_attribute_label($attribute_name); ?></label>
+					<label for="<?php echo esc_attr(sanitize_title($attribute_name)); ?>">
+						<?php echo wc_attribute_label($attribute_name); ?>
+						<?php echo end($attribute_keys) === $attribute_name ? wp_kses_post(apply_filters('woocommerce_reset_variations_link', '<a class="reset_variations" href="#"><i>&times;</i>' . esc_html__('Clear', 'woocommerce') . '</a>')) : ''; ?>
+					</label>
 					<?php
 					wc_dropdown_variation_attribute_options(
 						array(
@@ -27,6 +31,7 @@ do_action('woocommerce_before_add_to_cart_form');
 						)
 					);
 					?>
+
 				</fieldset>
 			<?php endforeach; ?>
 		</div>
