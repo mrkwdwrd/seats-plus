@@ -596,12 +596,7 @@ function get_subcategory_terms($terms, $taxonomies, $args)
 {
     $new_terms = [];
     $hide_categories = [
-        'uncategorized',
-        'colour',
-        'finish',
-        'length',
-        'leg-type',
-        'table-top'
+        'uncategorized'
     ];
 
     if (in_array('product_cat', $taxonomies) && !is_admin() && is_shop()) {
@@ -616,3 +611,12 @@ function get_subcategory_terms($terms, $taxonomies, $args)
 }
 
 add_filter('get_terms', 'get_subcategory_terms', 10, 3);
+
+
+function remove_empty_option($args)
+{
+    $args['show_option_none'] = false;
+    return $args;
+}
+
+add_filter('woocommerce_dropdown_variation_attribute_options_args', 'remove_empty_option');
