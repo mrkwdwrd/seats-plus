@@ -1,27 +1,31 @@
 {
-  "_from": "swiper",
+  "_args": [
+    [
+      "swiper@6.3.3",
+      "/Users/mark/Projects/seats-plus/wp-content/themes/seats-plus-2020"
+    ]
+  ],
+  "_from": "swiper@6.3.3",
   "_id": "swiper@6.3.3",
   "_inBundle": false,
   "_integrity": "sha512-SnG1weu2GhqKxuG4NTIA1A6OE9x3P/+d2DW6APLUgYNHm0ZgkAOxL/tEDubiHvgwqtaVaz6QWqkSbCaDYffSNg==",
   "_location": "/swiper",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "swiper",
+    "raw": "swiper@6.3.3",
     "name": "swiper",
     "escapedName": "swiper",
-    "rawSpec": "",
+    "rawSpec": "6.3.3",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "6.3.3"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/swiper/-/swiper-6.3.3.tgz",
-  "_shasum": "e0b2e27621c07e789bfa91569b5676e896d18001",
-  "_spec": "swiper",
+  "_spec": "6.3.3",
   "_where": "/Users/mark/Projects/seats-plus/wp-content/themes/seats-plus-2020",
   "author": {
     "name": "Vladimir Kharlampidi"
@@ -29,12 +33,10 @@
   "bugs": {
     "url": "https://github.com/nolimits4web/swiper/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "dom7": "^3.0.0-alpha.7",
     "ssr-window": "^3.0.0-alpha.4"
   },
-  "deprecated": false,
   "description": "Most modern mobile touch slider and framework with hardware accelerated transitions",
   "engines": {
     "node": ">= 4.7.0"
