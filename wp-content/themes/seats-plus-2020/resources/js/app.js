@@ -192,9 +192,9 @@ import select2 from 'select2';
 			$('.add-to-cart .quantity .pseudo-qty input').val($('.add-to-cart .quantity input.qty').val());
 		});
 
-		$(document).on('click', 'ul.accordion li > .title', function () {
-			$(this).parent('li').toggleClass('active');
-		});
+		// $(document).on('click', 'ul.accordion li > .title', function () {
+		// 	$(this).parent('li').toggleClass('active');
+		// });
 
 		$(document).on('change', '#billing_country', function (e) {
 			if (e.target.value.length) {

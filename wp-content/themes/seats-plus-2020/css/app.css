@@ -3152,7 +3152,7 @@ main#faqs ul.accordion li {
 main#faqs ul.accordion li .title {
   position: relative;
   cursor: pointer;
-  background: #A5B2B7;
+  background: #00ADEE;
   padding: 0 3em 0 1em;
   color: #FFFFFF;
 }
@@ -3178,21 +3178,7 @@ main#faqs ul.accordion li .title::after {
 }
 main#faqs ul.accordion li .content {
   display: block;
-  overflow: hidden;
-  max-height: 0;
-  transition: 1s;
-  opacity: 0;
   padding: 0 1em;
-}
-main#faqs ul.accordion li.active .title {
-  background: #00ADEE;
-}
-main#faqs ul.accordion li.active .title::after {
-  transform: rotate(180deg);
-}
-main#faqs ul.accordion li.active .content {
-  max-height: 100vh;
-  opacity: 1;
 }
 main#contact-us .content .container, main#text-col-with-image-col .content .container {
   position: relative;
