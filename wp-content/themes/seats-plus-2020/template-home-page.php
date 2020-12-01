@@ -187,7 +187,7 @@ get_header();
 						$link_url = esc_url(get_permalink($project));
 						$categories = get_the_category($project->ID);
 					?>
-						<li class="project col-xs-12 col-md-6">
+						<li class="project col-xs-12 col-sm-6">
 							<figure>
 								<a href="<?php echo $link_url ?>" title="<?php echo $project->post_title ?>">
 									<?php echo get_the_post_thumbnail($project->ID, 'list-image-large'); ?>

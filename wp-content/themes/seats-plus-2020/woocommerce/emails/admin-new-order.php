@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
 /*
  * @hooked WC_Emails::email_header() Output the email header
  */
-do_action('woocommerce_email_header', $email_heading, $email); ?>
+do_action('woocommerce_email_header', 'New quote request: #' . $order->get_order_number(), $email); ?>
 
 <?php /* translators: %s: Customer billing full name */ ?>
 <p><?php printf(esc_html__('You’ve received the following quote request from %s:', 'woocommerce'), $order->get_formatted_billing_full_name()); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

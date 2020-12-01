@@ -32,30 +32,30 @@ html.menu-active {
 body {
   background-color: $brand-black;
   color: $brand-black;
-  &:before {
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: none;
-    // display: block;
-    background: $white;
-    border: 1px solid red;
-    z-index: 1000;
-    padding: 10px 20px;
-    content: 'xl';
-    @include lg {
-      content: 'lg';
-    }
-    @include md {
-      content: 'md';
-    }
-    @include sm {
-      content: 'sm';
-    }
-    @include xs {
-      content: 'xs';
-    }
-  }
+  // &:before {
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   display: none;
+  //   // display: block;
+  //   background: $white;
+  //   border: 1px solid red;
+  //   z-index: 1000;
+  //   padding: 10px 20px;
+  //   content: 'xl';
+  //   @include lg {
+  //     content: 'lg';
+  //   }
+  //   @include md {
+  //     content: 'md';
+  //   }
+  //   @include sm {
+  //     content: 'sm';
+  //   }
+  //   @include xs {
+  //     content: 'xs';
+  //   }
+  // }
 }
 .container {
     box-sizing: border-box;
@@ -113,6 +113,7 @@ main {
       clip-path: polygon(100% 0, 0 100%, 100% 100%);
       position: absolute;
       bottom: 0;
+      z-index: 1;
     }
     h2 {
       text-shadow: 1px 1px 3px $brand-black;
@@ -258,6 +259,7 @@ main {
           clip-path: polygon(100% 0, 0 100%, 100% 100%);
           position: absolute;
           bottom: 0;
+          z-index: 1;
         }
       }
       &.product-categories {
@@ -565,11 +567,11 @@ main {
           }
         }
         ul.projects {
-          margin: 50px -12px;
+          margin: 50px -20px;
           list-style: none;
           padding: 0;
           @include md {
-            margin: 35px -12px;
+            margin: 35px -20px;
           }
           li.project{
             padding: 0 12px;
