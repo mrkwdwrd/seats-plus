@@ -44,7 +44,73 @@ function theme_customize_register($wp_customize)
         'label' => 'Email:',
         'section' => 'contact_details'
     ));
+    $wp_customize->add_section('social_media', array(
+        'title'      => 'Social Media',
+        'priority'   => 30,
+    ));
+    $wp_customize->add_setting('facebook');
+    $wp_customize->add_control('facebook', array(
+        'id' => 'facebook',
+        'label' => 'Facebook URL:',
+        'type' => 'url',
+        'input_attrs' => array(
+            'placeholder' => 'https://facebook.com/...',
+        ),
+        'section' => 'social_media'
+    ));
+    $wp_customize->add_setting('twitter');
+    $wp_customize->add_control('twitter', array(
+        'id' => 'twitter',
+        'label' => 'Twitter URL:',
+        'type' => 'url',
+        'input_attrs' => array(
+            'placeholder' => 'https://twitter.com/...',
+        ),
+        'section' => 'social_media'
+    ));
+    $wp_customize->add_setting('instagram');
+    $wp_customize->add_control('instagram', array(
+        'id' => 'instagram',
+        'label' => 'Instagram URL:',
+        'type' => 'url',
+        'input_attrs' => array(
+            'placeholder' => 'https://instagram.com/...',
+        ),
+        'section' => 'social_media'
+    ));
+    $wp_customize->add_setting('youtube');
+    $wp_customize->add_control('youtube', array(
+        'id' => 'youtube',
+        'label' => 'YouTube URL:',
+        'type' => 'url',
+        'input_attrs' => array(
+            'placeholder' => 'https://youtube.com/...',
+        ),
+        'section' => 'social_media'
+    ));
+    $wp_customize->add_setting('pintrest');
+    $wp_customize->add_control('pintrest', array(
+        'id' => 'pintrest',
+        'label' => 'Pintrest URL:',
+        'type' => 'url',
+        'input_attrs' => array(
+            'placeholder' => 'https://pintrest.com/...',
+        ),
+        'section' => 'social_media'
+    ));
+    $wp_customize->add_setting('linkedin');
+    $wp_customize->add_control('linkedin', array(
+        'id' => 'linkedin',
+        'label' => 'LinkedIn URL:',
+        'type' => 'url',
+        'input_attrs' => array(
+            'placeholder' => 'https://linkedin.com/...',
+        ),
+        'section' => 'social_media'
+    ));
 }
+
+
 
 add_action('customize_register', 'theme_customize_register');
 

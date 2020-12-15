@@ -5,6 +5,28 @@
             <a href="/" class="logo" title="<?php bloginfo('name') ?>">
               <?php bloginfo('name') ?>
             </a>
+            <div class="social">
+              <ul>
+                <?php if (get_theme_mod('facebook')) : ?>
+                  <li class="icon facebook"><a href="<?php echo get_theme_mod('facebook'); ?>" target="_blank" title="<?php bloginfo('name'); ?> on Facebook"><?php bloginfo('name'); ?> on Facebook</a></li>
+                <?php endif; ?>
+                <?php if (get_theme_mod('twitter')) : ?>
+                  <li class="icon twitter"><a href="<?php echo get_theme_mod('twitter'); ?>" target="_blank" title="<?php bloginfo('name'); ?> on Twitter"><?php bloginfo('name'); ?> on Twitter</a></li>
+                <?php endif; ?>
+                <?php if (get_theme_mod('instagram')) : ?>
+                  <li class="icon instagram"><a href="<?php echo get_theme_mod('instagram'); ?>" target="_blank" title="<?php bloginfo('name'); ?> on Instagram"><?php bloginfo('name'); ?> on Instagram</a></li>
+                <?php endif; ?>
+                <?php if (get_theme_mod('youtube')) : ?>
+                  <li class="icon youtube"><a href="<?php echo get_theme_mod('youtube'); ?>" target="_blank" title="<?php bloginfo('name'); ?> on YouTube"><?php bloginfo('name'); ?> on YouTube</a></li>
+                <?php endif; ?>
+                <?php if (get_theme_mod('linkedin')) : ?>
+                  <li class="icon linkedin"><a href="<?php echo get_theme_mod('linkedin'); ?>" target="_blank" title="<?php bloginfo('name'); ?> on LinkedIn"><?php bloginfo('name'); ?> on LinkedIn</a></li>
+                <?php endif; ?>
+                <?php if (get_theme_mod('pintrest')) : ?>
+                  <li class="icon pintrest"><a href="<?php echo get_theme_mod('pintrest'); ?>" target="_blank" title="<?php bloginfo('name'); ?> on Pintrest"><?php bloginfo('name'); ?> on Pintrest</a></li>
+                <?php endif; ?>
+              </ul>
+            </div>
           </div>
           <div class="col-xs-12 col-lg-2">
             <nav class="sitemap" role="navigation">
