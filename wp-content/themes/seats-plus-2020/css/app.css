@@ -1925,9 +1925,9 @@ main#product-single section.product-content table.woocommerce-product-attributes
   background: none;
   vertical-align: top;
   padding: 20px 10px;
+  font-size: 1.25rem;
 }
 main#product-single section.product-content table.woocommerce-product-attributes tr th p, main#product-single section.product-content table.woocommerce-product-attributes tr td p {
-  font-size: 13px;
   padding: 0;
 }
 main#product-single section.product-content table.woocommerce-product-attributes tr:nth-of-type(even) th, main#product-single section.product-content table.woocommerce-product-attributes tr:nth-of-type(even) td {
