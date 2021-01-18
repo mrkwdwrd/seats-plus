@@ -29,14 +29,14 @@ if (post_password_required()) {
         <div class="options">
           <?php woocommerce_template_single_add_to_cart(); ?>
         </div>
-        <div class="share">
+        <!-- <div class="share">
           <div class="button-wrap">
             <div class="button share-button facebook-share-button">share</div>
           </div>
           <div class="button-wrap">
             <div class="button share-button twitter-share-button">tweet</div>
           </div>
-        </div>
+        </div> -->
         <div class="tags">
           <?php echo wc_get_product_tag_list($product->get_id()); ?>
         </div>

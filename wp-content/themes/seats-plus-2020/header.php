@@ -32,7 +32,7 @@
   <meta name="msapplication-square310x310logo" content="/wp-content/themes/seats-plus-2020/images/favicon/mstile-310x310.png" />
 
   <!-- Share This  -->
-  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fb0ee183d5b13001279cc15&product=sop' async='async'></script>
+  <!-- <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5fb0ee183d5b13001279cc15&product=sop' async='async'></script> -->
 
   <!-- Google Tag Manager -->
   <script>
