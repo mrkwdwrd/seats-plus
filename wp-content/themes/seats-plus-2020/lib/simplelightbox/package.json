@@ -1,0 +1,80 @@
+{
+  "_from": "simplelightbox",
+  "_id": "simplelightbox@2.7.0",
+  "_inBundle": false,
+  "_integrity": "sha512-vZNA5eGlHLWcy0y1yDc/fpH8kFG+4t6/g4EjGP4nwx9s+aFzJOIK87OVQiaZyALsYRP4Spfaed7UpQgCYw3pAA==",
+  "_location": "/simplelightbox",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "simplelightbox",
+    "name": "simplelightbox",
+    "escapedName": "simplelightbox",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/simplelightbox/-/simplelightbox-2.7.0.tgz",
+  "_shasum": "3360231da6e0ab49082c80de5f195e57ccb68d2f",
+  "_spec": "simplelightbox",
+  "_where": "/Users/mark/Projects/seats-plus/wp-content/themes/seats-plus-2020",
+  "author": {
+    "name": "Andre Rinas",
+    "email": "info@andrerinas.de",
+    "url": "https://www.andrerinas.de"
+  },
+  "bugs": {
+    "url": "https://github.com/andreknieriem/simplelightbox/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "core-js": "^3.6.5"
+  },
+  "deprecated": false,
+  "description": "Touch-friendly modern image lightbox for mobile and desktop with optional jQuery support",
+  "devDependencies": {
+    "@babel/core": "^7.12.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
+    "babelify": "^10.0.0",
+    "gulp": "^4.0.0",
+    "gulp-append-prepend": "^1.0.6",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-buffer": "0.0.2",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-tap": "^2.0.0",
+    "gulp-uglify": "^3.0.1",
+    "node-sass": "^4.14.0",
+    "through2": "^3.0.0"
+  },
+  "homepage": "https://simplelightbox.com/",
+  "keywords": [
+    "lightbox",
+    "modal",
+    "gallery",
+    "jquery-plugin",
+    "touchfriendly",
+    "pinch",
+    "responsive",
+    "popup",
+    "dialog"
+  ],
+  "license": "MIT",
+  "main": "dist/simple-lightbox.js",
+  "module": "dist/simple-lightbox.modules.js",
+  "name": "simplelightbox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreknieriem/simplelightbox.git"
+  },
+  "style": "dist/simple-lightbox.css",
+  "version": "2.7.0"
+}

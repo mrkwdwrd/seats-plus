@@ -132,6 +132,9 @@ function header_scripts()
         wp_register_script('select2', get_template_directory_uri() . '/lib/select2/js/select2.full.min.js', '', $cache_buster, true);
         wp_enqueue_script('select2');
 
+        wp_register_script('simplelightbox', get_template_directory_uri() . '/lib/simplelightbox/dist/simple-lightbox.jquery.min.js', '', $cache_buster, true);
+        wp_enqueue_script('simplelightbox');
+
         wp_register_script('scripts', get_template_directory_uri() . '/js/app.js', '', $cache_buster, true);
         wp_enqueue_script('scripts');
     }
@@ -404,7 +407,13 @@ function crb_attach_theme_options()
                             'colorbond' => 'Colorbond'
                         ])->set_width(10),
                     Field::make('text', 'name')->set_width(10),
-                    Field::make('color', 'colour')->set_width(10)
+                    Field::make('color', 'colour')->set_width(10),
+                    Field::make('complex', 'crb_gallery', '')
+                        ->add_fields([
+                            Field::make('image', 'image'),
+                            Field::make('text', 'title'),
+                        ])->set_layout('tabbed-horizontal')
+
                 ])
                 ->set_layout('grid')
         ]);

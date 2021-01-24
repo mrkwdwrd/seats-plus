@@ -45,13 +45,29 @@ get_header();
 							$hexvalue = $colour['colour'];
 							$id = strtolower(str_replace(' ', '-', $name)) ?>
 							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-								<div class="colour-swatch">
-									<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>"></figure>
+								<div class="colour-swatch" <?php echo (count($colour['crb_gallery']) > 0) ? 'data-target="' . $id . '-gallery"' : '' ?>>
+									<figure id="<?php echo $id; ?>" style="background-color: <?php echo $hexvalue; ?>">
+										<?php if (count($colour['crb_gallery']) > 0) : ?>
+											<div>
+												<i></i>
+												<span>View Gallery</span>
+											</div>
+										<?php endif; ?>
+									</figure>
 									<figcaption for="<?php echo $id; ?>">
 										<?php echo $name; ?>
 									</figcaption>
 								</div>
 							</div>
+							<?php if (count($colour['crb_gallery']) > 0) : ?>
+								<ul id="<?php echo $id . '-gallery' ?>" class="gallery">
+									<?php foreach ($colour['crb_gallery'] as $key => $image) : ?>
+										<li>
+											<a href="<?php echo wp_get_attachment_url($image['image'], $icon = true) ?>" data-caption="<?php echo $image['title'] ?>"></a>
+										</li>
+									<?php endforeach; ?>
+								</ul>
+							<?php endif; ?>
 						<?php endforeach; ?>
 					</div>
 

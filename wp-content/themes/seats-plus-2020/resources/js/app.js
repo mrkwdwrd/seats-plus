@@ -205,7 +205,6 @@ import select2 from 'select2';
 		});
 
 		window.addEventListener('message', event => {
-			console.warn(event.data);
 			if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
 				$('body > footer .hbspt-form .hs_email input').attr('placeholder', 'Your email *').attr('tabindex', 3);
 				$('body > footer .hbspt-form .hs_firstname input').attr('placeholder', 'First name').attr('tabindex', 1);
@@ -220,4 +219,25 @@ import select2 from 'select2';
 		return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 	}
 
+	$('.colour-swatch').each(function (e, elem) {
+		let gal = $(elem).data('target');
+		if (gal) {
+			$(elem).addClass('hasGallery');
+			$(elem).on('click', function () {
+				let gallery = $('#' + gal + ' li a').simpleLightbox({
+					overlay: true,
+					spinner: true,
+					captions: true,
+					captionSelector: 'self',
+					captionType: 'data',
+					captionsData: 'caption',
+					captionPosition: 'bottom',
+					showCounter: false,
+					disableScroll: true,
+					loop: false
+				});
+				gallery.open();
+			});
+		}
+	});
 } (jQuery));
