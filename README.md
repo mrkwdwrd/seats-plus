@@ -35,8 +35,8 @@
 
 ### SCSS & JS Compiling
 
-**In develeopment (one-off):** `npm run dev`
-**In develeopment (watched):** `npm run watch`
+**In development (one-off):** `npm run dev`
+**In development (watched):** `npm run watch`
 
 **For production:** `npm run prod`
 
